@@ -1,0 +1,1614 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,177.7143,100)
+  Visible = False
+  Background = &H8491FF
+  { Menu1 Menu
+    Text = ("Características")
+    Visible = False
+    { car00 Menu
+      Text = ("Género")
+    }
+    { car10 Menu
+      Text = ("Tes de la piel")
+    }
+    { car20 Menu
+      Text = ("Color de la ropa")
+    }
+    { car30 Menu
+      Text = ("Forma de los ojos")
+    }
+    { car40 Menu
+      Text = ("Color de los ojos")
+    }
+    { car50 Menu
+      Text = ("Pecas")
+    }
+    { car60 Menu
+      Text = ("Rasgos faciales")
+    }
+    { car70 Menu
+      Text = ("Tipo de cabello")
+    }
+    { car80 Menu
+      Text = ("Color de cabello")
+    }
+    { car90 Menu
+      Text = ("Accesorios")
+    }
+  }
+  { op0 Menu
+    Text = ("Género")
+    Visible = False
+    { car01 Menu
+      Text = ("Hombre")
+    }
+    { car02 Menu
+      Text = ("Mujer")
+    }
+  }
+  { op1 Menu
+    Text = ("Tes de la piel")
+    Visible = False
+    { car11 Menu
+      Text = ("Blanca")
+    }
+    { car12 Menu
+      Text = ("Negra")
+    }
+    { car13 Menu
+      Text = ("Amarilla")
+    }
+  }
+  { op2 Menu
+    Text = ("Color de la ropa")
+    Visible = False
+    { car21 Menu
+      Text = ("Rojo")
+    }
+    { car22 Menu
+      Text = ("Azul")
+    }
+    { car23 Menu
+      Text = ("Negro")
+    }
+  }
+  { op3 Menu
+    Text = ("Forma de los ojos")
+    Visible = False
+    { car31 Menu
+      Text = ("Redondos")
+    }
+    { car32 Menu
+      Text = ("Cuadrados")
+    }
+  }
+  { op4 Menu
+    Text = ("Color de los ojos")
+    Visible = False
+    { car41 Menu
+      Text = ("Azul")
+    }
+    { car42 Menu
+      Text = ("Verde")
+    }
+    { car43 Menu
+      Text = ("Cafe")
+    }
+  }
+  { op5 Menu
+    Text = ("Pecas")
+    Visible = False
+    { car51 Menu
+      Text = ("Pocas")
+    }
+    { car52 Menu
+      Text = ("Muchas")
+    }
+    { car53 Menu
+      Text = ("Ninguna")
+    }
+  }
+  { op6 Menu
+    Text = ("Rasgos faciales")
+    Visible = False
+    { car61 Menu
+      Text = ("Barba")
+    }
+    { car62 Menu
+      Text = ("Bigote")
+    }
+    { car63 Menu
+      Text = ("Ninguno")
+    }
+  }
+  { op7 Menu
+    Text = ("Tipo de cabello")
+    Visible = False
+    { car71 Menu
+      Text = ("Largo")
+    }
+    { car72 Menu
+      Text = ("Corto")
+    }
+    { car73 Menu
+      Text = ("Rapado")
+    }
+  }
+  { op8 Menu
+    Text = ("Color de cabello")
+    Visible = False
+    { car81 Menu
+      Text = ("Rubio")
+    }
+    { car82 Menu
+      Text = ("Castaño")
+    }
+    { car83 Menu
+      Text = ("Pelirrojo")
+    }
+  }
+  { op9 Menu
+    Text = ("Accesorios")
+    Visible = False
+    { car91 Menu
+      Text = ("Gafas")
+    }
+    { car92 Menu
+      Text = ("Sombrero")
+    }
+    { car93 Menu
+      Text = ("Ninguno")
+    }
+  }
+  { Button1 Button
+    MoveScaled(38,5,17.1429,5.1429)
+    Enabled = False
+    Font = Font["+2,Italic"]
+    Background = &H5555AA
+    Foreground = Color.TextBackground
+    Border = False
+  }
+  { Button2 Button
+    MoveScaled(55.1429,5,17.1429,5.1429)
+    Enabled = False
+    Font = Font["+2,Italic"]
+    Background = &H5555AA
+    Foreground = Color.TextBackground
+    Border = False
+  }
+  { Button3 Button
+    MoveScaled(72.2857,5,17.1429,5.1429)
+    Enabled = False
+    Font = Font["+2,Italic"]
+    Background = &H5555AA
+    Foreground = Color.TextBackground
+    Border = False
+  }
+  { Button4 Button
+    MoveScaled(89.4286,5,17.1429,5.1429)
+    Enabled = False
+    Font = Font["+2,Italic"]
+    Background = &H5555AA
+    Foreground = Color.TextBackground
+    Border = False
+  }
+  { Button5 Button
+    MoveScaled(106.5714,5,17.1429,5.1429)
+    Enabled = False
+    Font = Font["+2,Italic"]
+    Background = &H5555AA
+    Foreground = Color.TextBackground
+    Border = False
+  }
+  { Button6 Button
+    MoveScaled(123.7143,5,17.1429,5.1429)
+    Enabled = False
+    Font = Font["+2,Italic"]
+    Background = &H5555AA
+    Foreground = Color.TextBackground
+    Border = False
+  }
+  { Button7 Button
+    MoveScaled(38,27.2857,17.1429,5.1429)
+    Enabled = False
+    Font = Font["+2,Italic"]
+    Background = &H5555AA
+    Foreground = Color.TextBackground
+    Border = False
+  }
+  { Button8 Button
+    MoveScaled(55.1429,27.2857,17.1429,5.1429)
+    Enabled = False
+    Font = Font["+2,Italic"]
+    Background = &H5555AA
+    Foreground = Color.TextBackground
+    Border = False
+  }
+  { Button9 Button
+    MoveScaled(72.2857,27.2857,17.1429,5.1429)
+    Enabled = False
+    Font = Font["+2,Italic"]
+    Background = &H5555AA
+    Foreground = Color.TextBackground
+    Border = False
+  }
+  { Button10 Button
+    MoveScaled(89.4286,27.2857,17.1429,5.1429)
+    Enabled = False
+    Font = Font["+2,Italic"]
+    Background = &H5555AA
+    Foreground = Color.TextBackground
+    Border = False
+  }
+  { Button11 Button
+    MoveScaled(106.5714,27.2857,17.1429,5.1429)
+    Enabled = False
+    Font = Font["+2,Italic"]
+    Background = &H5555AA
+    Foreground = Color.TextBackground
+    Border = False
+  }
+  { Button12 Button
+    MoveScaled(123.7143,27.2857,17.1429,5.1429)
+    Enabled = False
+    Font = Font["+2,Italic"]
+    Background = &H5555AA
+    Foreground = Color.TextBackground
+    Border = False
+  }
+  { Button13 Button
+    MoveScaled(38,49.5714,17.1429,5.1429)
+    Enabled = False
+    Font = Font["+2,Italic"]
+    Background = &H5555AA
+    Foreground = Color.TextBackground
+    Border = False
+  }
+  { Button14 Button
+    MoveScaled(55.1429,49.5714,17.1429,5.1429)
+    Enabled = False
+    Font = Font["+2,Italic"]
+    Background = &H5555AA
+    Foreground = Color.TextBackground
+    Border = False
+  }
+  { Button15 Button
+    MoveScaled(72.2857,49.5714,17.1429,5.1429)
+    Enabled = False
+    Font = Font["+2,Italic"]
+    Background = &H5555AA
+    Foreground = Color.TextBackground
+    Border = False
+  }
+  { Button16 Button
+    MoveScaled(89.4286,49.5714,17.1429,5.1429)
+    Enabled = False
+    Font = Font["+2,Italic"]
+    Background = &H5555AA
+    Foreground = Color.TextBackground
+    Border = False
+  }
+  { Button17 Button
+    MoveScaled(106.5714,49.5714,17.1429,5.1429)
+    Enabled = False
+    Font = Font["+2,Italic"]
+    Background = &H5555AA
+    Foreground = Color.TextBackground
+    Border = False
+  }
+  { Button18 Button
+    MoveScaled(123.7143,49.5714,17.1429,5.1429)
+    Enabled = False
+    Font = Font["+2,Italic"]
+    Background = &H5555AA
+    Foreground = Color.TextBackground
+    Border = False
+  }
+  { Button19 Button
+    MoveScaled(38,71.8571,17.1429,5.1429)
+    Enabled = False
+    Font = Font["+2,Italic"]
+    Background = &H5555AA
+    Foreground = Color.TextBackground
+    Border = False
+  }
+  { Button20 Button
+    MoveScaled(55.1429,71.8571,17.1429,5.1429)
+    Enabled = False
+    Font = Font["+2,Italic"]
+    Background = &H5555AA
+    Foreground = Color.TextBackground
+    Border = False
+  }
+  { Button21 Button
+    MoveScaled(72.2857,71.8571,17.1429,5.1429)
+    Enabled = False
+    Font = Font["+2,Italic"]
+    Background = &H5555AA
+    Foreground = Color.TextBackground
+    Border = False
+  }
+  { Button22 Button
+    MoveScaled(89.4286,71.8571,17.1429,5.1429)
+    Enabled = False
+    Font = Font["+2,Italic"]
+    Background = &H5555AA
+    Foreground = Color.TextBackground
+    Border = False
+  }
+  { Button23 Button
+    MoveScaled(106.5714,71.8571,17.1429,5.1429)
+    Enabled = False
+    Font = Font["+2,Italic"]
+    Background = &H5555AA
+    Foreground = Color.TextBackground
+    Border = False
+  }
+  { Button24 Button
+    MoveScaled(123.7143,71.8571,17.1429,5.1429)
+    Enabled = False
+    Font = Font["+2,Italic"]
+    Background = &H5555AA
+    Foreground = Color.TextBackground
+    Border = False
+  }
+  { PictureBox26 PictureBox
+    MoveScaled(145,54,20.5714,20.5714)
+    Background = &HAA0000
+    Picture = Picture.Load("guess.png")
+    Stretch = True
+    Border = Border.Plain
+  }
+  { !MenuButton1 MenuButton
+    MoveScaled(12,39,21.1429,5.1429)
+    #Public = True
+    Font = Font["Bold,Italic"]
+    Background = &HAA0000
+    Foreground = Color.TextBackground
+    Text = ("Características")
+    Menu = "Menu1"
+    MenuOnly = True
+  }
+  { Button27 Button
+    MoveScaled(12,39,21.1429,5.1429)
+    Visible = False
+    Font = Font["Bold,Italic"]
+    Background = &HAA0000
+    Foreground = Color.TextBackground
+    Text = ("Continuar")
+  }
+  { Button25 Button
+    MoveScaled(12,55,21.1429,5.1429)
+    Background = &HD37E7E
+    Foreground = Color.TextBackground
+    Text = ("Adivinanza directa")
+  }
+  { Button26 Button
+    MoveScaled(12,47,21.1429,5.1429)
+    Background = &HD37E7E
+    Foreground = Color.TextBackground
+    Text = ("Finalizar juego")
+  }
+  { piel1 PictureBox
+    MoveScaled(38,10.1429,17.1429,17.1429)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { piel2 PictureBox
+    MoveScaled(55.1429,10.1429,17.1429,17.1429)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { piel3 PictureBox
+    MoveScaled(72.2857,10.1429,17.1429,17.1429)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { piel4 PictureBox
+    MoveScaled(89.4286,10.1429,17.1429,17.1429)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { piel5 PictureBox
+    MoveScaled(106.5714,10.1429,17.1429,17.1429)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { piel6 PictureBox
+    MoveScaled(123.7143,10.1429,17.1429,17.1429)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { piel7 PictureBox
+    MoveScaled(38,32.4286,17.1429,17.1429)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { piel8 PictureBox
+    MoveScaled(55.1429,32.4286,17.1429,17.1429)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { piel9 PictureBox
+    MoveScaled(72.2857,32.4286,17.1429,17.1429)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { piel10 PictureBox
+    MoveScaled(89.4286,32.4286,17.1429,17.1429)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { piel11 PictureBox
+    MoveScaled(106.5714,32.4286,17.1429,17.1429)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { piel12 PictureBox
+    MoveScaled(123.7143,32.4286,17.1429,17.1429)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { piel13 PictureBox
+    MoveScaled(38,54.7143,17.1429,17.1429)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { piel14 PictureBox
+    MoveScaled(55.1429,54.7143,17.1429,17.1429)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { piel15 PictureBox
+    MoveScaled(72.2857,54.7143,17.1429,17.1429)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { piel16 PictureBox
+    MoveScaled(89.4286,54.7143,17.1429,17.1429)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { piel17 PictureBox
+    MoveScaled(106.5714,54.7143,17.1429,17.1429)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { piel18 PictureBox
+    MoveScaled(123.7143,54.7143,17.1429,17.1429)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { piel19 PictureBox
+    MoveScaled(38,77,17.1429,17.1429)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { piel20 PictureBox
+    MoveScaled(55.1429,77,17.1429,17.1429)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { piel21 PictureBox
+    MoveScaled(72.2857,77,17.1429,17.1429)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { piel22 PictureBox
+    MoveScaled(89.4286,77,17.1429,17.1429)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { piel23 PictureBox
+    MoveScaled(106.5714,77,17.1429,17.1429)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { piel24 PictureBox
+    MoveScaled(123.7143,77,17.1429,17.1429)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ropa1 PictureBox
+    MoveScaled(38,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ropa2 PictureBox
+    MoveScaled(55.1429,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ropa3 PictureBox
+    MoveScaled(72.2857,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ropa4 PictureBox
+    MoveScaled(89.4286,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ropa5 PictureBox
+    MoveScaled(106.5714,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ropa6 PictureBox
+    MoveScaled(123.7143,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ropa7 PictureBox
+    MoveScaled(38,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ropa8 PictureBox
+    MoveScaled(55.1429,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ropa9 PictureBox
+    MoveScaled(72.2857,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ropa10 PictureBox
+    MoveScaled(89.4286,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ropa11 PictureBox
+    MoveScaled(106.5714,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ropa12 PictureBox
+    MoveScaled(123.7143,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ropa13 PictureBox
+    MoveScaled(38,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ropa14 PictureBox
+    MoveScaled(55.1429,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ropa15 PictureBox
+    MoveScaled(72.2857,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ropa16 PictureBox
+    MoveScaled(89.4286,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ropa17 PictureBox
+    MoveScaled(106.5714,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ropa18 PictureBox
+    MoveScaled(123.7143,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ropa19 PictureBox
+    MoveScaled(38,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ropa20 PictureBox
+    MoveScaled(55.1429,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ropa21 PictureBox
+    MoveScaled(72.2857,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ropa22 PictureBox
+    MoveScaled(89.4286,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ropa23 PictureBox
+    MoveScaled(106.5714,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ropa24 PictureBox
+    MoveScaled(123.7143,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ojos1 PictureBox
+    MoveScaled(38,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ojos2 PictureBox
+    MoveScaled(55.1429,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ojos3 PictureBox
+    MoveScaled(72.2857,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ojos4 PictureBox
+    MoveScaled(89.4286,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ojos5 PictureBox
+    MoveScaled(106.5714,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ojos6 PictureBox
+    MoveScaled(123.7143,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ojos7 PictureBox
+    MoveScaled(38,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ojos8 PictureBox
+    MoveScaled(55.1429,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ojos9 PictureBox
+    MoveScaled(72.2857,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ojos10 PictureBox
+    MoveScaled(89.4286,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ojos11 PictureBox
+    MoveScaled(106.5714,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ojos12 PictureBox
+    MoveScaled(123.7143,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ojos13 PictureBox
+    MoveScaled(38,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ojos14 PictureBox
+    MoveScaled(55.1429,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ojos15 PictureBox
+    MoveScaled(72.2857,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ojos16 PictureBox
+    MoveScaled(89.4286,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ojos17 PictureBox
+    MoveScaled(106.5714,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ojos18 PictureBox
+    MoveScaled(123.7143,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ojos19 PictureBox
+    MoveScaled(38,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ojos20 PictureBox
+    MoveScaled(55.1429,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ojos21 PictureBox
+    MoveScaled(72.2857,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ojos22 PictureBox
+    MoveScaled(89.4286,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ojos23 PictureBox
+    MoveScaled(106.5714,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ojos24 PictureBox
+    MoveScaled(123.7143,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pecas1 PictureBox
+    MoveScaled(38,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pecas2 PictureBox
+    MoveScaled(55.1429,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pecas3 PictureBox
+    MoveScaled(72.2857,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pecas4 PictureBox
+    MoveScaled(89.4286,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pecas5 PictureBox
+    MoveScaled(106.5714,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pecas6 PictureBox
+    MoveScaled(123.7143,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pecas7 PictureBox
+    MoveScaled(38,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pecas8 PictureBox
+    MoveScaled(55.1429,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pecas9 PictureBox
+    MoveScaled(72.2857,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pecas10 PictureBox
+    MoveScaled(89.4286,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pecas11 PictureBox
+    MoveScaled(106.5714,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pecas12 PictureBox
+    MoveScaled(123.7143,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pecas13 PictureBox
+    MoveScaled(38,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pecas14 PictureBox
+    MoveScaled(55.1429,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pecas15 PictureBox
+    MoveScaled(72.2857,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pecas16 PictureBox
+    MoveScaled(89.4286,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pecas17 PictureBox
+    MoveScaled(106.5714,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pecas18 PictureBox
+    MoveScaled(123.7143,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pecas19 PictureBox
+    MoveScaled(38,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pecas20 PictureBox
+    MoveScaled(55.1429,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pecas21 PictureBox
+    MoveScaled(72.2857,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pecas22 PictureBox
+    MoveScaled(89.4286,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pecas23 PictureBox
+    MoveScaled(106.5714,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pecas24 PictureBox
+    MoveScaled(123.7143,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { rasgos1 PictureBox
+    MoveScaled(38,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { rasgos2 PictureBox
+    MoveScaled(55.1429,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { rasgos3 PictureBox
+    MoveScaled(72.2857,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { rasgos4 PictureBox
+    MoveScaled(89.4286,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { rasgos5 PictureBox
+    MoveScaled(106.5714,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { rasgos6 PictureBox
+    MoveScaled(123.7143,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { rasgos7 PictureBox
+    MoveScaled(38,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { rasgos8 PictureBox
+    MoveScaled(55.1429,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { rasgos9 PictureBox
+    MoveScaled(72.2857,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { rasgos10 PictureBox
+    MoveScaled(89.4286,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { rasgos11 PictureBox
+    MoveScaled(106.5714,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { rasgos12 PictureBox
+    MoveScaled(123.7143,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { rasgos13 PictureBox
+    MoveScaled(38,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { rasgos14 PictureBox
+    MoveScaled(55.1429,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { rasgos15 PictureBox
+    MoveScaled(72.2857,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { rasgos16 PictureBox
+    MoveScaled(89.4286,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { rasgos17 PictureBox
+    MoveScaled(106.5714,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { rasgos18 PictureBox
+    MoveScaled(123.7143,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { rasgos19 PictureBox
+    MoveScaled(38,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { rasgos20 PictureBox
+    MoveScaled(55.1429,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { rasgos21 PictureBox
+    MoveScaled(72.2857,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { rasgos22 PictureBox
+    MoveScaled(89.4286,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { rasgos23 PictureBox
+    MoveScaled(106.5714,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { rasgos24 PictureBox
+    MoveScaled(123.7143,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pelo1 PictureBox
+    MoveScaled(38,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pelo2 PictureBox
+    MoveScaled(55.1429,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pelo3 PictureBox
+    MoveScaled(72.2857,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pelo4 PictureBox
+    MoveScaled(89.4286,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pelo5 PictureBox
+    MoveScaled(106.5714,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pelo6 PictureBox
+    MoveScaled(123.7143,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pelo7 PictureBox
+    MoveScaled(38,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pelo8 PictureBox
+    MoveScaled(55.1429,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pelo9 PictureBox
+    MoveScaled(72.2857,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pelo10 PictureBox
+    MoveScaled(89.4286,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pelo11 PictureBox
+    MoveScaled(106.5714,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pelo12 PictureBox
+    MoveScaled(123.7143,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pelo13 PictureBox
+    MoveScaled(38,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pelo14 PictureBox
+    MoveScaled(55.1429,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pelo15 PictureBox
+    MoveScaled(72.2857,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pelo16 PictureBox
+    MoveScaled(89.4286,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pelo17 PictureBox
+    MoveScaled(106.5714,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pelo18 PictureBox
+    MoveScaled(123.7143,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pelo19 PictureBox
+    MoveScaled(38,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pelo20 PictureBox
+    MoveScaled(55.1429,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pelo21 PictureBox
+    MoveScaled(72.2857,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pelo22 PictureBox
+    MoveScaled(89.4286,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pelo23 PictureBox
+    MoveScaled(106.5714,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pelo24 PictureBox
+    MoveScaled(123.7143,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { acc1 PictureBox
+    MoveScaled(38,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { acc2 PictureBox
+    MoveScaled(55.1429,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { acc3 PictureBox
+    MoveScaled(72.2857,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { acc4 PictureBox
+    MoveScaled(89.4286,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { acc5 PictureBox
+    MoveScaled(106.5714,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { acc6 PictureBox
+    MoveScaled(123.7143,10.1429,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { acc7 PictureBox
+    MoveScaled(38,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { acc8 PictureBox
+    MoveScaled(55.1429,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { acc9 PictureBox
+    MoveScaled(72.2857,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { acc10 PictureBox
+    MoveScaled(89.4286,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { acc11 PictureBox
+    MoveScaled(106.5714,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { acc12 PictureBox
+    MoveScaled(123.7143,32.4286,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { acc13 PictureBox
+    MoveScaled(38,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { acc14 PictureBox
+    MoveScaled(55.1429,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { acc15 PictureBox
+    MoveScaled(72.2857,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { acc16 PictureBox
+    MoveScaled(89.4286,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { acc17 PictureBox
+    MoveScaled(106.5714,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { acc18 PictureBox
+    MoveScaled(123.7143,54.7143,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { acc19 PictureBox
+    MoveScaled(38,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { acc20 PictureBox
+    MoveScaled(55.1429,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { acc21 PictureBox
+    MoveScaled(72.2857,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { acc22 PictureBox
+    MoveScaled(89.4286,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { acc23 PictureBox
+    MoveScaled(106.5714,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { acc24 PictureBox
+    MoveScaled(123.7143,77,17.1429,17.1429)
+    Background = Color.Transparent
+    Stretch = True
+    Border = Border.Plain
+  }
+  { piel25 PictureBox
+    MoveScaled(145,24,20.5714,20.5714)
+    Background = &HAA0000
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ropa25 PictureBox
+    MoveScaled(145,24,20.5714,20.5714)
+    Stretch = True
+    Border = Border.Plain
+  }
+  { ojos25 PictureBox
+    MoveScaled(145,24,20.5714,20.5714)
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pecas25 PictureBox
+    MoveScaled(145,24,20.5714,20.5714)
+    Stretch = True
+    Border = Border.Plain
+  }
+  { rasgos25 PictureBox
+    MoveScaled(145,24,20.5714,20.5714)
+    Stretch = True
+    Border = Border.Plain
+  }
+  { pelo25 PictureBox
+    MoveScaled(145,24,20.5714,20.5714)
+    Stretch = True
+    Border = Border.Plain
+  }
+  { acc25 PictureBox
+    MoveScaled(145,24,20.5714,20.5714)
+    Stretch = True
+    Border = Border.Plain
+  }
+  { Label1 Label
+    MoveScaled(145,19,20.5714,5.1429)
+    Font = Font["+2,Italic"]
+    Background = &HD37E7E
+    Foreground = Color.White
+    Alignment = Align.Center
+  }
+  { Label2 Label
+    MoveScaled(145,49,20.5714,5.1429)
+    Font = Font["+2,Italic"]
+    Background = &HD37E7E
+    Foreground = Color.White
+    Alignment = Align.Center
+    Text = ("??????")
+  }
+  { Label3 Label
+    MoveScaled(145,11,20.5714,4)
+    Font = Font["+1"]
+    Background = &H008000
+    Foreground = Color.TextBackground
+  }
+  { Label4 Label
+    MoveScaled(145,7,20.5714,4)
+    Font = Font["+1"]
+    Background = Color.DarkGray
+    Foreground = Color.TextBackground
+  }
+  { inf1 PictureBox
+    MoveScaled(145,79,3.5714,3.5714)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { inf2 PictureBox
+    MoveScaled(148.5714,79,3.5714,3.5714)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { inf3 PictureBox
+    MoveScaled(152.1429,79,3.5714,3.5714)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { inf4 PictureBox
+    MoveScaled(155.7143,79,3.5714,3.5714)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { inf5 PictureBox
+    MoveScaled(159.2857,79,3.5714,3.5714)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { inf6 PictureBox
+    MoveScaled(162.8571,79,3.5714,3.5714)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { inf7 PictureBox
+    MoveScaled(145,82.5714,3.5714,3.5714)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { inf8 PictureBox
+    MoveScaled(148.5714,82.5714,3.5714,3.5714)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { inf9 PictureBox
+    MoveScaled(152.1429,82.5714,3.5714,3.5714)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { inf10 PictureBox
+    MoveScaled(155.7143,82.5714,3.5714,3.5714)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { inf11 PictureBox
+    MoveScaled(159.2857,82.5714,3.5714,3.5714)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { inf12 PictureBox
+    MoveScaled(162.8571,82.5714,3.5714,3.5714)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { inf13 PictureBox
+    MoveScaled(145,86.1429,3.5714,3.5714)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { inf14 PictureBox
+    MoveScaled(148.5714,86.1429,3.5714,3.5714)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { inf15 PictureBox
+    MoveScaled(152.1429,86.1429,3.5714,3.5714)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { inf16 PictureBox
+    MoveScaled(155.7143,86.1429,3.5714,3.5714)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { inf17 PictureBox
+    MoveScaled(159.2857,86.1429,3.5714,3.5714)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { inf18 PictureBox
+    MoveScaled(162.8571,86.1429,3.5714,3.5714)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { inf19 PictureBox
+    MoveScaled(145,89.7143,3.5714,3.5714)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { inf20 PictureBox
+    MoveScaled(148.5714,89.7143,3.5714,3.5714)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { inf21 PictureBox
+    MoveScaled(152.1429,89.7143,3.5714,3.5714)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { inf22 PictureBox
+    MoveScaled(155.7143,89.7143,3.5714,3.5714)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { inf23 PictureBox
+    MoveScaled(159.2857,89.7143,3.5714,3.5714)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { inf24 PictureBox
+    MoveScaled(162.8571,89.7143,3.5714,3.5714)
+    Background = Color.DarkRoyal
+    Stretch = True
+    Border = Border.Plain
+  }
+  { PictureBox1 PictureBox
+    MoveScaled(3,5,32,23)
+    Picture = Picture.Load("adivina kiem.png")
+    Stretch = True
+  }
+}

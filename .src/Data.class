@@ -1,0 +1,321 @@
+' Gambas class file
+
+Public personajes[24, 11] As String             ' [personaje, caracteristicas (11 = nombre)]
+Public oculto[2] As Byte
+Public vivos[2] As Integer                      ' cuenta cuantos personajes le quedan a cada jugador
+Public mock[2, 24] As String                    ' matriz en la que se muestra cuales personajes han sido adivinados 
+
+Public car[10, 4] As String                     ' [caracteristica, opciones]; car[i, 0] = nombre de caracteristica
+Public nombres[2, 48] As String                 ' [genero, nombre]
+Public menu[10] As String                       ' menús en 'Plantilla.form'
+
+Public oponente As Boolean                      ' False = jugador 1; True = jugador 2
+
+Public Sub Form_Open()
+    oponente = True
+    vivos[0] = 24
+    vivos[1] = 24
+    caracteristicas()
+    asignacion()
+End
+
+Public Sub oponenteL() ' oponente logico
+    oponente = Not oponente
+End
+
+Public Function oponenteN() As Byte ' oponente numérico
+    If oponente Then
+        Return 1
+    Else 
+        Return 0
+    Endif
+End
+
+
+Public Function jugador() As Byte
+    If oponente Then
+        Return 0
+    Else 
+        Return 1
+    Endif
+End
+
+
+'-----------------------------------
+' caracteristicas de los personajes
+'-----------------------------------
+Public caracteristicas() 
+    ' caracteristicas
+    
+    ' genero
+    car[0, 0] = "Género"
+    car[0, 1] = "Hombre"
+    car[0, 2] = "Mujer"
+    
+    ' piel
+    car[1, 0] = "Tes de la piel"
+    car[1, 1] = "Blanca"
+    car[1, 2] = "Negra"
+    car[1, 3] = "Amarilla"
+    
+    ' ropa
+    car[2, 0] = "Color de la ropa"
+    car[2, 1] = "Rojo"
+    car[2, 2] = "Azul"
+    car[2, 3] = "Negro"
+    
+    ' forma de los ojos
+    car[3, 0] = "Forma de los ojos"
+    car[3, 1] = "Redondos"
+    car[3, 2] = "Cuadrados"
+    car[3, 3] = "Cuadrados"
+    
+    ' color de los ojos
+    car[4, 0] = "Color de los ojos"
+    car[4, 1] = "Azul"
+    car[4, 2] = "Verde"
+    car[4, 3] = "Cafe"
+    
+    ' pecas
+    car[5, 0] = "Pecas"
+    car[5, 1] = "Pocas"
+    car[5, 2] = "Muchas"
+    car[5, 3] = "Ninguna"
+    
+    ' rasgos faciales
+    car[6, 0] = "Rasgos faciales"
+    car[6, 1] = "Barba"
+    car[6, 2] = "Bigote"
+    car[6, 3] = "Ninguno"
+    
+    ' tipo de cabello
+    car[7, 0] = "Tipo de cabello"
+    car[7, 1] = "Largo"
+    car[7, 2] = "Corto"
+    car[7, 3] = "Rapado"
+    
+    ' color de cabello
+    car[8, 0] = "Color de cabello"
+    car[8, 1] = "Rubio"
+    car[8, 2] = "Castaño"
+    car[8, 3] = "Pelirrojo"
+    
+    ' uso de accesorios
+    car[9, 0] = "Accesorios"
+    car[9, 1] = "Gafas"
+    car[9, 2] = "Sombrero"
+    car[9, 3] = "Ninguno"
+
+    ' nombres
+
+    ' nombres de hombres
+    nombres[0, 0] = "Juan"
+    nombres[0, 1] = "Pedro"
+    nombres[0, 2] = "Carlos"
+    nombres[0, 3] = "Luis"
+    nombres[0, 4] = "Miguel"
+    nombres[0, 5] = "Javier"
+    nombres[0, 6] = "Alejandro"
+    nombres[0, 7] = "José"
+    nombres[0, 8] = "Antonio"
+    nombres[0, 9] = "Francisco"
+    nombres[0, 10] = "Manuel"
+    nombres[0, 11] = "Jorge"
+    nombres[0, 12] = "Daniel"
+    nombres[0, 13] = "David"
+    nombres[0, 14] = "Fernando"
+    nombres[0, 15] = "Andrés"
+    nombres[0, 16] = "Pablo"
+    nombres[0, 17] = "Raúl"
+    nombres[0, 18] = "Roberto"
+    nombres[0, 19] = "Alberto"
+    nombres[0, 20] = "Diego"
+    nombres[0, 21] = "Sergio"
+    nombres[0, 22] = "Joaquín"
+    nombres[0, 23] = "Guillermo"
+    nombres[0, 24] = "Ricardo"
+    nombres[0, 25] = "Mario"
+    nombres[0, 26] = "Enrique"
+    nombres[0, 27] = "Emilio"
+    nombres[0, 28] = "Héctor"
+    nombres[0, 29] = "Federico"
+    nombres[0, 30] = "Gabriel"
+    nombres[0, 31] = "Ángel"
+    nombres[0, 32] = "Ignacio"
+    nombres[0, 33] = "Victor"
+    nombres[0, 34] = "Marcos"
+    nombres[0, 35] = "César"
+    nombres[0, 36] = "Gonzalo"
+    nombres[0, 37] = "Adrián"
+    nombres[0, 38] = "Damian"
+    nombres[0, 39] = "Eduardo"
+    nombres[0, 40] = "Tomás"
+    nombres[0, 41] = "Samuel"
+    nombres[0, 42] = "Israel"
+    nombres[0, 43] = "Hugo"
+    nombres[0, 44] = "Álvaro"
+    nombres[0, 45] = "Martín"
+    nombres[0, 46] = "Mateo"
+    nombres[0, 47] = "Oscar"
+
+    ' nombres de mujeres
+    nombres[1, 0] = "María"
+    nombres[1, 1] = "Laura"
+    nombres[1, 2] = "Ana"
+    nombres[1, 3] = "Sofía"
+    nombres[1, 4] = "Isabel"
+    nombres[1, 5] = "Carmen"
+    nombres[1, 6] = "Elena"
+    nombres[1, 7] = "Patricia"
+    nombres[1, 8] = "Paula"
+    nombres[1, 9] = "Silvia"
+    nombres[1, 10] = "Marta"
+    nombres[1, 11] = "Lucía"
+    nombres[1, 12] = "Teresa"
+    nombres[1, 13] = "Rosa"
+    nombres[1, 14] = "Beatriz"
+    nombres[1, 15] = "Mónica"
+    nombres[1, 16] = "Natalia"
+    nombres[1, 17] = "Diana"
+    nombres[1, 18] = "Eva"
+    nombres[1, 19] = "Adriana"
+    nombres[1, 20] = "Lorena"
+    nombres[1, 21] = "Verónica"
+    nombres[1, 22] = "Inés"
+    nombres[1, 23] = "Victoria"
+    nombres[1, 24] = "Carolina"
+    nombres[1, 25] = "Sara"
+    nombres[1, 26] = "Luisa"
+    nombres[1, 27] = "Andrea"
+    nombres[1, 28] = "Cristina"
+    nombres[1, 29] = "Clara"
+    nombres[1, 30] = "Rocío"
+    nombres[1, 31] = "Miriam"
+    nombres[1, 32] = "Angela"
+    nombres[1, 33] = "Lidia"
+    nombres[1, 34] = "Alba"
+    nombres[1, 35] = "Nuria"
+    nombres[1, 36] = "Esther"
+    nombres[1, 37] = "Pilar"
+    nombres[1, 38] = "Monica"
+    nombres[1, 39] = "Julia"
+    nombres[1, 40] = "Marina"
+    nombres[1, 41] = "Nerea"
+    nombres[1, 42] = "Celia"
+    nombres[1, 43] = "Patricia"
+    nombres[1, 44] = "Alicia"
+    nombres[1, 45] = "Lara"
+    nombres[1, 46] = "Virginia"
+    nombres[1, 47] = "Elsa"
+    
+    ' nombres de menús
+    menu[0] = "op0"
+    menu[1] = "op1"
+    menu[2] = "op2"
+    menu[3] = "op3"
+    menu[4] = "op4"
+    menu[5] = "op5"
+    menu[6] = "op6"
+    menu[7] = "op7"
+    menu[8] = "op8"
+    menu[9] = "op9"
+End
+
+
+'--------------------------------------------
+' asignacion de caracteristicas a personajes
+'--------------------------------------------
+Public Sub asignacion()
+    Dim i As Byte                       ' primera dimension
+    Dim j As Byte                       ' segunda dimension
+    Dim r1 As Byte                      ' para random
+    Dim r2 As Byte                      ' para random
+
+    ' asignacion de caracteristicas
+    For i = 0 To 23
+        ' genero
+        Repeat
+            r1 = Int(Rnd(1, 3))
+        Until r1 <> 3
+        personajes[i, 0] = car[0, r1]
+        
+        ' nombre
+        Repeat
+            r2 = Int(Rnd(0, 48))
+        Until r2 <> 48
+        personajes[i, 10] = nombres[r1 - 1, r2]
+        
+        ' rasgo facial
+        If r1 = 1 Then
+            Repeat
+                r2 = Int(Rnd(1, 4))
+            Until r2 <> 4
+            personajes[i, 6] = car[6, r2]
+        Else
+            personajes[i, 6] = car[6, 3] ' para que no haya mujeres con barba o bigote
+        Endif 
+        
+        ' resto de caracteristicas
+        For j = 1 To 9
+            Repeat
+                r1 = Int(Rnd(1, 4))
+            Until r1 <> 4
+            personajes[i, j] = car[j, r1]
+            
+            If j = 5 Then
+                Inc j
+            Endif
+        Next
+    Next
+    
+    ' eleccion de personajes ocultos
+    For i = 0 To 1
+        Repeat
+            r1 = Int(Rnd(0, 24))
+        Until r1 <> 24
+        oculto[i] = r1
+    Next
+
+    ' info. de personajes ocultos
+    For i = 0 To 1
+        Print "El personaje oculto del jugador " & (i + 1) & " es " & (personajes[oculto[i], 10]) & " y tiene las siguientes características:"
+        For j = 0 To 9
+            Print (car[j, 0]) & ": " & (personajes[oculto[i], j])
+        Next
+        Print Null
+    Next
+
+    ' llenado de la matriz mock
+    For i = 0 To 1
+        For j = 0 To 23
+            mock[i, j] = "-"
+        Next
+    Next
+End
+
+
+'-----------------------------------------
+' info. de personajes restantes (consola)
+'-----------------------------------------
+Public Sub restantes()
+    Dim i As Byte                       ' primera dimension
+    Dim j As Byte                       ' segunda dimension
+
+    ' numero
+    For i = 0 To 1
+        Print "El jugador " & (i + 1) & " tiene " & (vivos[i]) & " jugadores restantes."
+    Next
+
+    ' matriz
+    Print "\nJugador 1\t\tJugador 2"
+    For i = 0 To 3
+        For j = 0 To 5
+            Print mock[0, 6 * i + j];
+        Next
+        Print "\t\t",
+        For j = 0 To 5
+            Print mock[1, 6 * i + j];
+        Next
+        Print Null
+    Next
+End

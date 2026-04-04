@@ -1,0 +1,33 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,177.7143,100)
+  Visible = False
+  Background = &H8491FF
+  { Label1 Label
+    MoveScaled(21.1429,45.5714,135.4286,10)
+    Font = Font["+8"]
+    Background = &HAA0000
+    Foreground = Color.TextBackground
+    Alignment = Align.Center
+  }
+  { PictureBox1 PictureBox
+    MoveScaled(56.8571,6,64,42.2857)
+    Picture = Picture.Load("adivina kiem.png")
+    Stretch = True
+  }
+  { Label2 Label
+    MoveScaled(21.1429,55.5714,135.4286,36.5714)
+    Font = Font["+3"]
+    Background = Color.DarkRoyal
+    Foreground = Color.TextBackground
+    Alignment = Align.Center
+  }
+  { Next Button
+    MoveScaled(82,87.5714,13.7143,9.1429)
+    Background = &H5555FF
+    Foreground = &HFFFFFF
+    Mouse = Cursor.Pointing
+    Text = ("Continuar")
+  }
+}

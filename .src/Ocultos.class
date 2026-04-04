@@ -1,0 +1,166 @@
+' Gambas class file
+
+jugador[2] As Boolean
+
+Public Sub Button1_Click()
+    macro()
+    
+    Button1.Enabled = False
+    Next.Background = &H5555AA
+    jugador[0] = True
+    
+    imagen(0)
+    
+    Label1.Text = "Jugador 1"
+    Label3.Text = Data.personajes[Data.oculto[0], 10]
+End
+
+Public Sub Button2_Click()
+    macro()
+    
+    Button2.Enabled = False
+    Next.Background = &HAA0000
+    jugador[1] = True
+    
+    imagen(1)
+    
+    Label1.Text = "Jugador 2"
+    Label3.Text = Data.personajes[Data.oculto[1], 10]
+End
+
+Public Sub Next_Click()
+    If jugador[0] Then 
+        change(1)
+    Else If jugador[1] Then 
+        change(2)
+    Endif
+    
+    onoff(False)
+    Next.Visible = False
+    
+    Label1.Text = "Personajes ocultos"
+    Label2.Text = "Pulse el otro botón para ver su personaje oculto"
+    Label2.Visible = True
+    Label3.Visible = False
+End
+
+Public Sub change(i As Byte)
+    Label3.Visible = False
+    If jugador[0] And jugador[1] Then
+        Me.Hide()
+        Inicio.Show()
+    Else If i = 1 Then
+        Button2.Visible = True
+    Else If i = 2 Then
+        Button1.Visible = True
+    Endif
+End
+
+Public Sub macro()
+    Button1.Visible = False
+    Button2.Visible = False
+    Next.Visible = True
+    
+    Label2.Visible = False
+    Label3.Visible = True
+    
+    onoff(True)
+End
+
+Public Sub onoff(valor As Boolean)
+    piel.Visible = valor
+    ropa.Visible = valor
+    ojos.Visible = valor
+    pecas.Visible = valor
+    rasgos.Visible = valor
+    pelo.Visible = valor
+    acc.Visible = valor
+End
+
+
+Public Sub imagen(i As Byte)
+    i = Data.oculto[i]
+
+    ' piel
+    If Data.personajes[i, 1] = Data.car[1, 1] Then
+        piel.Picture = Picture["pb11.png"]
+    Else If Data.personajes[i, 1] = Data.car[1, 2] Then
+        piel.Picture = Picture["pb12.png"]
+    Else If Data.personajes[i, 1] = Data.car[1, 3] Then
+        piel.Picture = Picture["pb13.png"]
+    Endif
+    
+    ' ropa
+    If Data.personajes[i, 2] = Data.car[2, 1] Then
+        ropa.Picture = Picture["pb21.png"]
+    Else If Data.personajes[i, 2] = Data.car[2, 2] Then
+        ropa.Picture = Picture["pb22.png"]
+    Else If Data.personajes[i, 2] = Data.car[2, 3] Then
+        ropa.Picture = Picture["pb23.png"]
+    Endif
+    
+    ' ojos
+    If Data.personajes[i, 3] = Data.car[3, 1] And Data.personajes[i, 4] = Data.car[4, 1] Then
+        ojos.Picture = Picture["ojos11.png"]
+    Else If Data.personajes[i, 3] = Data.car[3, 1] And Data.personajes[i, 4] = Data.car[4, 2] Then
+        ojos.Picture = Picture["ojos12.png"]
+    Else If Data.personajes[i, 3] = Data.car[3, 1] And Data.personajes[i, 4] = Data.car[4, 3] Then
+        ojos.Picture = Picture["ojos13.png"]
+    Else If Data.personajes[i, 3] = Data.car[3, 2] And Data.personajes[i, 4] = Data.car[4, 1] Then
+        ojos.Picture = Picture["ojos21.png"]
+    Else If Data.personajes[i, 3] = Data.car[3, 2] And Data.personajes[i, 4] = Data.car[4, 2] Then
+        ojos.Picture = Picture["ojos22.png"]
+    Else If Data.personajes[i, 3] = Data.car[3, 2] And Data.personajes[i, 4] = Data.car[4, 3] Then
+        ojos.Picture = Picture["ojos23.png"]
+    Else If Data.personajes[i, 3] = Data.car[3, 3] And Data.personajes[i, 4] = Data.car[4, 1] Then
+        ojos.Picture = Picture["ojos21.png"]
+    Else If Data.personajes[i, 3] = Data.car[3, 3] And Data.personajes[i, 4] = Data.car[4, 2] Then
+        ojos.Picture = Picture["ojos22.png"]
+    Else If Data.personajes[i, 3] = Data.car[3, 3] And Data.personajes[i, 4] = Data.car[4, 3] Then
+        ojos.Picture = Picture["ojos23.png"]
+    Endif
+    
+    ' pecas
+    If Data.personajes[i, 5] = Data.car[5, 1] Then
+        pecas.Picture = Picture["pb51.png"]
+    Else If Data.personajes[i, 5] = Data.car[5, 2] Then
+        pecas.Picture = Picture["pb52.png"]
+    Else If Data.personajes[i, 5] = Data.car[5, 3] Then
+        pecas.Picture = Picture["empty.png"]
+    Endif
+    
+    ' rasgos
+    If Data.personajes[i, 6] = Data.car[6, 1] Then
+        rasgos.Picture = Picture["pb61.png"]
+    Else If Data.personajes[i, 6] = Data.car[6, 2] Then
+        rasgos.Picture = Picture["pb62.png"]
+    Else If Data.personajes[i, 6] = Data.car[6, 3] Then
+        rasgos.Picture = Picture["empty.png"]
+    Endif
+    
+    ' pelo
+    If Data.personajes[i, 7] = Data.car[7, 1] And Data.personajes[i, 8] = Data.car[8, 1] Then
+        pelo.Picture = Picture["pelo11.png"]
+    Else If Data.personajes[i, 7] = Data.car[7, 1] And Data.personajes[i, 8] = Data.car[8, 2] Then
+        pelo.Picture = Picture["pelo12.png"]
+    Else If Data.personajes[i, 7] = Data.car[7, 1] And Data.personajes[i, 8] = Data.car[8, 3] Then
+        pelo.Picture = Picture["pelo13.png"]
+    Else If Data.personajes[i, 7] = Data.car[7, 2] And Data.personajes[i, 8] = Data.car[8, 1] Then
+        pelo.Picture = Picture["pelo21.png"]
+    Else If Data.personajes[i, 7] = Data.car[7, 2] And Data.personajes[i, 8] = Data.car[8, 2] Then
+        pelo.Picture = Picture["pelo22.png"]
+    Else If Data.personajes[i, 7] = Data.car[7, 2] And Data.personajes[i, 8] = Data.car[8, 3] Then
+        pelo.Picture = Picture["pelo23.png"]
+    Else If Data.personajes[i, 7] = Data.car[7, 3] Then
+        pelo.Picture = Picture["empty.png"]
+    Endif
+    
+    ' accesorios
+    If Data.personajes[i, 9] = Data.car[9, 1] Then
+        acc.Picture = Picture["pb91.png"]
+    Else If Data.personajes[i, 9] = Data.car[9, 2] Then
+        acc.Picture = Picture["pb92.png"]
+    Else If Data.personajes[i, 9] = Data.car[9, 3] Then
+        acc.Picture = Picture["empty.png"]
+    Endif
+End

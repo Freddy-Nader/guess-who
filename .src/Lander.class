@@ -1,0 +1,15 @@
+' Gambas class file
+
+Public Sub Form_Open()
+    Data.Form_Open()
+End
+
+Public Sub Button1_Click()
+    Me.Hide()
+    Ocultos.Show()
+End
+
+Public Sub Button2_Click()
+    Info.Show()
+    Me.Hide()
+End
