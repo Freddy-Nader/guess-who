@@ -1,4 +1,7 @@
-#---- Gambas files to ignore (v5)
+.DS_Store
+
+# GAMBAS Files
+
 *.gambas
 .lock
 *~
@@ -15,4 +18,3 @@ vgcore.*
 .list
 .info
 .fuse_hidden*
-#----
