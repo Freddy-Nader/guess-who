@@ -1,10 +1,10 @@
-<h1 align="center">
-    Adivina Quién?
-</h1>
-
 <p align="center" width="80%">
   <img src="assets/banner.jpeg" alt="Adivina Quién Banner" />
 </p>
+
+<h1 align="center">
+    Adivina Quién?
+</h1>
 
 <p align="center">
   <strong>Spanish version of the board game <a href="https://en.wikipedia.org/wiki/Guess_Who%3F">Guess Who?</a></strong><br>
