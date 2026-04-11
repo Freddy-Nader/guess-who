@@ -357,7 +357,7 @@
   { PictureBox26 PictureBox
     MoveScaled(145,54,20.5714,20.5714)
     Background = &HAA0000
-    Picture = Picture.Load("guess.png")
+    Picture = Picture.Load("img/guess.png")
     Stretch = True
     Border = Border.Plain
   }
@@ -1608,7 +1608,7 @@
   }
   { PictureBox1 PictureBox
     MoveScaled(3,5,32,23)
-    Picture = Picture.Load("adivina kiem.png")
+    Picture = Picture.Load("img/logo.png")
     Stretch = True
   }
 }

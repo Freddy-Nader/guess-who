@@ -5,7 +5,7 @@
   Background = &H8491FF
   { PictureBox1 PictureBox
     MoveScaled(56.8571,6,64,42.2857)
-    Picture = Picture.Load("adivina kiem.png")
+    Picture = Picture.Load("img/adivina kiem.png")
     Stretch = True
   }
   { Button1 Button
@@ -13,13 +13,13 @@
     Background = &HAA0000
     Foreground = &HFFFFFF
     Mouse = Cursor.Pointing
-    Picture = Picture["play.png"]
+    Picture = Picture["img/play.png"]
   }
   { Button2 Button
     MoveScaled(56.8571,61.8571,18.2857,18.2857)
     Background = &H5555AA
     Foreground = &HFFFFFF
     Mouse = Cursor.Pointing
-    Picture = Picture["info.png"]
+    Picture = Picture["img/info.png"]
   }
 }

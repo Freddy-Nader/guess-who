@@ -1,7 +1,22 @@
+# Mac
 .DS_Store
 
-# GAMBAS Files
+# Environment Files
+*.env*
+!.env.example
 
+# Encryption files
+*.enc
+
+# Backup and temp files
+*.bak*
+*.back*
+*backup*
+*Backup
+*tmp*
+*temp*
+
+# GAMBAS Files
 *.gambas
 .lock
 *~

@@ -298,17 +298,17 @@ Public Sub tachar()
     
     For i = 0 To 23
         If Data.mock[Data.jugador(), i] = "*" Then
-            pb[0, i].Picture = Picture["no.png"]
+            pb[0, i].Picture = Picture["img/no.png"]
             For j = 1 To 6
-                pb[j, i].Picture = Picture["empty.png"]
+                pb[j, i].Picture = Picture["img/empty.png"]
             Next
         Endif 
         
         Data.oponenteL()
         If Data.mock[Data.jugador(), i] = "*" Then
-            inferior[i].Picture = Picture["no.png"]
+            inferior[i].Picture = Picture["img/no.png"]
         Else 
-            inferior[i].Picture = Picture["guess.png"]
+            inferior[i].Picture = Picture["img/guess.png"]
         Endif
         Data.oponenteL()
     Next
@@ -775,85 +775,85 @@ Public Sub setup()
     For i = 0 To 23
         ' piel
         If Data.personajes[i, 1] = Data.car[1, 1] Then
-            pb[0, i].Picture = Picture["pb11.png"]
+            pb[0, i].Picture = Picture["img/pb11.png"]
         Else If Data.personajes[i, 1] = Data.car[1, 2] Then
-            pb[0, i].Picture = Picture["pb12.png"]
+            pb[0, i].Picture = Picture["img/pb12.png"]
         Else If Data.personajes[i, 1] = Data.car[1, 3] Then
-            pb[0, i].Picture = Picture["pb13.png"]
+            pb[0, i].Picture = Picture["img/pb13.png"]
         Endif
         
         ' ropa
         If Data.personajes[i, 2] = Data.car[2, 1] Then
-            pb[1, i].Picture = Picture["pb21.png"]
+            pb[1, i].Picture = Picture["img/pb21.png"]
         Else If Data.personajes[i, 2] = Data.car[2, 2] Then
-            pb[1, i].Picture = Picture["pb22.png"]
+            pb[1, i].Picture = Picture["img/pb22.png"]
         Else If Data.personajes[i, 2] = Data.car[2, 3] Then
-            pb[1, i].Picture = Picture["pb23.png"]
+            pb[1, i].Picture = Picture["img/pb23.png"]
         Endif
         
         ' ojos
         If Data.personajes[i, 3] = Data.car[3, 1] And Data.personajes[i, 4] = Data.car[4, 1] Then
-            pb[2, i].Picture = Picture["ojos11.png"]
+            pb[2, i].Picture = Picture["img/ojos11.png"]
         Else If Data.personajes[i, 3] = Data.car[3, 1] And Data.personajes[i, 4] = Data.car[4, 2] Then
-            pb[2, i].Picture = Picture["ojos12.png"]
+            pb[2, i].Picture = Picture["img/ojos12.png"]
         Else If Data.personajes[i, 3] = Data.car[3, 1] And Data.personajes[i, 4] = Data.car[4, 3] Then
-            pb[2, i].Picture = Picture["ojos13.png"]
+            pb[2, i].Picture = Picture["img/ojos13.png"]
         Else If Data.personajes[i, 3] = Data.car[3, 2] And Data.personajes[i, 4] = Data.car[4, 1] Then
-            pb[2, i].Picture = Picture["ojos21.png"]
+            pb[2, i].Picture = Picture["img/ojos21.png"]
         Else If Data.personajes[i, 3] = Data.car[3, 2] And Data.personajes[i, 4] = Data.car[4, 2] Then
-            pb[2, i].Picture = Picture["ojos22.png"]
+            pb[2, i].Picture = Picture["img/ojos22.png"]
         Else If Data.personajes[i, 3] = Data.car[3, 2] And Data.personajes[i, 4] = Data.car[4, 3] Then
-            pb[2, i].Picture = Picture["ojos23.png"]
+            pb[2, i].Picture = Picture["img/ojos23.png"]
         Else If Data.personajes[i, 3] = Data.car[3, 3] And Data.personajes[i, 4] = Data.car[4, 1] Then
-            pb[2, i].Picture = Picture["ojos21.png"]
+            pb[2, i].Picture = Picture["img/ojos21.png"]
         Else If Data.personajes[i, 3] = Data.car[3, 3] And Data.personajes[i, 4] = Data.car[4, 2] Then
-            pb[2, i].Picture = Picture["ojos22.png"]
+            pb[2, i].Picture = Picture["img/ojos22.png"]
         Else If Data.personajes[i, 3] = Data.car[3, 3] And Data.personajes[i, 4] = Data.car[4, 3] Then
-            pb[2, i].Picture = Picture["ojos23.png"]
+            pb[2, i].Picture = Picture["img/ojos23.png"]
         Endif
         
         ' pecas
         If Data.personajes[i, 5] = Data.car[5, 1] Then
-            pb[3, i].Picture = Picture["pb51.png"]
+            pb[3, i].Picture = Picture["img/pb51.png"]
         Else If Data.personajes[i, 5] = Data.car[5, 2] Then
-            pb[3, i].Picture = Picture["pb52.png"]
+            pb[3, i].Picture = Picture["img/pb52.png"]
         Else If Data.personajes[i, 5] = Data.car[5, 3] Then
-            pb[3, i].Picture = Picture["empty.png"]
+            pb[3, i].Picture = Picture["img/empty.png"]
         Endif
         
         ' rasgos
         If Data.personajes[i, 6] = Data.car[6, 1] Then
-            pb[4, i].Picture = Picture["pb61.png"]
+            pb[4, i].Picture = Picture["img/pb61.png"]
         Else If Data.personajes[i, 6] = Data.car[6, 2] Then
-            pb[4, i].Picture = Picture["pb62.png"]
+            pb[4, i].Picture = Picture["img/pb62.png"]
         Else If Data.personajes[i, 6] = Data.car[6, 3] Then
-            pb[4, i].Picture = Picture["empty.png"]
+            pb[4, i].Picture = Picture["img/empty.png"]
         Endif
         
         ' pelo
         If Data.personajes[i, 7] = Data.car[7, 1] And Data.personajes[i, 8] = Data.car[8, 1] Then
-            pb[5, i].Picture = Picture["pelo11.png"]
+            pb[5, i].Picture = Picture["img/pelo11.png"]
         Else If Data.personajes[i, 7] = Data.car[7, 1] And Data.personajes[i, 8] = Data.car[8, 2] Then
-            pb[5, i].Picture = Picture["pelo12.png"]
+            pb[5, i].Picture = Picture["img/pelo12.png"]
         Else If Data.personajes[i, 7] = Data.car[7, 1] And Data.personajes[i, 8] = Data.car[8, 3] Then
-            pb[5, i].Picture = Picture["pelo13.png"]
+            pb[5, i].Picture = Picture["img/pelo13.png"]
         Else If Data.personajes[i, 7] = Data.car[7, 2] And Data.personajes[i, 8] = Data.car[8, 1] Then
-            pb[5, i].Picture = Picture["pelo21.png"]
+            pb[5, i].Picture = Picture["img/pelo21.png"]
         Else If Data.personajes[i, 7] = Data.car[7, 2] And Data.personajes[i, 8] = Data.car[8, 2] Then
-            pb[5, i].Picture = Picture["pelo22.png"]
+            pb[5, i].Picture = Picture["img/pelo22.png"]
         Else If Data.personajes[i, 7] = Data.car[7, 2] And Data.personajes[i, 8] = Data.car[8, 3] Then
-            pb[5, i].Picture = Picture["pelo23.png"]
+            pb[5, i].Picture = Picture["img/pelo23.png"]
         Else If Data.personajes[i, 7] = Data.car[7, 3] Then
-            pb[5, i].Picture = Picture["empty.png"]
+            pb[5, i].Picture = Picture["img/empty.png"]
         Endif
         
         ' accesorios
         If Data.personajes[i, 9] = Data.car[9, 1] Then
-            pb[6, i].Picture = Picture["pb91.png"]
+            pb[6, i].Picture = Picture["img/pb91.png"]
         Else If Data.personajes[i, 9] = Data.car[9, 2] Then
-            pb[6, i].Picture = Picture["pb92.png"]
+            pb[6, i].Picture = Picture["img/pb92.png"]
         Else If Data.personajes[i, 9] = Data.car[9, 3] Then
-            pb[6, i].Picture = Picture["empty.png"]
+            pb[6, i].Picture = Picture["img/empty.png"]
         Endif
     Next
     
@@ -864,84 +864,84 @@ Public Sub setup()
     
     ' piel
     If Data.personajes[i, 1] = Data.car[1, 1] Then
-        pb[0, 24].Picture = Picture["pb11.png"]
+        pb[0, 24].Picture = Picture["img/pb11.png"]
     Else If Data.personajes[i, 1] = Data.car[1, 2] Then
-        pb[0, 24].Picture = Picture["pb12.png"]
+        pb[0, 24].Picture = Picture["img/pb12.png"]
     Else If Data.personajes[i, 1] = Data.car[1, 3] Then
-        pb[0, 24].Picture = Picture["pb13.png"]
+        pb[0, 24].Picture = Picture["img/pb13.png"]
     Endif
     
     ' ropa
     If Data.personajes[i, 2] = Data.car[2, 1] Then
-        pb[1, 24].Picture = Picture["pb21.png"]
+        pb[1, 24].Picture = Picture["img/pb21.png"]
     Else If Data.personajes[i, 2] = Data.car[2, 2] Then
-        pb[1, 24].Picture = Picture["pb22.png"]
+        pb[1, 24].Picture = Picture["img/pb22.png"]
     Else If Data.personajes[i, 2] = Data.car[2, 3] Then
-        pb[1, 24].Picture = Picture["pb23.png"]
+        pb[1, 24].Picture = Picture["img/pb23.png"]
     Endif
     
     ' ojos
     If Data.personajes[i, 3] = Data.car[3, 1] And Data.personajes[i, 4] = Data.car[4, 1] Then
-        pb[2, 24].Picture = Picture["ojos11.png"]
+        pb[2, 24].Picture = Picture["img/ojos11.png"]
     Else If Data.personajes[i, 3] = Data.car[3, 1] And Data.personajes[i, 4] = Data.car[4, 2] Then
-        pb[2, 24].Picture = Picture["ojos12.png"]
+        pb[2, 24].Picture = Picture["img/ojos12.png"]
     Else If Data.personajes[i, 3] = Data.car[3, 1] And Data.personajes[i, 4] = Data.car[4, 3] Then
-        pb[2, 24].Picture = Picture["ojos13.png"]
+        pb[2, 24].Picture = Picture["img/ojos13.png"]
     Else If Data.personajes[i, 3] = Data.car[3, 2] And Data.personajes[i, 4] = Data.car[4, 1] Then
-        pb[2, 24].Picture = Picture["ojos21.png"]
+        pb[2, 24].Picture = Picture["img/ojos21.png"]
     Else If Data.personajes[i, 3] = Data.car[3, 2] And Data.personajes[i, 4] = Data.car[4, 2] Then
-        pb[2, 24].Picture = Picture["ojos22.png"]
+        pb[2, 24].Picture = Picture["img/ojos22.png"]
     Else If Data.personajes[i, 3] = Data.car[3, 2] And Data.personajes[i, 4] = Data.car[4, 3] Then
-        pb[2, 24].Picture = Picture["ojos23.png"]
+        pb[2, 24].Picture = Picture["img/ojos23.png"]
     Else If Data.personajes[i, 3] = Data.car[3, 3] And Data.personajes[i, 4] = Data.car[4, 1] Then
-        pb[2, 24].Picture = Picture["ojos21.png"]
+        pb[2, 24].Picture = Picture["img/ojos21.png"]
     Else If Data.personajes[i, 3] = Data.car[3, 3] And Data.personajes[i, 4] = Data.car[4, 2] Then
-        pb[2, 24].Picture = Picture["ojos22.png"]
+        pb[2, 24].Picture = Picture["img/ojos22.png"]
     Else If Data.personajes[i, 3] = Data.car[3, 3] And Data.personajes[i, 4] = Data.car[4, 3] Then
-        pb[2, 24].Picture = Picture["ojos23.png"]
+        pb[2, 24].Picture = Picture["img/ojos23.png"]
     Endif
     
     ' pecas
     If Data.personajes[i, 5] = Data.car[5, 1] Then
-        pb[3, 24].Picture = Picture["pb51.png"]
+        pb[3, 24].Picture = Picture["img/pb51.png"]
     Else If Data.personajes[i, 5] = Data.car[5, 2] Then
-        pb[3, 24].Picture = Picture["pb52.png"]
+        pb[3, 24].Picture = Picture["img/pb52.png"]
     Else If Data.personajes[i, 5] = Data.car[5, 3] Then
-        pb[3, 24].Picture = Picture["empty.png"]
+        pb[3, 24].Picture = Picture["img/empty.png"]
     Endif
     
     ' rasgos
     If Data.personajes[i, 6] = Data.car[6, 1] Then
-        pb[4, 24].Picture = Picture["pb61.png"]
+        pb[4, 24].Picture = Picture["img/pb61.png"]
     Else If Data.personajes[i, 6] = Data.car[6, 2] Then
-        pb[4, 24].Picture = Picture["pb62.png"]
+        pb[4, 24].Picture = Picture["img/pb62.png"]
     Else If Data.personajes[i, 6] = Data.car[6, 3] Then
-        pb[4, 24].Picture = Picture["empty.png"]
+        pb[4, 24].Picture = Picture["img/empty.png"]
     Endif
     
     ' pelo
     If Data.personajes[i, 7] = Data.car[7, 1] And Data.personajes[i, 8] = Data.car[8, 1] Then
-        pb[5, 24].Picture = Picture["pelo11.png"]
+        pb[5, 24].Picture = Picture["img/pelo11.png"]
     Else If Data.personajes[i, 7] = Data.car[7, 1] And Data.personajes[i, 8] = Data.car[8, 2] Then
-        pb[5, 24].Picture = Picture["pelo12.png"]
+        pb[5, 24].Picture = Picture["img/pelo12.png"]
     Else If Data.personajes[i, 7] = Data.car[7, 1] And Data.personajes[i, 8] = Data.car[8, 3] Then
-        pb[5, 24].Picture = Picture["pelo13.png"]
+        pb[5, 24].Picture = Picture["img/pelo13.png"]
     Else If Data.personajes[i, 7] = Data.car[7, 2] And Data.personajes[i, 8] = Data.car[8, 1] Then
-        pb[5, 24].Picture = Picture["pelo21.png"]
+        pb[5, 24].Picture = Picture["img/pelo21.png"]
     Else If Data.personajes[i, 7] = Data.car[7, 2] And Data.personajes[i, 8] = Data.car[8, 2] Then
-        pb[5, 24].Picture = Picture["pelo22.png"]
+        pb[5, 24].Picture = Picture["img/pelo22.png"]
     Else If Data.personajes[i, 7] = Data.car[7, 2] And Data.personajes[i, 8] = Data.car[8, 3] Then
-        pb[5, 24].Picture = Picture["pelo23.png"]
+        pb[5, 24].Picture = Picture["img/pelo23.png"]
     Else If Data.personajes[i, 7] = Data.car[7, 3] Then
-        pb[5, 24].Picture = Picture["empty.png"]
+        pb[5, 24].Picture = Picture["img/empty.png"]
     Endif
     
     ' accesorios
     If Data.personajes[i, 9] = Data.car[9, 1] Then
-        pb[6, 24].Picture = Picture["pb91.png"]
+        pb[6, 24].Picture = Picture["img/pb91.png"]
     Else If Data.personajes[i, 9] = Data.car[9, 2] Then
-        pb[6, 24].Picture = Picture["pb92.png"]
+        pb[6, 24].Picture = Picture["img/pb92.png"]
     Else If Data.personajes[i, 9] = Data.car[9, 3] Then
-        pb[6, 24].Picture = Picture["empty.png"]
+        pb[6, 24].Picture = Picture["img/empty.png"]
     Endif
 End
