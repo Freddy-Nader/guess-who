@@ -28,7 +28,7 @@ End
 
 
 '-------------------------------------------------------------------------------
-' cambiar boton "Características" a un boton con la caracteristica seleccionada
+' cambiar botón "Características" a un botón con la característica seleccionada
 '-------------------------------------------------------------------------------
 Public Sub MenuClicks1(i As Byte)
     caracteristica = i
@@ -82,25 +82,22 @@ Public Sub MenuClicks2(i As Byte, j As Byte, k As Byte)
 
     Data.restantes() ' consola
     
-    If chosen[Data.jugador(), j, k] Then
-        Message.Info("Esta característica ya fue seleccionada anteriormente. Vuelva a intentarlo.", "Ok")
+    If chosen[Data.jugador(), j, k] Or Data.vivos[Data.jugador()] = 0 Then
+        If chosen[Data.jugador(), j, k] Then
+            Message.Info("Esta característica ya fue seleccionada anteriormente. Vuelva a intentarlo.", "Ok")
+        Else
+            Message.Info("Todos los personajes comparten esta característica. Vuelva a intentarlo.", "Ok")
+            respaldar()
+        Endif
+
         MenuButton1.Text = "Características"
         MenuButton1.Menu = "Menu1"
         MenuButton1.Visible = True
         Button25.Enabled = True
         Button27.Visible = False
-    Else If Data.vivos[Data.jugador()] = 0 Then
-        Message.Info("Todos los personajes comparten esta característica. Vuelva a intentarlo.", "Ok")
-        MenuButton1.Text = "Características"
-        MenuButton1.Menu = "Menu1"
-        MenuButton1.Visible = True
-        Button25.Enabled = True
-        Button27.Visible = False
-        respaldar()
     Else
         MenuButton1.Visible = False
         MenuButton1.Text = "Características"
-    
         Button25.Enabled = False
         Button27.Visible = True
     Endif
@@ -231,16 +228,17 @@ Public Sub adivinar()
     If Data.personajes[Data.oculto[Data.oponenteN()], caracteristica] = Data.car[caracteristica, op] Then
         Inc Data.vivos[Data.jugador()]
         
-        If op = 1 Then
-            op1 = 2
-            op2 = 3
-        Else If op = 2 Then
-            op1 = 1
-            op2 = 3
-        Else If op = 3 Then
-            op1 = 2
-            op2 = 3
-        Endif
+        Select Case op
+            Case 1
+                op1 = 2
+                op2 = 3
+            Case 2
+                op1 = 1
+                op2 = 3
+            Case 3
+                op1 = 2
+                op2 = 3
+        End
         
         opciones(op1)
         opciones(op2)
@@ -305,11 +303,7 @@ Public Sub tachar()
         Endif 
         
         Data.oponenteL()
-        If Data.mock[Data.jugador(), i] = "*" Then
-            inferior[i].Picture = Picture["img/no.png"]
-        Else 
-            inferior[i].Picture = Picture["img/guess.png"]
-        Endif
+        inferior[i].Picture = Picture[IIf(Data.mock[Data.jugador(), i] = "*", "img/no.png", "img/guess.png")]
         Data.oponenteL()
     Next
 End
@@ -339,21 +333,12 @@ Public Sub Button25_Click()
 End
 
 Public Sub MenuClick3(i As Byte)
-    If Data.oculto[Data.oponenteN()] = i Then
-        Message.Info("El jugador " & (Data.jugador() + 1) & " ha ganado.", "Ok")
-        Data.Close()
-        Inicio.Close()
-        Lander.Close()
-        Ocultos.Close()
-        Plantilla.Close()
-    Else 
-        Message.Info("El jugador " & (Data.jugador() + 1) & " ha perdido.", "Ok")
-        Data.Close()
-        Inicio.Close()
-        Lander.Close()
-        Ocultos.Close()
-        Plantilla.Close()
-    Endif
+    Message.Info("El jugador " & (Data.jugador() + 1) & If(Data.oculto[Data.oponenteN()] = i, " ha ganado.", " ha perdido."), "Ok")
+    Data.Close()
+    Inicio.Close()
+    Lander.Close()
+    Ocultos.Close()
+    Plantilla.Close()
 End
 
 Public Sub Button1_Click()
@@ -769,179 +754,80 @@ Public Sub setup()
     
     For i = 0 To 23
         botones[i].Text = Data.personajes[i, 10]
+        drawPersonaje(i, i)
     Next 
     
-    
-    For i = 0 To 23
-        ' piel
-        If Data.personajes[i, 1] = Data.car[1, 1] Then
-            pb[0, i].Picture = Picture["img/pb11.png"]
-        Else If Data.personajes[i, 1] = Data.car[1, 2] Then
-            pb[0, i].Picture = Picture["img/pb12.png"]
-        Else If Data.personajes[i, 1] = Data.car[1, 3] Then
-            pb[0, i].Picture = Picture["img/pb13.png"]
-        Endif
-        
-        ' ropa
-        If Data.personajes[i, 2] = Data.car[2, 1] Then
-            pb[1, i].Picture = Picture["img/pb21.png"]
-        Else If Data.personajes[i, 2] = Data.car[2, 2] Then
-            pb[1, i].Picture = Picture["img/pb22.png"]
-        Else If Data.personajes[i, 2] = Data.car[2, 3] Then
-            pb[1, i].Picture = Picture["img/pb23.png"]
-        Endif
-        
-        ' ojos
-        If Data.personajes[i, 3] = Data.car[3, 1] And Data.personajes[i, 4] = Data.car[4, 1] Then
-            pb[2, i].Picture = Picture["img/ojos11.png"]
-        Else If Data.personajes[i, 3] = Data.car[3, 1] And Data.personajes[i, 4] = Data.car[4, 2] Then
-            pb[2, i].Picture = Picture["img/ojos12.png"]
-        Else If Data.personajes[i, 3] = Data.car[3, 1] And Data.personajes[i, 4] = Data.car[4, 3] Then
-            pb[2, i].Picture = Picture["img/ojos13.png"]
-        Else If Data.personajes[i, 3] = Data.car[3, 2] And Data.personajes[i, 4] = Data.car[4, 1] Then
-            pb[2, i].Picture = Picture["img/ojos21.png"]
-        Else If Data.personajes[i, 3] = Data.car[3, 2] And Data.personajes[i, 4] = Data.car[4, 2] Then
-            pb[2, i].Picture = Picture["img/ojos22.png"]
-        Else If Data.personajes[i, 3] = Data.car[3, 2] And Data.personajes[i, 4] = Data.car[4, 3] Then
-            pb[2, i].Picture = Picture["img/ojos23.png"]
-        Else If Data.personajes[i, 3] = Data.car[3, 3] And Data.personajes[i, 4] = Data.car[4, 1] Then
-            pb[2, i].Picture = Picture["img/ojos21.png"]
-        Else If Data.personajes[i, 3] = Data.car[3, 3] And Data.personajes[i, 4] = Data.car[4, 2] Then
-            pb[2, i].Picture = Picture["img/ojos22.png"]
-        Else If Data.personajes[i, 3] = Data.car[3, 3] And Data.personajes[i, 4] = Data.car[4, 3] Then
-            pb[2, i].Picture = Picture["img/ojos23.png"]
-        Endif
-        
-        ' pecas
-        If Data.personajes[i, 5] = Data.car[5, 1] Then
-            pb[3, i].Picture = Picture["img/pb51.png"]
-        Else If Data.personajes[i, 5] = Data.car[5, 2] Then
-            pb[3, i].Picture = Picture["img/pb52.png"]
-        Else If Data.personajes[i, 5] = Data.car[5, 3] Then
-            pb[3, i].Picture = Picture["img/empty.png"]
-        Endif
-        
-        ' rasgos
-        If Data.personajes[i, 6] = Data.car[6, 1] Then
-            pb[4, i].Picture = Picture["img/pb61.png"]
-        Else If Data.personajes[i, 6] = Data.car[6, 2] Then
-            pb[4, i].Picture = Picture["img/pb62.png"]
-        Else If Data.personajes[i, 6] = Data.car[6, 3] Then
-            pb[4, i].Picture = Picture["img/empty.png"]
-        Endif
-        
-        ' pelo
-        If Data.personajes[i, 7] = Data.car[7, 1] And Data.personajes[i, 8] = Data.car[8, 1] Then
-            pb[5, i].Picture = Picture["img/pelo11.png"]
-        Else If Data.personajes[i, 7] = Data.car[7, 1] And Data.personajes[i, 8] = Data.car[8, 2] Then
-            pb[5, i].Picture = Picture["img/pelo12.png"]
-        Else If Data.personajes[i, 7] = Data.car[7, 1] And Data.personajes[i, 8] = Data.car[8, 3] Then
-            pb[5, i].Picture = Picture["img/pelo13.png"]
-        Else If Data.personajes[i, 7] = Data.car[7, 2] And Data.personajes[i, 8] = Data.car[8, 1] Then
-            pb[5, i].Picture = Picture["img/pelo21.png"]
-        Else If Data.personajes[i, 7] = Data.car[7, 2] And Data.personajes[i, 8] = Data.car[8, 2] Then
-            pb[5, i].Picture = Picture["img/pelo22.png"]
-        Else If Data.personajes[i, 7] = Data.car[7, 2] And Data.personajes[i, 8] = Data.car[8, 3] Then
-            pb[5, i].Picture = Picture["img/pelo23.png"]
-        Else If Data.personajes[i, 7] = Data.car[7, 3] Then
-            pb[5, i].Picture = Picture["img/empty.png"]
-        Endif
-        
-        ' accesorios
-        If Data.personajes[i, 9] = Data.car[9, 1] Then
-            pb[6, i].Picture = Picture["img/pb91.png"]
-        Else If Data.personajes[i, 9] = Data.car[9, 2] Then
-            pb[6, i].Picture = Picture["img/pb92.png"]
-        Else If Data.personajes[i, 9] = Data.car[9, 3] Then
-            pb[6, i].Picture = Picture["img/empty.png"]
+    ' personaje oculto
+    i = Data.oculto[Data.jugador()]
+    Label1.Text = Data.personajes[i, 10]
+    drawPersonaje(i, 24)
+End
+
+Private Sub drawPersonaje(src As Byte, dest As Byte)
+    Dim k As Byte
+    Dim m As Byte
+
+    ' piel
+    For k = 1 To 3
+        If Data.personajes[src, 1] = Data.car[1, k] Then
+            pb[0, dest].Picture = Picture["img/pb1" & k & ".png"]
+            Break
         Endif
     Next
-    
-    
-    ' personaje oculto
-    Label1.Text = Data.personajes[Data.oculto[Data.jugador()], 10]
-    i = Data.oculto[Data.jugador()]
-    
-    ' piel
-    If Data.personajes[i, 1] = Data.car[1, 1] Then
-        pb[0, 24].Picture = Picture["img/pb11.png"]
-    Else If Data.personajes[i, 1] = Data.car[1, 2] Then
-        pb[0, 24].Picture = Picture["img/pb12.png"]
-    Else If Data.personajes[i, 1] = Data.car[1, 3] Then
-        pb[0, 24].Picture = Picture["img/pb13.png"]
-    Endif
-    
+
     ' ropa
-    If Data.personajes[i, 2] = Data.car[2, 1] Then
-        pb[1, 24].Picture = Picture["img/pb21.png"]
-    Else If Data.personajes[i, 2] = Data.car[2, 2] Then
-        pb[1, 24].Picture = Picture["img/pb22.png"]
-    Else If Data.personajes[i, 2] = Data.car[2, 3] Then
-        pb[1, 24].Picture = Picture["img/pb23.png"]
-    Endif
-    
+    For k = 1 To 3
+        If Data.personajes[src, 2] = Data.car[2, k] Then
+            pb[1, dest].Picture = Picture["img/pb2" & k & ".png"]
+            Break
+        Endif
+    Next
+
     ' ojos
-    If Data.personajes[i, 3] = Data.car[3, 1] And Data.personajes[i, 4] = Data.car[4, 1] Then
-        pb[2, 24].Picture = Picture["img/ojos11.png"]
-    Else If Data.personajes[i, 3] = Data.car[3, 1] And Data.personajes[i, 4] = Data.car[4, 2] Then
-        pb[2, 24].Picture = Picture["img/ojos12.png"]
-    Else If Data.personajes[i, 3] = Data.car[3, 1] And Data.personajes[i, 4] = Data.car[4, 3] Then
-        pb[2, 24].Picture = Picture["img/ojos13.png"]
-    Else If Data.personajes[i, 3] = Data.car[3, 2] And Data.personajes[i, 4] = Data.car[4, 1] Then
-        pb[2, 24].Picture = Picture["img/ojos21.png"]
-    Else If Data.personajes[i, 3] = Data.car[3, 2] And Data.personajes[i, 4] = Data.car[4, 2] Then
-        pb[2, 24].Picture = Picture["img/ojos22.png"]
-    Else If Data.personajes[i, 3] = Data.car[3, 2] And Data.personajes[i, 4] = Data.car[4, 3] Then
-        pb[2, 24].Picture = Picture["img/ojos23.png"]
-    Else If Data.personajes[i, 3] = Data.car[3, 3] And Data.personajes[i, 4] = Data.car[4, 1] Then
-        pb[2, 24].Picture = Picture["img/ojos21.png"]
-    Else If Data.personajes[i, 3] = Data.car[3, 3] And Data.personajes[i, 4] = Data.car[4, 2] Then
-        pb[2, 24].Picture = Picture["img/ojos22.png"]
-    Else If Data.personajes[i, 3] = Data.car[3, 3] And Data.personajes[i, 4] = Data.car[4, 3] Then
-        pb[2, 24].Picture = Picture["img/ojos23.png"]
-    Endif
-    
+    For k = 1 To 3
+        For m = 1 To 3
+            If Data.personajes[src, 3] = Data.car[3, k] And Data.personajes[src, 4] = Data.car[4, m] Then
+                pb[2, dest].Picture = Picture["img/ojos" & k & m & ".png"]
+                Break 2
+            Endif
+        Next
+    Next
+
     ' pecas
-    If Data.personajes[i, 5] = Data.car[5, 1] Then
-        pb[3, 24].Picture = Picture["img/pb51.png"]
-    Else If Data.personajes[i, 5] = Data.car[5, 2] Then
-        pb[3, 24].Picture = Picture["img/pb52.png"]
-    Else If Data.personajes[i, 5] = Data.car[5, 3] Then
-        pb[3, 24].Picture = Picture["img/empty.png"]
-    Endif
-    
+    For k = 1 To 3
+        If Data.personajes[src, 5] = Data.car[5, k] Then
+            pb[3, dest].Picture = IIf(k = 3, Picture["img/empty.png"], Picture["img/pb5" & k & ".png"])
+            Break
+        Endif
+    Next
+
     ' rasgos
-    If Data.personajes[i, 6] = Data.car[6, 1] Then
-        pb[4, 24].Picture = Picture["img/pb61.png"]
-    Else If Data.personajes[i, 6] = Data.car[6, 2] Then
-        pb[4, 24].Picture = Picture["img/pb62.png"]
-    Else If Data.personajes[i, 6] = Data.car[6, 3] Then
-        pb[4, 24].Picture = Picture["img/empty.png"]
-    Endif
-    
+    For k = 1 To 3
+        If Data.personajes[src, 6] = Data.car[6, k] Then
+            pb[4, dest].Picture = IIf(k = 3, Picture["img/empty.png"], Picture["img/pb6" & k & ".png"])
+            Break
+        Endif
+    Next
+
     ' pelo
-    If Data.personajes[i, 7] = Data.car[7, 1] And Data.personajes[i, 8] = Data.car[8, 1] Then
-        pb[5, 24].Picture = Picture["img/pelo11.png"]
-    Else If Data.personajes[i, 7] = Data.car[7, 1] And Data.personajes[i, 8] = Data.car[8, 2] Then
-        pb[5, 24].Picture = Picture["img/pelo12.png"]
-    Else If Data.personajes[i, 7] = Data.car[7, 1] And Data.personajes[i, 8] = Data.car[8, 3] Then
-        pb[5, 24].Picture = Picture["img/pelo13.png"]
-    Else If Data.personajes[i, 7] = Data.car[7, 2] And Data.personajes[i, 8] = Data.car[8, 1] Then
-        pb[5, 24].Picture = Picture["img/pelo21.png"]
-    Else If Data.personajes[i, 7] = Data.car[7, 2] And Data.personajes[i, 8] = Data.car[8, 2] Then
-        pb[5, 24].Picture = Picture["img/pelo22.png"]
-    Else If Data.personajes[i, 7] = Data.car[7, 2] And Data.personajes[i, 8] = Data.car[8, 3] Then
-        pb[5, 24].Picture = Picture["img/pelo23.png"]
-    Else If Data.personajes[i, 7] = Data.car[7, 3] Then
-        pb[5, 24].Picture = Picture["img/empty.png"]
+    If Data.personajes[src, 7] = Data.car[7, 3] Then
+        pb[5, dest].Picture = Picture["img/empty.png"]
+    Else
+        For k = 1 To 2
+            For m = 1 To 3
+                If Data.personajes[src, 7] = Data.car[7, k] And Data.personajes[src, 8] = Data.car[8, m] Then
+                    pb[5, dest].Picture = Picture["img/pelo" & k & m & ".png"]
+                    Break 2
+                Endif
+            Next
+        Next
     Endif
-    
+
     ' accesorios
-    If Data.personajes[i, 9] = Data.car[9, 1] Then
-        pb[6, 24].Picture = Picture["img/pb91.png"]
-    Else If Data.personajes[i, 9] = Data.car[9, 2] Then
-        pb[6, 24].Picture = Picture["img/pb92.png"]
-    Else If Data.personajes[i, 9] = Data.car[9, 3] Then
-        pb[6, 24].Picture = Picture["img/empty.png"]
-    Endif
+    For k = 1 To 3
+        If Data.personajes[src, 9] = Data.car[9, k] Then
+            pb[6, dest].Picture = IIf(k = 3, Picture["img/empty.png"], Picture["img/pb9" & k & ".png"])
+            Break
+        Endif
+    Next
 End

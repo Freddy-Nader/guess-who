@@ -24,20 +24,12 @@ Public Sub oponenteL() ' oponente logico
 End
 
 Public Function oponenteN() As Byte ' oponente numérico
-    If oponente Then
-        Return 1
-    Else 
-        Return 0
-    Endif
+    Return If(oponente, 1, 0)
 End
 
 
 Public Function jugador() As Byte
-    If oponente Then
-        Return 0
-    Else 
-        Return 1
-    Endif
+    Return If(oponente, 0, 1)
 End
 
 

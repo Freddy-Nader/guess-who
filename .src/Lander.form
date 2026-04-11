@@ -5,7 +5,7 @@
   Background = &H8491FF
   { PictureBox1 PictureBox
     MoveScaled(56.8571,6,64,42.2857)
-    Picture = Picture.Load("img/adivina kiem.png")
+    Picture = Picture.Load("img/logo.png")
     Stretch = True
   }
   { Button1 Button
