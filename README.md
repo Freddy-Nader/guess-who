@@ -9,7 +9,7 @@
   [![GitHub](https://img.shields.io/badge/-Freddy--Nader-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Freddy-Nader) 
   [![Personal Website](https://img.shields.io/badge/anader.xyz-FFFFFF?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0iYmxhY2siIGNsYXNzPSJzaXplLTYiPgogIDxwYXRoIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTEyIDIxYTkuMDA0IDkuMDA0IDAgMCAwIDguNzE2LTYuNzQ3TTEyIDIxYTkuMDA0IDkuMDA0IDAgMCAxLTguNzE2LTYuNzQ3TTEyIDIxYzIuNDg1IDAgNC41LTQuMDMgNC41LTlTMTQuNDg1IDMgMTIgM20wIDE4Yy0yLjQ4NSAwLTQuNS00LjAzLTQuNS05UzkuNTE1IDMgMTIgM20wIDBhOC45OTcgOC45OTcgMCAwIDEgNy44NDMgNC41ODJNMTIgM2E4Ljk5NyA4Ljk5NyAwIDAgMC03Ljg0MyA0LjU4Mm0xNS42ODYgMEExMS45NTMgMTEuOTUzIDAgMCAxIDEyIDEwLjVjLTIuOTk4IDAtNS43NC0xLjEtNy44NDMtMi45MThtMTUuNjg2IDBBOC45NTkgOC45NTkgMCAwIDEgMjEgMTJjMCAuNzc4LS4wOTkgMS41MzMtLjI4NCAyLjI1M20wIDBBMTcuOTE5IDE3LjkxOSAwIDAgMSAxMiAxNi41Yy0zLjE2MiAwLTYuMTMzLS44MTUtOC43MTYtMi4yNDdtMCAwQTkuMDE1IDkuMDE1IDAgMCAxIDMgMTJjMC0xLjYwNS40Mi0zLjExMyAxLjE1Ny00LjQxOCIgLz4KPC9zdmc+)](https://www.anader.xyz)
 
-  [Features](#features) • [Getting Started](#getting-started) • [License](#license)
+  [English Version](https://github.com/Freddy-Nader/guess-who/tree/en) • [Features](#features) • [Getting Started](#getting-started) • [License](#license)
 
   <br />
 
