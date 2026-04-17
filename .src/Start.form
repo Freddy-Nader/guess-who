@@ -9,7 +9,7 @@
     Background = &H5555FF
     Foreground = &HFFFFFF
     Mouse = Cursor.Pointing
-    Text = ("Continuar")
+    Text = ("Continue")
   }
   { Label1 Label
     MoveScaled(70.5714,50.2857,36.5714,18.2857)

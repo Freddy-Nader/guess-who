@@ -1,0 +1,834 @@
+' Gambas class file
+
+score[2] As Byte
+
+' guessing logic
+trait As Byte
+op As Byte
+backup[24, 12] As String
+
+' character elimination tracking
+chosen[2, 10, 3] As Boolean
+
+' object arrays
+buttons[24] As Object
+pb[7, 25] As Object             ' picture box
+                                ' skin, outfit, eyes, freckles, features, hair, accessories (acc)
+menus1[10, 4] As Object
+menus2[10] As Object
+menus3[10] As Object
+bottomRow[24] As Object
+
+Public Sub Form_Open()
+    Dim i As Byte
+
+    initArrays()
+    setup()
+    markEliminated()
+End
+
+
+'-------------------------------------------------------------------
+' switch the "Traits" button to a button showing the selected trait
+'-------------------------------------------------------------------
+Public Sub MenuClicks1(i As Byte)
+    trait = i
+    MenuButton1.Text = Data.attr[i, 0]
+    MenuButton1.Menu = Data.menu[i]
+
+    Button25.Enabled = False
+End
+
+Public Sub trait00_Click()
+    MenuClicks1(0)
+End
+Public Sub trait10_Click()
+    MenuClicks1(1)
+End
+Public Sub trait20_Click()
+    MenuClicks1(2)
+End
+Public Sub trait30_Click()
+    MenuClicks1(3)
+End
+Public Sub trait40_Click()
+    MenuClicks1(4)
+End
+Public Sub trait50_Click()
+    MenuClicks1(5)
+End
+Public Sub trait60_Click()
+    MenuClicks1(6)
+End
+Public Sub trait70_Click()
+    MenuClicks1(7)
+End
+Public Sub trait80_Click()
+    MenuClicks1(8)
+End
+Public Sub trait90_Click()
+    MenuClicks1(9)
+End
+
+
+'---------------------------------------------------------
+' map menu selections to arrays and character elimination
+'---------------------------------------------------------
+Public Sub MenuClicks2(i As Byte, j As Byte, k As Byte)
+    op = i
+    guess()
+
+    Inc score[Data.player()]
+    Label3.Text = "Score: " & (score[Data.player()] * 10)
+
+    Data.printRemaining() ' console
+
+    If chosen[Data.player(), j, k] Or Data.alive[Data.player()] = 0 Then
+        If chosen[Data.player(), j, k] Then
+            Message.Info("This trait was already selected. Please try again.", "Ok")
+        Else
+            Message.Info("All characters share this trait. Please try again.", "Ok")
+            restoreBackup()
+        Endif
+
+        MenuButton1.Text = "Traits"
+        MenuButton1.Menu = "Menu1"
+        MenuButton1.Visible = True
+        Button25.Enabled = True
+        Button27.Visible = False
+    Else
+        MenuButton1.Visible = False
+        MenuButton1.Text = "Traits"
+        Button25.Enabled = False
+        Button27.Visible = True
+    Endif
+
+    markEliminated()
+    chosen[Data.player(), j, k] = True
+End
+
+' gender
+Public Sub trait01_Click()
+    MenuClicks2(1, 0, 0)
+End
+Public Sub trait02_Click()
+    MenuClicks2(2, 0, 1)
+End
+Public Sub trait03_Click()
+    MenuClicks2(3, 0, 2)
+End
+' hair color
+Public Sub trait11_Click()
+    MenuClicks2(1, 1, 0)
+End
+Public Sub trait12_Click()
+    MenuClicks2(2, 1, 1)
+End
+Public Sub trait13_Click()
+    MenuClicks2(3, 1, 2)
+End
+' hair style
+Public Sub trait21_Click()
+    MenuClicks2(1, 2, 0)
+End
+Public Sub trait22_Click()
+    MenuClicks2(2, 2, 1)
+End
+Public Sub trait23_Click()
+    MenuClicks2(3, 2, 2)
+End
+' eye color
+Public Sub trait31_Click()
+    MenuClicks2(1, 3, 0)
+End
+Public Sub trait32_Click()
+    MenuClicks2(2, 3, 1)
+End
+Public Sub trait33_Click()
+    MenuClicks2(3, 3, 2)
+End
+' accessories
+Public Sub trait41_Click()
+    MenuClicks2(1, 4, 0)
+End
+Public Sub trait42_Click()
+    MenuClicks2(2, 4, 1)
+End
+Public Sub trait43_Click()
+    MenuClicks2(3, 4, 2)
+End
+' facial features
+Public Sub trait51_Click()
+    MenuClicks2(1, 5, 0)
+End
+Public Sub trait52_Click()
+    MenuClicks2(2, 5, 1)
+End
+Public Sub trait53_Click()
+    MenuClicks2(3, 5, 2)
+End
+' age
+Public Sub trait61_Click()
+    MenuClicks2(1, 6, 0)
+End
+Public Sub trait62_Click()
+    MenuClicks2(2, 6, 1)
+End
+Public Sub trait63_Click()
+    MenuClicks2(3, 6, 2)
+End
+' facial expression
+Public Sub trait71_Click()
+    MenuClicks2(1, 7, 0)
+End
+Public Sub trait72_Click()
+    MenuClicks2(2, 7, 1)
+End
+Public Sub trait73_Click()
+    MenuClicks2(3, 7, 2)
+End
+' clothing color
+Public Sub trait81_Click()
+    MenuClicks2(1, 8, 0)
+End
+Public Sub trait82_Click()
+    MenuClicks2(2, 8, 1)
+End
+Public Sub trait83_Click()
+    MenuClicks2(3, 8, 2)
+End
+' ethnicity
+Public Sub trait91_Click()
+    MenuClicks2(1, 9, 0)
+End
+Public Sub trait92_Click()
+    MenuClicks2(2, 9, 1)
+End
+Public Sub trait93_Click()
+    MenuClicks2(3, 9, 2)
+End
+
+
+'----------------
+' guessing logic
+'----------------
+Public Sub guess()
+    Dim i As Byte
+    Dim j As Byte
+    Dim op1 As Byte
+    Dim op2 As Byte
+
+    ' save backup
+    For i = 0 To 23
+        For j = 0 To 10
+            backup[i, j] = Data.characters[i, j]
+        Next
+        backup[i, j] = Data.mock[Data.player(), i]
+    Next
+
+    If Data.characters[Data.hidden[Data.opponentIndex()], trait] = Data.attr[trait, op] Then
+        Inc Data.alive[Data.player()]
+
+        Select Case op
+            Case 1
+                op1 = 2
+                op2 = 3
+            Case 2
+                op1 = 1
+                op2 = 3
+            Case 3
+                op1 = 2
+                op2 = 3
+        End
+
+        eliminateOption(op1)
+        eliminateOption(op2)
+    Else
+        eliminateOption(op)
+    Endif
+
+    If Data.alive[Data.player()] = 1 Or Data.alive[Data.player()] = 1 Then ' win by elimination
+        Message.Info("Player " & (Data.player() + 1) & " has won.", "Ok")
+        Data.Close()
+        Start.Close()
+        Lander.Close()
+        HiddenCharacters.Close()
+        Board.Close()
+    Endif
+End
+
+Public Sub eliminateOption(option As Byte)
+    Dim i As Byte
+
+    For i = 0 To 23
+        If Data.characters[i, trait] = Data.attr[trait, option] And Data.mock[Data.player(), i] <> "*" Then
+            Data.mock[Data.player(), i] = "*"
+            Dec Data.alive[Data.player()]
+        Endif
+    Next
+End
+
+
+'--------------------------------
+' restore backup of characters[]
+'--------------------------------
+Public Sub restoreBackup()
+    Dim i As Byte
+    Dim j As Byte
+
+    For i = 0 To 23
+        For j = 0 To 10
+            If Data.characters[i, j] <> backup[i, j] Then
+                Inc Data.alive[Data.player()]
+            Endif
+            Data.characters[i, j] = backup[i, j]
+        Next
+        Data.mock[Data.player(), i] = backup[i, j]
+    Next
+End
+
+
+'----------------------------
+' mark eliminated characters
+'----------------------------
+Public Sub markEliminated()
+    Dim i As Integer
+    Dim j As Byte
+
+    For i = 0 To 23
+        If Data.mock[Data.player(), i] = "*" Then
+            pb[0, i].Picture = Picture["img/no.png"]
+            For j = 1 To 6
+                pb[j, i].Picture = Picture["img/empty.png"]
+            Next
+        Endif
+
+        Data.toggleOpponent()
+        bottomRow[i].Picture = Picture[IIf(Data.mock[Data.player(), i] = "*", "img/no.png", "img/guess.png")]
+        Data.toggleOpponent()
+    Next
+End
+
+
+'--------------
+' direct guess
+'--------------
+Public Sub Button25_Click()
+    Dim i As Byte
+    Dim result As Byte
+
+    result = Message.Question("You have chosen the direct guess option. Do you want to continue?", "Yes", "No")
+
+    If result = 1 Then
+        For i = 0 To 23
+            If Data.mock[Data.player(), i] <> "*" Then
+                buttons[i].Enabled = True
+            Endif
+        Next
+        MenuButton1.Visible = False
+        MenuButton1.Text = "Traits"
+        Button25.Enabled = False
+        Button27.Visible = False
+        Message.Info("Ready. Choose a character by pressing their name.", "Ok")
+    Endif
+End
+
+Public Sub MenuClick3(i As Byte)
+    Message.Info("Player " & (Data.player() + 1) & If(Data.hidden[Data.opponentIndex()] = i, " has won.", " has lost."), "Ok")
+    Data.Close()
+    Start.Close()
+    Lander.Close()
+    HiddenCharacters.Close()
+    Board.Close()
+End
+
+Public Sub Button1_Click()
+    MenuClick3(0)
+End
+Public Sub Button2_Click()
+    MenuClick3(1)
+End
+Public Sub Button3_Click()
+    MenuClick3(2)
+End
+Public Sub Button4_Click()
+    MenuClick3(3)
+End
+Public Sub Button5_Click()
+    MenuClick3(4)
+End
+Public Sub Button6_Click()
+    MenuClick3(5)
+End
+Public Sub Button7_Click()
+    MenuClick3(6)
+End
+Public Sub Button8_Click()
+    MenuClick3(7)
+End
+Public Sub Button9_Click()
+    MenuClick3(8)
+End
+Public Sub Button10_Click()
+    MenuClick3(9)
+End
+Public Sub Button11_Click()
+    MenuClick3(10)
+End
+Public Sub Button12_Click()
+    MenuClick3(11)
+End
+Public Sub Button13_Click()
+    MenuClick3(12)
+End
+Public Sub Button14_Click()
+    MenuClick3(13)
+End
+Public Sub Button15_Click()
+    MenuClick3(14)
+End
+Public Sub Button16_Click()
+    MenuClick3(15)
+End
+Public Sub Button17_Click()
+    MenuClick3(16)
+End
+Public Sub Button18_Click()
+    MenuClick3(17)
+End
+Public Sub Button19_Click()
+    MenuClick3(18)
+End
+Public Sub Button20_Click()
+    MenuClick3(19)
+End
+Public Sub Button21_Click()
+    MenuClick3(20)
+End
+Public Sub Button22_Click()
+    MenuClick3(21)
+End
+Public Sub Button23_Click()
+    MenuClick3(22)
+End
+Public Sub Button24_Click()
+    MenuClick3(23)
+End
+
+
+'----------
+' end game
+'----------
+Public Sub Button26_Click()
+    Message.Info("Player " & (Data.player() + 1) & " has ended the game.", "Ok")
+    Data.Close()
+    Start.Close()
+    Lander.Close()
+    HiddenCharacters.Close()
+    Board.Close()
+End
+
+
+'----------
+' continue
+'----------
+Public Sub Button27_Click()
+    Me.Hide()
+    Data.toggleOpponent()
+    Start.Show()
+End
+
+
+'---------------
+' object arrays
+'---------------
+Public Sub initArrays()
+    ' button objects
+    buttons[0] = Button1
+    buttons[1] = Button2
+    buttons[2] = Button3
+    buttons[3] = Button4
+    buttons[4] = Button5
+    buttons[5] = Button6
+    buttons[6] = Button7
+    buttons[7] = Button8
+    buttons[8] = Button9
+    buttons[9] = Button10
+    buttons[10] = Button11
+    buttons[11] = Button12
+    buttons[12] = Button13
+    buttons[13] = Button14
+    buttons[14] = Button15
+    buttons[15] = Button16
+    buttons[16] = Button17
+    buttons[17] = Button18
+    buttons[18] = Button19
+    buttons[19] = Button20
+    buttons[20] = Button21
+    buttons[21] = Button22
+    buttons[22] = Button23
+    buttons[23] = Button24
+
+
+    ' menu objects
+    menus1[0, 0] = trait00
+    menus1[0, 1] = trait01
+    menus1[0, 2] = trait02
+    menus1[1, 0] = trait10
+    menus1[1, 1] = trait11
+    menus1[1, 2] = trait12
+    menus1[1, 3] = trait13
+    menus1[2, 0] = trait20
+    menus1[2, 1] = trait21
+    menus1[2, 2] = trait22
+    menus1[2, 3] = trait23
+    menus1[3, 0] = trait30
+    menus1[3, 1] = trait31
+    menus1[3, 2] = trait32
+    menus1[4, 0] = trait40
+    menus1[4, 1] = trait41
+    menus1[4, 2] = trait42
+    menus1[4, 3] = trait43
+    menus1[5, 0] = trait50
+    menus1[5, 1] = trait51
+    menus1[5, 2] = trait52
+    menus1[5, 3] = trait53
+    menus1[6, 0] = trait60
+    menus1[6, 1] = trait61
+    menus1[6, 2] = trait62
+    menus1[6, 3] = trait63
+    menus1[7, 0] = trait70
+    menus1[7, 1] = trait71
+    menus1[7, 2] = trait72
+    menus1[7, 3] = trait73
+    menus1[8, 0] = trait80
+    menus1[8, 1] = trait81
+    menus1[8, 2] = trait82
+    menus1[8, 3] = trait83
+    menus1[9, 0] = trait90
+    menus1[9, 1] = trait91
+    menus1[9, 2] = trait92
+    menus1[9, 3] = trait93
+
+    menus2[0] = op0
+    menus2[1] = op1
+    menus2[2] = op2
+    menus2[3] = op3
+    menus2[4] = op4
+    menus2[5] = op5
+    menus2[6] = op6
+    menus2[7] = op7
+    menus2[8] = op8
+    menus2[9] = op9
+
+
+    ' picturebox objects
+
+    ' skin
+    pb[0, 0] = skin1
+    pb[0, 1] = skin2
+    pb[0, 2] = skin3
+    pb[0, 3] = skin4
+    pb[0, 4] = skin5
+    pb[0, 5] = skin6
+    pb[0, 6] = skin7
+    pb[0, 7] = skin8
+    pb[0, 8] = skin9
+    pb[0, 9] = skin10
+    pb[0, 10] = skin11
+    pb[0, 11] = skin12
+    pb[0, 12] = skin13
+    pb[0, 13] = skin14
+    pb[0, 14] = skin15
+    pb[0, 15] = skin16
+    pb[0, 16] = skin17
+    pb[0, 17] = skin18
+    pb[0, 18] = skin19
+    pb[0, 19] = skin20
+    pb[0, 20] = skin21
+    pb[0, 21] = skin22
+    pb[0, 22] = skin23
+    pb[0, 23] = skin24
+    pb[0, 24] = skin25
+
+    ' outfit
+    pb[1, 0] = outfit1
+    pb[1, 1] = outfit2
+    pb[1, 2] = outfit3
+    pb[1, 3] = outfit4
+    pb[1, 4] = outfit5
+    pb[1, 5] = outfit6
+    pb[1, 6] = outfit7
+    pb[1, 7] = outfit8
+    pb[1, 8] = outfit9
+    pb[1, 9] = outfit10
+    pb[1, 10] = outfit11
+    pb[1, 11] = outfit12
+    pb[1, 12] = outfit13
+    pb[1, 13] = outfit14
+    pb[1, 14] = outfit15
+    pb[1, 15] = outfit16
+    pb[1, 16] = outfit17
+    pb[1, 17] = outfit18
+    pb[1, 18] = outfit19
+    pb[1, 19] = outfit20
+    pb[1, 20] = outfit21
+    pb[1, 21] = outfit22
+    pb[1, 22] = outfit23
+    pb[1, 23] = outfit24
+    pb[1, 24] = outfit25
+
+    ' eyes
+    pb[2, 0] = eyes1
+    pb[2, 1] = eyes2
+    pb[2, 2] = eyes3
+    pb[2, 3] = eyes4
+    pb[2, 4] = eyes5
+    pb[2, 5] = eyes6
+    pb[2, 6] = eyes7
+    pb[2, 7] = eyes8
+    pb[2, 8] = eyes9
+    pb[2, 9] = eyes10
+    pb[2, 10] = eyes11
+    pb[2, 11] = eyes12
+    pb[2, 12] = eyes13
+    pb[2, 13] = eyes14
+    pb[2, 14] = eyes15
+    pb[2, 15] = eyes16
+    pb[2, 16] = eyes17
+    pb[2, 17] = eyes18
+    pb[2, 18] = eyes19
+    pb[2, 19] = eyes20
+    pb[2, 20] = eyes21
+    pb[2, 21] = eyes22
+    pb[2, 22] = eyes23
+    pb[2, 23] = eyes24
+    pb[2, 24] = eyes25
+
+    ' freckles
+    pb[3, 0] = freckles1
+    pb[3, 1] = freckles2
+    pb[3, 2] = freckles3
+    pb[3, 3] = freckles4
+    pb[3, 4] = freckles5
+    pb[3, 5] = freckles6
+    pb[3, 6] = freckles7
+    pb[3, 7] = freckles8
+    pb[3, 8] = freckles9
+    pb[3, 9] = freckles10
+    pb[3, 10] = freckles11
+    pb[3, 11] = freckles12
+    pb[3, 12] = freckles13
+    pb[3, 13] = freckles14
+    pb[3, 14] = freckles15
+    pb[3, 15] = freckles16
+    pb[3, 16] = freckles17
+    pb[3, 17] = freckles18
+    pb[3, 18] = freckles19
+    pb[3, 19] = freckles20
+    pb[3, 20] = freckles21
+    pb[3, 21] = freckles22
+    pb[3, 22] = freckles23
+    pb[3, 23] = freckles24
+    pb[3, 24] = freckles25
+
+    ' features
+    pb[4, 0] = features1
+    pb[4, 1] = features2
+    pb[4, 2] = features3
+    pb[4, 3] = features4
+    pb[4, 4] = features5
+    pb[4, 5] = features6
+    pb[4, 6] = features7
+    pb[4, 7] = features8
+    pb[4, 8] = features9
+    pb[4, 9] = features10
+    pb[4, 10] = features11
+    pb[4, 11] = features12
+    pb[4, 12] = features13
+    pb[4, 13] = features14
+    pb[4, 14] = features15
+    pb[4, 15] = features16
+    pb[4, 16] = features17
+    pb[4, 17] = features18
+    pb[4, 18] = features19
+    pb[4, 19] = features20
+    pb[4, 20] = features21
+    pb[4, 21] = features22
+    pb[4, 22] = features23
+    pb[4, 23] = features24
+    pb[4, 24] = features25
+
+    ' hair
+    pb[5, 0] = hair1
+    pb[5, 1] = hair2
+    pb[5, 2] = hair3
+    pb[5, 3] = hair4
+    pb[5, 4] = hair5
+    pb[5, 5] = hair6
+    pb[5, 6] = hair7
+    pb[5, 7] = hair8
+    pb[5, 8] = hair9
+    pb[5, 9] = hair10
+    pb[5, 10] = hair11
+    pb[5, 11] = hair12
+    pb[5, 12] = hair13
+    pb[5, 13] = hair14
+    pb[5, 14] = hair15
+    pb[5, 15] = hair16
+    pb[5, 16] = hair17
+    pb[5, 17] = hair18
+    pb[5, 18] = hair19
+    pb[5, 19] = hair20
+    pb[5, 20] = hair21
+    pb[5, 21] = hair22
+    pb[5, 22] = hair23
+    pb[5, 23] = hair24
+    pb[5, 24] = hair25
+
+    ' accessories
+    pb[6, 0] = acc1
+    pb[6, 1] = acc2
+    pb[6, 2] = acc3
+    pb[6, 3] = acc4
+    pb[6, 4] = acc5
+    pb[6, 5] = acc6
+    pb[6, 6] = acc7
+    pb[6, 7] = acc8
+    pb[6, 8] = acc9
+    pb[6, 9] = acc10
+    pb[6, 10] = acc11
+    pb[6, 11] = acc12
+    pb[6, 12] = acc13
+    pb[6, 13] = acc14
+    pb[6, 14] = acc15
+    pb[6, 15] = acc16
+    pb[6, 16] = acc17
+    pb[6, 17] = acc18
+    pb[6, 18] = acc19
+    pb[6, 19] = acc20
+    pb[6, 20] = acc21
+    pb[6, 21] = acc22
+    pb[6, 22] = acc23
+    pb[6, 23] = acc24
+    pb[6, 24] = acc25
+
+
+    ' bottom row array
+    bottomRow[0] = info1
+    bottomRow[1] = info2
+    bottomRow[2] = info3
+    bottomRow[3] = info4
+    bottomRow[4] = info5
+    bottomRow[5] = info6
+    bottomRow[6] = info7
+    bottomRow[7] = info8
+    bottomRow[8] = info9
+    bottomRow[9] = info10
+    bottomRow[10] = info11
+    bottomRow[11] = info12
+    bottomRow[12] = info13
+    bottomRow[13] = info14
+    bottomRow[14] = info15
+    bottomRow[15] = info16
+    bottomRow[16] = info17
+    bottomRow[17] = info18
+    bottomRow[18] = info19
+    bottomRow[19] = info20
+    bottomRow[20] = info21
+    bottomRow[21] = info22
+    bottomRow[22] = info23
+    bottomRow[23] = info24
+End
+
+'---------------------
+' images and template
+'---------------------
+Public Sub setup()
+    Dim i As Byte
+
+    Button27.Visible = False
+    Button25.Enabled = True
+
+    Label4.Text = "Player " & (Data.player() + 1)
+    Label3.Text = "Score: " & (score[Data.player()] * 10)
+
+    For i = 0 To 23
+        buttons[i].Text = Data.characters[i, 10]
+        drawCharacter(i, i)
+    Next
+
+    ' hidden character
+    i = Data.hidden[Data.player()]
+    Label1.Text = Data.characters[i, 10]
+    drawCharacter(i, 24)
+End
+
+Private Sub drawCharacter(src As Byte, dest As Byte)
+    Dim k As Byte
+    Dim m As Byte
+
+    ' skin
+    For k = 1 To 3
+        If Data.characters[src, 1] = Data.attr[1, k] Then
+            pb[0, dest].Picture = Picture["img/pb1" & k & ".png"]
+            Break
+        Endif
+    Next
+
+    ' outfit
+    For k = 1 To 3
+        If Data.characters[src, 2] = Data.attr[2, k] Then
+            pb[1, dest].Picture = Picture["img/pb2" & k & ".png"]
+            Break
+        Endif
+    Next
+
+    ' eyes
+    For k = 1 To 3
+        For m = 1 To 3
+            If Data.characters[src, 3] = Data.attr[3, k] And Data.characters[src, 4] = Data.attr[4, m] Then
+                pb[2, dest].Picture = Picture["img/eyes" & k & m & ".png"]
+                Break 2
+            Endif
+        Next
+    Next
+
+    ' freckles
+    For k = 1 To 3
+        If Data.characters[src, 5] = Data.attr[5, k] Then
+            pb[3, dest].Picture = IIf(k = 3, Picture["img/empty.png"], Picture["img/pb5" & k & ".png"])
+            Break
+        Endif
+    Next
+
+    ' features
+    For k = 1 To 3
+        If Data.characters[src, 6] = Data.attr[6, k] Then
+            pb[4, dest].Picture = IIf(k = 3, Picture["img/empty.png"], Picture["img/pb6" & k & ".png"])
+            Break
+        Endif
+    Next
+
+    ' hair
+    If Data.characters[src, 7] = Data.attr[7, 3] Then
+        pb[5, dest].Picture = Picture["img/empty.png"]
+    Else
+        For k = 1 To 2
+            For m = 1 To 3
+                If Data.characters[src, 7] = Data.attr[7, k] And Data.characters[src, 8] = Data.attr[8, m] Then
+                    pb[5, dest].Picture = Picture["img/hair" & k & m & ".png"]
+                    Break 2
+                Endif
+            Next
+        Next
+    Endif
+
+    ' accessories
+    For k = 1 To 3
+        If Data.characters[src, 9] = Data.attr[9, k] Then
+            pb[6, dest].Picture = IIf(k = 3, Picture["img/empty.png"], Picture["img/pb9" & k & ".png"])
+            Break
+        Endif
+    Next
+End

@@ -5,161 +5,161 @@
   Visible = False
   Background = &H8491FF
   { Menu1 Menu
-    Text = ("Características")
+    Text = ("Traits")
     Visible = False
-    { car00 Menu
-      Text = ("Género")
+    { trait00 Menu
+      Text = ("Gender")
     }
-    { car10 Menu
-      Text = ("Tes de la piel")
+    { trait10 Menu
+      Text = ("Skin Tone")
     }
-    { car20 Menu
-      Text = ("Color de la ropa")
+    { trait20 Menu
+      Text = ("Clothing Color")
     }
-    { car30 Menu
-      Text = ("Forma de los ojos")
+    { trait30 Menu
+      Text = ("Eye Shape")
     }
-    { car40 Menu
-      Text = ("Color de los ojos")
+    { trait40 Menu
+      Text = ("Eye Color")
     }
-    { car50 Menu
-      Text = ("Pecas")
+    { trait50 Menu
+      Text = ("Freckles")
     }
-    { car60 Menu
-      Text = ("Rasgos faciales")
+    { trait60 Menu
+      Text = ("Facial Features")
     }
-    { car70 Menu
-      Text = ("Tipo de cabello")
+    { trait70 Menu
+      Text = ("Hair Type")
     }
-    { car80 Menu
-      Text = ("Color de cabello")
+    { trait80 Menu
+      Text = ("Hair Color")
     }
-    { car90 Menu
-      Text = ("Accesorios")
+    { trait90 Menu
+      Text = ("Accessories")
     }
   }
   { op0 Menu
-    Text = ("Género")
+    Text = ("Gender")
     Visible = False
-    { car01 Menu
-      Text = ("Hombre")
+    { trait01 Menu
+      Text = ("Male")
     }
-    { car02 Menu
-      Text = ("Mujer")
+    { trait02 Menu
+      Text = ("Female")
     }
   }
   { op1 Menu
-    Text = ("Tes de la piel")
+    Text = ("Skin Tone")
     Visible = False
-    { car11 Menu
-      Text = ("Blanca")
+    { trait11 Menu
+      Text = ("Light")
     }
-    { car12 Menu
-      Text = ("Negra")
+    { trait12 Menu
+      Text = ("Dark")
     }
-    { car13 Menu
-      Text = ("Amarilla")
+    { trait13 Menu
+      Text = ("Tan")
     }
   }
   { op2 Menu
-    Text = ("Color de la ropa")
+    Text = ("Clothing Color")
     Visible = False
-    { car21 Menu
-      Text = ("Rojo")
+    { trait21 Menu
+      Text = ("Red")
     }
-    { car22 Menu
-      Text = ("Azul")
+    { trait22 Menu
+      Text = ("Blue")
     }
-    { car23 Menu
-      Text = ("Negro")
+    { trait23 Menu
+      Text = ("Black")
     }
   }
   { op3 Menu
-    Text = ("Forma de los ojos")
+    Text = ("Eye Shape")
     Visible = False
-    { car31 Menu
-      Text = ("Redondos")
+    { trait31 Menu
+      Text = ("Round")
     }
-    { car32 Menu
-      Text = ("Cuadrados")
+    { trait32 Menu
+      Text = ("Narrow")
     }
   }
   { op4 Menu
-    Text = ("Color de los ojos")
+    Text = ("Eye Color")
     Visible = False
-    { car41 Menu
-      Text = ("Azul")
+    { trait41 Menu
+      Text = ("Blue")
     }
-    { car42 Menu
-      Text = ("Verde")
+    { trait42 Menu
+      Text = ("Green")
     }
-    { car43 Menu
-      Text = ("Cafe")
+    { trait43 Menu
+      Text = ("Brown")
     }
   }
   { op5 Menu
-    Text = ("Pecas")
+    Text = ("Freckles")
     Visible = False
-    { car51 Menu
-      Text = ("Pocas")
+    { trait51 Menu
+      Text = ("Few")
     }
-    { car52 Menu
-      Text = ("Muchas")
+    { trait52 Menu
+      Text = ("Many")
     }
-    { car53 Menu
-      Text = ("Ninguna")
+    { trait53 Menu
+      Text = ("None")
     }
   }
   { op6 Menu
-    Text = ("Rasgos faciales")
+    Text = ("Facial Features")
     Visible = False
-    { car61 Menu
-      Text = ("Barba")
+    { trait61 Menu
+      Text = ("Beard")
     }
-    { car62 Menu
-      Text = ("Bigote")
+    { trait62 Menu
+      Text = ("Mustache")
     }
-    { car63 Menu
-      Text = ("Ninguno")
+    { trait63 Menu
+      Text = ("None")
     }
   }
   { op7 Menu
-    Text = ("Tipo de cabello")
+    Text = ("Hair Type")
     Visible = False
-    { car71 Menu
-      Text = ("Largo")
+    { trait71 Menu
+      Text = ("Long")
     }
-    { car72 Menu
-      Text = ("Corto")
+    { trait72 Menu
+      Text = ("Short")
     }
-    { car73 Menu
-      Text = ("Rapado")
+    { trait73 Menu
+      Text = ("Shaved")
     }
   }
   { op8 Menu
-    Text = ("Color de cabello")
+    Text = ("Hair Color")
     Visible = False
-    { car81 Menu
-      Text = ("Rubio")
+    { trait81 Menu
+      Text = ("Blonde")
     }
-    { car82 Menu
-      Text = ("Castaño")
+    { trait82 Menu
+      Text = ("Brown")
     }
-    { car83 Menu
-      Text = ("Pelirrojo")
+    { trait83 Menu
+      Text = ("Red")
     }
   }
   { op9 Menu
-    Text = ("Accesorios")
+    Text = ("Accessories")
     Visible = False
-    { car91 Menu
-      Text = ("Gafas")
+    { trait91 Menu
+      Text = ("Glasses")
     }
-    { car92 Menu
-      Text = ("Sombrero")
+    { trait92 Menu
+      Text = ("Hat")
     }
-    { car93 Menu
-      Text = ("Ninguno")
+    { trait93 Menu
+      Text = ("None")
     }
   }
   { Button1 Button
@@ -367,7 +367,7 @@
     Font = Font["Bold,Italic"]
     Background = &HAA0000
     Foreground = Color.TextBackground
-    Text = ("Características")
+    Text = ("Traits")
     Menu = "Menu1"
     MenuOnly = True
   }
@@ -377,879 +377,879 @@
     Font = Font["Bold,Italic"]
     Background = &HAA0000
     Foreground = Color.TextBackground
-    Text = ("Continuar")
+    Text = ("Continue")
   }
   { Button25 Button
     MoveScaled(12,55,21.1429,5.1429)
     Background = &HD37E7E
     Foreground = Color.TextBackground
-    Text = ("Adivinanza directa")
+    Text = ("Direct Guess")
   }
   { Button26 Button
     MoveScaled(12,47,21.1429,5.1429)
     Background = &HD37E7E
     Foreground = Color.TextBackground
-    Text = ("Finalizar juego")
+    Text = ("End Game")
   }
-  { piel1 PictureBox
+  { skin1 PictureBox
     MoveScaled(38,10.1429,17.1429,17.1429)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { piel2 PictureBox
+  { skin2 PictureBox
     MoveScaled(55.1429,10.1429,17.1429,17.1429)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { piel3 PictureBox
+  { skin3 PictureBox
     MoveScaled(72.2857,10.1429,17.1429,17.1429)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { piel4 PictureBox
+  { skin4 PictureBox
     MoveScaled(89.4286,10.1429,17.1429,17.1429)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { piel5 PictureBox
+  { skin5 PictureBox
     MoveScaled(106.5714,10.1429,17.1429,17.1429)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { piel6 PictureBox
+  { skin6 PictureBox
     MoveScaled(123.7143,10.1429,17.1429,17.1429)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { piel7 PictureBox
+  { skin7 PictureBox
     MoveScaled(38,32.4286,17.1429,17.1429)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { piel8 PictureBox
+  { skin8 PictureBox
     MoveScaled(55.1429,32.4286,17.1429,17.1429)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { piel9 PictureBox
+  { skin9 PictureBox
     MoveScaled(72.2857,32.4286,17.1429,17.1429)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { piel10 PictureBox
+  { skin10 PictureBox
     MoveScaled(89.4286,32.4286,17.1429,17.1429)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { piel11 PictureBox
+  { skin11 PictureBox
     MoveScaled(106.5714,32.4286,17.1429,17.1429)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { piel12 PictureBox
+  { skin12 PictureBox
     MoveScaled(123.7143,32.4286,17.1429,17.1429)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { piel13 PictureBox
+  { skin13 PictureBox
     MoveScaled(38,54.7143,17.1429,17.1429)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { piel14 PictureBox
+  { skin14 PictureBox
     MoveScaled(55.1429,54.7143,17.1429,17.1429)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { piel15 PictureBox
+  { skin15 PictureBox
     MoveScaled(72.2857,54.7143,17.1429,17.1429)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { piel16 PictureBox
+  { skin16 PictureBox
     MoveScaled(89.4286,54.7143,17.1429,17.1429)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { piel17 PictureBox
+  { skin17 PictureBox
     MoveScaled(106.5714,54.7143,17.1429,17.1429)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { piel18 PictureBox
+  { skin18 PictureBox
     MoveScaled(123.7143,54.7143,17.1429,17.1429)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { piel19 PictureBox
+  { skin19 PictureBox
     MoveScaled(38,77,17.1429,17.1429)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { piel20 PictureBox
+  { skin20 PictureBox
     MoveScaled(55.1429,77,17.1429,17.1429)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { piel21 PictureBox
+  { skin21 PictureBox
     MoveScaled(72.2857,77,17.1429,17.1429)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { piel22 PictureBox
+  { skin22 PictureBox
     MoveScaled(89.4286,77,17.1429,17.1429)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { piel23 PictureBox
+  { skin23 PictureBox
     MoveScaled(106.5714,77,17.1429,17.1429)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { piel24 PictureBox
+  { skin24 PictureBox
     MoveScaled(123.7143,77,17.1429,17.1429)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { ropa1 PictureBox
+  { outfit1 PictureBox
     MoveScaled(38,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ropa2 PictureBox
+  { outfit2 PictureBox
     MoveScaled(55.1429,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ropa3 PictureBox
+  { outfit3 PictureBox
     MoveScaled(72.2857,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ropa4 PictureBox
+  { outfit4 PictureBox
     MoveScaled(89.4286,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ropa5 PictureBox
+  { outfit5 PictureBox
     MoveScaled(106.5714,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ropa6 PictureBox
+  { outfit6 PictureBox
     MoveScaled(123.7143,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ropa7 PictureBox
+  { outfit7 PictureBox
     MoveScaled(38,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ropa8 PictureBox
+  { outfit8 PictureBox
     MoveScaled(55.1429,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ropa9 PictureBox
+  { outfit9 PictureBox
     MoveScaled(72.2857,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ropa10 PictureBox
+  { outfit10 PictureBox
     MoveScaled(89.4286,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ropa11 PictureBox
+  { outfit11 PictureBox
     MoveScaled(106.5714,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ropa12 PictureBox
+  { outfit12 PictureBox
     MoveScaled(123.7143,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ropa13 PictureBox
+  { outfit13 PictureBox
     MoveScaled(38,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ropa14 PictureBox
+  { outfit14 PictureBox
     MoveScaled(55.1429,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ropa15 PictureBox
+  { outfit15 PictureBox
     MoveScaled(72.2857,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ropa16 PictureBox
+  { outfit16 PictureBox
     MoveScaled(89.4286,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ropa17 PictureBox
+  { outfit17 PictureBox
     MoveScaled(106.5714,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ropa18 PictureBox
+  { outfit18 PictureBox
     MoveScaled(123.7143,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ropa19 PictureBox
+  { outfit19 PictureBox
     MoveScaled(38,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ropa20 PictureBox
+  { outfit20 PictureBox
     MoveScaled(55.1429,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ropa21 PictureBox
+  { outfit21 PictureBox
     MoveScaled(72.2857,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ropa22 PictureBox
+  { outfit22 PictureBox
     MoveScaled(89.4286,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ropa23 PictureBox
+  { outfit23 PictureBox
     MoveScaled(106.5714,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ropa24 PictureBox
+  { outfit24 PictureBox
     MoveScaled(123.7143,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ojos1 PictureBox
+  { eyes1 PictureBox
     MoveScaled(38,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ojos2 PictureBox
+  { eyes2 PictureBox
     MoveScaled(55.1429,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ojos3 PictureBox
+  { eyes3 PictureBox
     MoveScaled(72.2857,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ojos4 PictureBox
+  { eyes4 PictureBox
     MoveScaled(89.4286,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ojos5 PictureBox
+  { eyes5 PictureBox
     MoveScaled(106.5714,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ojos6 PictureBox
+  { eyes6 PictureBox
     MoveScaled(123.7143,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ojos7 PictureBox
+  { eyes7 PictureBox
     MoveScaled(38,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ojos8 PictureBox
+  { eyes8 PictureBox
     MoveScaled(55.1429,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ojos9 PictureBox
+  { eyes9 PictureBox
     MoveScaled(72.2857,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ojos10 PictureBox
+  { eyes10 PictureBox
     MoveScaled(89.4286,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ojos11 PictureBox
+  { eyes11 PictureBox
     MoveScaled(106.5714,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ojos12 PictureBox
+  { eyes12 PictureBox
     MoveScaled(123.7143,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ojos13 PictureBox
+  { eyes13 PictureBox
     MoveScaled(38,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ojos14 PictureBox
+  { eyes14 PictureBox
     MoveScaled(55.1429,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ojos15 PictureBox
+  { eyes15 PictureBox
     MoveScaled(72.2857,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ojos16 PictureBox
+  { eyes16 PictureBox
     MoveScaled(89.4286,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ojos17 PictureBox
+  { eyes17 PictureBox
     MoveScaled(106.5714,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ojos18 PictureBox
+  { eyes18 PictureBox
     MoveScaled(123.7143,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ojos19 PictureBox
+  { eyes19 PictureBox
     MoveScaled(38,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ojos20 PictureBox
+  { eyes20 PictureBox
     MoveScaled(55.1429,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ojos21 PictureBox
+  { eyes21 PictureBox
     MoveScaled(72.2857,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ojos22 PictureBox
+  { eyes22 PictureBox
     MoveScaled(89.4286,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ojos23 PictureBox
+  { eyes23 PictureBox
     MoveScaled(106.5714,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { ojos24 PictureBox
+  { eyes24 PictureBox
     MoveScaled(123.7143,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pecas1 PictureBox
+  { freckles1 PictureBox
     MoveScaled(38,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pecas2 PictureBox
+  { freckles2 PictureBox
     MoveScaled(55.1429,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pecas3 PictureBox
+  { freckles3 PictureBox
     MoveScaled(72.2857,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pecas4 PictureBox
+  { freckles4 PictureBox
     MoveScaled(89.4286,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pecas5 PictureBox
+  { freckles5 PictureBox
     MoveScaled(106.5714,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pecas6 PictureBox
+  { freckles6 PictureBox
     MoveScaled(123.7143,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pecas7 PictureBox
+  { freckles7 PictureBox
     MoveScaled(38,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pecas8 PictureBox
+  { freckles8 PictureBox
     MoveScaled(55.1429,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pecas9 PictureBox
+  { freckles9 PictureBox
     MoveScaled(72.2857,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pecas10 PictureBox
+  { freckles10 PictureBox
     MoveScaled(89.4286,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pecas11 PictureBox
+  { freckles11 PictureBox
     MoveScaled(106.5714,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pecas12 PictureBox
+  { freckles12 PictureBox
     MoveScaled(123.7143,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pecas13 PictureBox
+  { freckles13 PictureBox
     MoveScaled(38,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pecas14 PictureBox
+  { freckles14 PictureBox
     MoveScaled(55.1429,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pecas15 PictureBox
+  { freckles15 PictureBox
     MoveScaled(72.2857,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pecas16 PictureBox
+  { freckles16 PictureBox
     MoveScaled(89.4286,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pecas17 PictureBox
+  { freckles17 PictureBox
     MoveScaled(106.5714,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pecas18 PictureBox
+  { freckles18 PictureBox
     MoveScaled(123.7143,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pecas19 PictureBox
+  { freckles19 PictureBox
     MoveScaled(38,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pecas20 PictureBox
+  { freckles20 PictureBox
     MoveScaled(55.1429,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pecas21 PictureBox
+  { freckles21 PictureBox
     MoveScaled(72.2857,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pecas22 PictureBox
+  { freckles22 PictureBox
     MoveScaled(89.4286,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pecas23 PictureBox
+  { freckles23 PictureBox
     MoveScaled(106.5714,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pecas24 PictureBox
+  { freckles24 PictureBox
     MoveScaled(123.7143,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { rasgos1 PictureBox
+  { features1 PictureBox
     MoveScaled(38,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { rasgos2 PictureBox
+  { features2 PictureBox
     MoveScaled(55.1429,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { rasgos3 PictureBox
+  { features3 PictureBox
     MoveScaled(72.2857,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { rasgos4 PictureBox
+  { features4 PictureBox
     MoveScaled(89.4286,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { rasgos5 PictureBox
+  { features5 PictureBox
     MoveScaled(106.5714,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { rasgos6 PictureBox
+  { features6 PictureBox
     MoveScaled(123.7143,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { rasgos7 PictureBox
+  { features7 PictureBox
     MoveScaled(38,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { rasgos8 PictureBox
+  { features8 PictureBox
     MoveScaled(55.1429,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { rasgos9 PictureBox
+  { features9 PictureBox
     MoveScaled(72.2857,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { rasgos10 PictureBox
+  { features10 PictureBox
     MoveScaled(89.4286,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { rasgos11 PictureBox
+  { features11 PictureBox
     MoveScaled(106.5714,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { rasgos12 PictureBox
+  { features12 PictureBox
     MoveScaled(123.7143,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { rasgos13 PictureBox
+  { features13 PictureBox
     MoveScaled(38,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { rasgos14 PictureBox
+  { features14 PictureBox
     MoveScaled(55.1429,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { rasgos15 PictureBox
+  { features15 PictureBox
     MoveScaled(72.2857,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { rasgos16 PictureBox
+  { features16 PictureBox
     MoveScaled(89.4286,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { rasgos17 PictureBox
+  { features17 PictureBox
     MoveScaled(106.5714,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { rasgos18 PictureBox
+  { features18 PictureBox
     MoveScaled(123.7143,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { rasgos19 PictureBox
+  { features19 PictureBox
     MoveScaled(38,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { rasgos20 PictureBox
+  { features20 PictureBox
     MoveScaled(55.1429,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { rasgos21 PictureBox
+  { features21 PictureBox
     MoveScaled(72.2857,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { rasgos22 PictureBox
+  { features22 PictureBox
     MoveScaled(89.4286,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { rasgos23 PictureBox
+  { features23 PictureBox
     MoveScaled(106.5714,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { rasgos24 PictureBox
+  { features24 PictureBox
     MoveScaled(123.7143,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pelo1 PictureBox
+  { hair1 PictureBox
     MoveScaled(38,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pelo2 PictureBox
+  { hair2 PictureBox
     MoveScaled(55.1429,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pelo3 PictureBox
+  { hair3 PictureBox
     MoveScaled(72.2857,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pelo4 PictureBox
+  { hair4 PictureBox
     MoveScaled(89.4286,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pelo5 PictureBox
+  { hair5 PictureBox
     MoveScaled(106.5714,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pelo6 PictureBox
+  { hair6 PictureBox
     MoveScaled(123.7143,10.1429,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pelo7 PictureBox
+  { hair7 PictureBox
     MoveScaled(38,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pelo8 PictureBox
+  { hair8 PictureBox
     MoveScaled(55.1429,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pelo9 PictureBox
+  { hair9 PictureBox
     MoveScaled(72.2857,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pelo10 PictureBox
+  { hair10 PictureBox
     MoveScaled(89.4286,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pelo11 PictureBox
+  { hair11 PictureBox
     MoveScaled(106.5714,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pelo12 PictureBox
+  { hair12 PictureBox
     MoveScaled(123.7143,32.4286,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pelo13 PictureBox
+  { hair13 PictureBox
     MoveScaled(38,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pelo14 PictureBox
+  { hair14 PictureBox
     MoveScaled(55.1429,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pelo15 PictureBox
+  { hair15 PictureBox
     MoveScaled(72.2857,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pelo16 PictureBox
+  { hair16 PictureBox
     MoveScaled(89.4286,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pelo17 PictureBox
+  { hair17 PictureBox
     MoveScaled(106.5714,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pelo18 PictureBox
+  { hair18 PictureBox
     MoveScaled(123.7143,54.7143,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pelo19 PictureBox
+  { hair19 PictureBox
     MoveScaled(38,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pelo20 PictureBox
+  { hair20 PictureBox
     MoveScaled(55.1429,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pelo21 PictureBox
+  { hair21 PictureBox
     MoveScaled(72.2857,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pelo22 PictureBox
+  { hair22 PictureBox
     MoveScaled(89.4286,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pelo23 PictureBox
+  { hair23 PictureBox
     MoveScaled(106.5714,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
     Border = Border.Plain
   }
-  { pelo24 PictureBox
+  { hair24 PictureBox
     MoveScaled(123.7143,77,17.1429,17.1429)
     Background = Color.Transparent
     Stretch = True
@@ -1399,33 +1399,33 @@
     Stretch = True
     Border = Border.Plain
   }
-  { piel25 PictureBox
+  { skin25 PictureBox
     MoveScaled(145,24,20.5714,20.5714)
     Background = &HAA0000
     Stretch = True
     Border = Border.Plain
   }
-  { ropa25 PictureBox
+  { outfit25 PictureBox
     MoveScaled(145,24,20.5714,20.5714)
     Stretch = True
     Border = Border.Plain
   }
-  { ojos25 PictureBox
+  { eyes25 PictureBox
     MoveScaled(145,24,20.5714,20.5714)
     Stretch = True
     Border = Border.Plain
   }
-  { pecas25 PictureBox
+  { freckles25 PictureBox
     MoveScaled(145,24,20.5714,20.5714)
     Stretch = True
     Border = Border.Plain
   }
-  { rasgos25 PictureBox
+  { features25 PictureBox
     MoveScaled(145,24,20.5714,20.5714)
     Stretch = True
     Border = Border.Plain
   }
-  { pelo25 PictureBox
+  { hair25 PictureBox
     MoveScaled(145,24,20.5714,20.5714)
     Stretch = True
     Border = Border.Plain
@@ -1462,145 +1462,145 @@
     Background = Color.DarkGray
     Foreground = Color.TextBackground
   }
-  { inf1 PictureBox
+  { info1 PictureBox
     MoveScaled(145,79,3.5714,3.5714)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { inf2 PictureBox
+  { info2 PictureBox
     MoveScaled(148.5714,79,3.5714,3.5714)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { inf3 PictureBox
+  { info3 PictureBox
     MoveScaled(152.1429,79,3.5714,3.5714)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { inf4 PictureBox
+  { info4 PictureBox
     MoveScaled(155.7143,79,3.5714,3.5714)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { inf5 PictureBox
+  { info5 PictureBox
     MoveScaled(159.2857,79,3.5714,3.5714)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { inf6 PictureBox
+  { info6 PictureBox
     MoveScaled(162.8571,79,3.5714,3.5714)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { inf7 PictureBox
+  { info7 PictureBox
     MoveScaled(145,82.5714,3.5714,3.5714)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { inf8 PictureBox
+  { info8 PictureBox
     MoveScaled(148.5714,82.5714,3.5714,3.5714)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { inf9 PictureBox
+  { info9 PictureBox
     MoveScaled(152.1429,82.5714,3.5714,3.5714)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { inf10 PictureBox
+  { info10 PictureBox
     MoveScaled(155.7143,82.5714,3.5714,3.5714)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { inf11 PictureBox
+  { info11 PictureBox
     MoveScaled(159.2857,82.5714,3.5714,3.5714)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { inf12 PictureBox
+  { info12 PictureBox
     MoveScaled(162.8571,82.5714,3.5714,3.5714)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { inf13 PictureBox
+  { info13 PictureBox
     MoveScaled(145,86.1429,3.5714,3.5714)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { inf14 PictureBox
+  { info14 PictureBox
     MoveScaled(148.5714,86.1429,3.5714,3.5714)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { inf15 PictureBox
+  { info15 PictureBox
     MoveScaled(152.1429,86.1429,3.5714,3.5714)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { inf16 PictureBox
+  { info16 PictureBox
     MoveScaled(155.7143,86.1429,3.5714,3.5714)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { inf17 PictureBox
+  { info17 PictureBox
     MoveScaled(159.2857,86.1429,3.5714,3.5714)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { inf18 PictureBox
+  { info18 PictureBox
     MoveScaled(162.8571,86.1429,3.5714,3.5714)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { inf19 PictureBox
+  { info19 PictureBox
     MoveScaled(145,89.7143,3.5714,3.5714)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { inf20 PictureBox
+  { info20 PictureBox
     MoveScaled(148.5714,89.7143,3.5714,3.5714)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { inf21 PictureBox
+  { info21 PictureBox
     MoveScaled(152.1429,89.7143,3.5714,3.5714)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { inf22 PictureBox
+  { info22 PictureBox
     MoveScaled(155.7143,89.7143,3.5714,3.5714)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { inf23 PictureBox
+  { info23 PictureBox
     MoveScaled(159.2857,89.7143,3.5714,3.5714)
     Background = Color.DarkRoyal
     Stretch = True
     Border = Border.Plain
   }
-  { inf24 PictureBox
+  { info24 PictureBox
     MoveScaled(162.8571,89.7143,3.5714,3.5714)
     Background = Color.DarkRoyal
     Stretch = True

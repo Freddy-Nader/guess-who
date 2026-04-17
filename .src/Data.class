@@ -1,206 +1,206 @@
 ' Gambas class file
 
-Public personajes[24, 11] As String             ' [personaje, caracteristicas (11 = nombre)]
-Public oculto[2] As Byte
-Public vivos[2] As Integer                      ' cuenta cuantos personajes le quedan a cada jugador
-Public mock[2, 24] As String                    ' matriz en la que se muestra cuales personajes han sido adivinados 
+Public characters[24, 11] As String             ' [character, traits (11 = name)]
+Public hidden[2] As Byte
+Public alive[2] As Integer                      ' tracks how many characters each player has left
+Public mock[2, 24] As String                    ' matrix that tracks which characters have been eliminated
 
-Public car[10, 4] As String                     ' [caracteristica, opciones]; car[i, 0] = nombre de caracteristica
-Public nombres[2, 48] As String                 ' [genero, nombre]
-Public menu[10] As String                       ' menús en 'Plantilla.form'
+Public attr[10, 4] As String                    ' [trait, options]; attr[i, 0] = trait name
+Public names[2, 48] As String                   ' [gender, name]
+Public menu[10] As String                       ' menus in 'Board.form'
 
-Public oponente As Boolean                      ' False = jugador 1; True = jugador 2
+Public opponent As Boolean                      ' False = player 1; True = player 2
 
 Public Sub Form_Open()
-    oponente = True
-    vivos[0] = 24
-    vivos[1] = 24
-    caracteristicas()
-    asignacion()
+    opponent = True
+    alive[0] = 24
+    alive[1] = 24
+    initTraits()
+    assignTraits()
 End
 
-Public Sub oponenteL() ' oponente logico
-    oponente = Not oponente
+Public Sub toggleOpponent() ' logical opponent toggle
+    opponent = Not opponent
 End
 
-Public Function oponenteN() As Byte ' oponente numérico
-    Return If(oponente, 1, 0)
+Public Function opponentIndex() As Byte ' numeric opponent index
+    Return If(opponent, 1, 0)
 End
 
 
-Public Function jugador() As Byte
-    Return If(oponente, 0, 1)
+Public Function player() As Byte
+    Return If(opponent, 0, 1)
 End
 
 
 '-----------------------------------
-' caracteristicas de los personajes
+' character traits
 '-----------------------------------
-Public caracteristicas() 
-    ' caracteristicas
-    
-    ' genero
-    car[0, 0] = "Género"
-    car[0, 1] = "Hombre"
-    car[0, 2] = "Mujer"
-    
-    ' piel
-    car[1, 0] = "Tes de la piel"
-    car[1, 1] = "Blanca"
-    car[1, 2] = "Negra"
-    car[1, 3] = "Amarilla"
-    
-    ' ropa
-    car[2, 0] = "Color de la ropa"
-    car[2, 1] = "Rojo"
-    car[2, 2] = "Azul"
-    car[2, 3] = "Negro"
-    
-    ' forma de los ojos
-    car[3, 0] = "Forma de los ojos"
-    car[3, 1] = "Redondos"
-    car[3, 2] = "Cuadrados"
-    car[3, 3] = "Cuadrados"
-    
-    ' color de los ojos
-    car[4, 0] = "Color de los ojos"
-    car[4, 1] = "Azul"
-    car[4, 2] = "Verde"
-    car[4, 3] = "Cafe"
-    
-    ' pecas
-    car[5, 0] = "Pecas"
-    car[5, 1] = "Pocas"
-    car[5, 2] = "Muchas"
-    car[5, 3] = "Ninguna"
-    
-    ' rasgos faciales
-    car[6, 0] = "Rasgos faciales"
-    car[6, 1] = "Barba"
-    car[6, 2] = "Bigote"
-    car[6, 3] = "Ninguno"
-    
-    ' tipo de cabello
-    car[7, 0] = "Tipo de cabello"
-    car[7, 1] = "Largo"
-    car[7, 2] = "Corto"
-    car[7, 3] = "Rapado"
-    
-    ' color de cabello
-    car[8, 0] = "Color de cabello"
-    car[8, 1] = "Rubio"
-    car[8, 2] = "Castaño"
-    car[8, 3] = "Pelirrojo"
-    
-    ' uso de accesorios
-    car[9, 0] = "Accesorios"
-    car[9, 1] = "Gafas"
-    car[9, 2] = "Sombrero"
-    car[9, 3] = "Ninguno"
+Public initTraits()
+    ' traits
 
-    ' nombres
+    ' gender
+    attr[0, 0] = "Gender"
+    attr[0, 1] = "Male"
+    attr[0, 2] = "Female"
 
-    ' nombres de hombres
-    nombres[0, 0] = "Juan"
-    nombres[0, 1] = "Pedro"
-    nombres[0, 2] = "Carlos"
-    nombres[0, 3] = "Luis"
-    nombres[0, 4] = "Miguel"
-    nombres[0, 5] = "Javier"
-    nombres[0, 6] = "Alejandro"
-    nombres[0, 7] = "José"
-    nombres[0, 8] = "Antonio"
-    nombres[0, 9] = "Francisco"
-    nombres[0, 10] = "Manuel"
-    nombres[0, 11] = "Jorge"
-    nombres[0, 12] = "Daniel"
-    nombres[0, 13] = "David"
-    nombres[0, 14] = "Fernando"
-    nombres[0, 15] = "Andrés"
-    nombres[0, 16] = "Pablo"
-    nombres[0, 17] = "Raúl"
-    nombres[0, 18] = "Roberto"
-    nombres[0, 19] = "Alberto"
-    nombres[0, 20] = "Diego"
-    nombres[0, 21] = "Sergio"
-    nombres[0, 22] = "Joaquín"
-    nombres[0, 23] = "Guillermo"
-    nombres[0, 24] = "Ricardo"
-    nombres[0, 25] = "Mario"
-    nombres[0, 26] = "Enrique"
-    nombres[0, 27] = "Emilio"
-    nombres[0, 28] = "Héctor"
-    nombres[0, 29] = "Federico"
-    nombres[0, 30] = "Gabriel"
-    nombres[0, 31] = "Ángel"
-    nombres[0, 32] = "Ignacio"
-    nombres[0, 33] = "Victor"
-    nombres[0, 34] = "Marcos"
-    nombres[0, 35] = "César"
-    nombres[0, 36] = "Gonzalo"
-    nombres[0, 37] = "Adrián"
-    nombres[0, 38] = "Damian"
-    nombres[0, 39] = "Eduardo"
-    nombres[0, 40] = "Tomás"
-    nombres[0, 41] = "Samuel"
-    nombres[0, 42] = "Israel"
-    nombres[0, 43] = "Hugo"
-    nombres[0, 44] = "Álvaro"
-    nombres[0, 45] = "Martín"
-    nombres[0, 46] = "Mateo"
-    nombres[0, 47] = "Oscar"
+    ' skin tone
+    attr[1, 0] = "Skin Tone"
+    attr[1, 1] = "Light"
+    attr[1, 2] = "Dark"
+    attr[1, 3] = "Yellow"
 
-    ' nombres de mujeres
-    nombres[1, 0] = "María"
-    nombres[1, 1] = "Laura"
-    nombres[1, 2] = "Ana"
-    nombres[1, 3] = "Sofía"
-    nombres[1, 4] = "Isabel"
-    nombres[1, 5] = "Carmen"
-    nombres[1, 6] = "Elena"
-    nombres[1, 7] = "Patricia"
-    nombres[1, 8] = "Paula"
-    nombres[1, 9] = "Silvia"
-    nombres[1, 10] = "Marta"
-    nombres[1, 11] = "Lucía"
-    nombres[1, 12] = "Teresa"
-    nombres[1, 13] = "Rosa"
-    nombres[1, 14] = "Beatriz"
-    nombres[1, 15] = "Mónica"
-    nombres[1, 16] = "Natalia"
-    nombres[1, 17] = "Diana"
-    nombres[1, 18] = "Eva"
-    nombres[1, 19] = "Adriana"
-    nombres[1, 20] = "Lorena"
-    nombres[1, 21] = "Verónica"
-    nombres[1, 22] = "Inés"
-    nombres[1, 23] = "Victoria"
-    nombres[1, 24] = "Carolina"
-    nombres[1, 25] = "Sara"
-    nombres[1, 26] = "Luisa"
-    nombres[1, 27] = "Andrea"
-    nombres[1, 28] = "Cristina"
-    nombres[1, 29] = "Clara"
-    nombres[1, 30] = "Rocío"
-    nombres[1, 31] = "Miriam"
-    nombres[1, 32] = "Angela"
-    nombres[1, 33] = "Lidia"
-    nombres[1, 34] = "Alba"
-    nombres[1, 35] = "Nuria"
-    nombres[1, 36] = "Esther"
-    nombres[1, 37] = "Pilar"
-    nombres[1, 38] = "Monica"
-    nombres[1, 39] = "Julia"
-    nombres[1, 40] = "Marina"
-    nombres[1, 41] = "Nerea"
-    nombres[1, 42] = "Celia"
-    nombres[1, 43] = "Patricia"
-    nombres[1, 44] = "Alicia"
-    nombres[1, 45] = "Lara"
-    nombres[1, 46] = "Virginia"
-    nombres[1, 47] = "Elsa"
-    
-    ' nombres de menús
+    ' clothing color
+    attr[2, 0] = "Clothing Color"
+    attr[2, 1] = "Red"
+    attr[2, 2] = "Blue"
+    attr[2, 3] = "Black"
+
+    ' eye shape
+    attr[3, 0] = "Eye Shape"
+    attr[3, 1] = "Round"
+    attr[3, 2] = "Square"
+    attr[3, 3] = "Square"
+
+    ' eye color
+    attr[4, 0] = "Eye Color"
+    attr[4, 1] = "Blue"
+    attr[4, 2] = "Green"
+    attr[4, 3] = "Brown"
+
+    ' freckles
+    attr[5, 0] = "Freckles"
+    attr[5, 1] = "Few"
+    attr[5, 2] = "Many"
+    attr[5, 3] = "None"
+
+    ' facial features
+    attr[6, 0] = "Facial Features"
+    attr[6, 1] = "Beard"
+    attr[6, 2] = "Mustache"
+    attr[6, 3] = "None"
+
+    ' hair type
+    attr[7, 0] = "Hair Type"
+    attr[7, 1] = "Long"
+    attr[7, 2] = "Short"
+    attr[7, 3] = "Shaved"
+
+    ' hair color
+    attr[8, 0] = "Hair Color"
+    attr[8, 1] = "Blonde"
+    attr[8, 2] = "Brown"
+    attr[8, 3] = "Red"
+
+    ' accessories
+    attr[9, 0] = "Accessories"
+    attr[9, 1] = "Glasses"
+    attr[9, 2] = "Hat"
+    attr[9, 3] = "None"
+
+    ' names
+
+    ' male names
+    names[0, 0] = "John"
+    names[0, 1] = "Peter"
+    names[0, 2] = "Charles"
+    names[0, 3] = "Louis"
+    names[0, 4] = "Michael"
+    names[0, 5] = "Xavier"
+    names[0, 6] = "Alexander"
+    names[0, 7] = "Joseph"
+    names[0, 8] = "Anthony"
+    names[0, 9] = "Francis"
+    names[0, 10] = "Manny"
+    names[0, 11] = "George"
+    names[0, 12] = "Daniel"
+    names[0, 13] = "David"
+    names[0, 14] = "Ferdinand"
+    names[0, 15] = "Andrew"
+    names[0, 16] = "Paul"
+    names[0, 17] = "Ralph"
+    names[0, 18] = "Robert"
+    names[0, 19] = "Albert"
+    names[0, 20] = "James"
+    names[0, 21] = "Steven"
+    names[0, 22] = "Joachim"
+    names[0, 23] = "William"
+    names[0, 24] = "Richard"
+    names[0, 25] = "Mario"
+    names[0, 26] = "Henry"
+    names[0, 27] = "Emil"
+    names[0, 28] = "Hector"
+    names[0, 29] = "Frederick"
+    names[0, 30] = "Gabriel"
+    names[0, 31] = "Angel"
+    names[0, 32] = "Ignatius"
+    names[0, 33] = "Victor"
+    names[0, 34] = "Mark"
+    names[0, 35] = "Caesar"
+    names[0, 36] = "Gary"
+    names[0, 37] = "Adrian"
+    names[0, 38] = "Damian"
+    names[0, 39] = "Edward"
+    names[0, 40] = "Thomas"
+    names[0, 41] = "Samuel"
+    names[0, 42] = "Israel"
+    names[0, 43] = "Hugh"
+    names[0, 44] = "Alan"
+    names[0, 45] = "Martin"
+    names[0, 46] = "Matthew"
+    names[0, 47] = "Oscar"
+
+    ' female names
+    names[1, 0] = "Mary"
+    names[1, 1] = "Laura"
+    names[1, 2] = "Anne"
+    names[1, 3] = "Sophia"
+    names[1, 4] = "Elizabeth"
+    names[1, 5] = "Carmen"
+    names[1, 6] = "Helen"
+    names[1, 7] = "Patricia"
+    names[1, 8] = "Paula"
+    names[1, 9] = "Sylvia"
+    names[1, 10] = "Martha"
+    names[1, 11] = "Lucy"
+    names[1, 12] = "Theresa"
+    names[1, 13] = "Rose"
+    names[1, 14] = "Beatrice"
+    names[1, 15] = "Monica"
+    names[1, 16] = "Natalie"
+    names[1, 17] = "Diana"
+    names[1, 18] = "Eve"
+    names[1, 19] = "Adriana"
+    names[1, 20] = "Lorraine"
+    names[1, 21] = "Veronica"
+    names[1, 22] = "Agnes"
+    names[1, 23] = "Victoria"
+    names[1, 24] = "Caroline"
+    names[1, 25] = "Sarah"
+    names[1, 26] = "Louise"
+    names[1, 27] = "Andrea"
+    names[1, 28] = "Christina"
+    names[1, 29] = "Claire"
+    names[1, 30] = "Rachel"
+    names[1, 31] = "Miriam"
+    names[1, 32] = "Angela"
+    names[1, 33] = "Lydia"
+    names[1, 34] = "Dawn"
+    names[1, 35] = "Nora"
+    names[1, 36] = "Esther"
+    names[1, 37] = "Penelope"
+    names[1, 38] = "Molly"
+    names[1, 39] = "Julia"
+    names[1, 40] = "Marina"
+    names[1, 41] = "Nicole"
+    names[1, 42] = "Celia"
+    names[1, 43] = "Pamela"
+    names[1, 44] = "Alice"
+    names[1, 45] = "Lara"
+    names[1, 46] = "Virginia"
+    names[1, 47] = "Elsa"
+
+    ' menu names
     menu[0] = "op0"
     menu[1] = "op1"
     menu[2] = "op2"
@@ -215,69 +215,69 @@ End
 
 
 '--------------------------------------------
-' asignacion de caracteristicas a personajes
+' assign traits to characters
 '--------------------------------------------
-Public Sub asignacion()
-    Dim i As Byte                       ' primera dimension
-    Dim j As Byte                       ' segunda dimension
-    Dim r1 As Byte                      ' para random
-    Dim r2 As Byte                      ' para random
+Public Sub assignTraits()
+    Dim i As Byte                       ' first dimension
+    Dim j As Byte                       ' second dimension
+    Dim r1 As Byte                      ' for random
+    Dim r2 As Byte                      ' for random
 
-    ' asignacion de caracteristicas
+    ' trait assignment
     For i = 0 To 23
-        ' genero
+        ' gender
         Repeat
             r1 = Int(Rnd(1, 3))
         Until r1 <> 3
-        personajes[i, 0] = car[0, r1]
-        
-        ' nombre
+        characters[i, 0] = attr[0, r1]
+
+        ' name
         Repeat
             r2 = Int(Rnd(0, 48))
         Until r2 <> 48
-        personajes[i, 10] = nombres[r1 - 1, r2]
-        
-        ' rasgo facial
+        characters[i, 10] = names[r1 - 1, r2]
+
+        ' facial features
         If r1 = 1 Then
             Repeat
                 r2 = Int(Rnd(1, 4))
             Until r2 <> 4
-            personajes[i, 6] = car[6, r2]
+            characters[i, 6] = attr[6, r2]
         Else
-            personajes[i, 6] = car[6, 3] ' para que no haya mujeres con barba o bigote
-        Endif 
-        
-        ' resto de caracteristicas
+            characters[i, 6] = attr[6, 3] ' prevent female characters from having a beard or mustache
+        Endif
+
+        ' remaining traits
         For j = 1 To 9
             Repeat
                 r1 = Int(Rnd(1, 4))
             Until r1 <> 4
-            personajes[i, j] = car[j, r1]
-            
+            characters[i, j] = attr[j, r1]
+
             If j = 5 Then
                 Inc j
             Endif
         Next
     Next
-    
-    ' eleccion de personajes ocultos
+
+    ' select hidden characters
     For i = 0 To 1
         Repeat
             r1 = Int(Rnd(0, 24))
         Until r1 <> 24
-        oculto[i] = r1
+        hidden[i] = r1
     Next
 
-    ' info. de personajes ocultos
+    ' hidden character info
     For i = 0 To 1
-        Print "El personaje oculto del jugador " & (i + 1) & " es " & (personajes[oculto[i], 10]) & " y tiene las siguientes características:"
+        Print "Player " & (i + 1) & "'s hidden character is " & (characters[hidden[i], 10]) & " and has the following traits:"
         For j = 0 To 9
-            Print (car[j, 0]) & ": " & (personajes[oculto[i], j])
+            Print (attr[j, 0]) & ": " & (characters[hidden[i], j])
         Next
         Print Null
     Next
 
-    ' llenado de la matriz mock
+    ' fill the mock matrix
     For i = 0 To 1
         For j = 0 To 23
             mock[i, j] = "-"
@@ -287,19 +287,19 @@ End
 
 
 '-----------------------------------------
-' info. de personajes restantes (consola)
+' remaining characters info (console)
 '-----------------------------------------
-Public Sub restantes()
-    Dim i As Byte                       ' primera dimension
-    Dim j As Byte                       ' segunda dimension
+Public Sub printRemaining()
+    Dim i As Byte                       ' first dimension
+    Dim j As Byte                       ' second dimension
 
-    ' numero
+    ' count
     For i = 0 To 1
-        Print "El jugador " & (i + 1) & " tiene " & (vivos[i]) & " jugadores restantes."
+        Print "Player " & (i + 1) & " has " & (alive[i]) & " characters remaining."
     Next
 
-    ' matriz
-    Print "\nJugador 1\t\tJugador 2"
+    ' matrix
+    Print "\nPlayer 1\t\tPlayer 2"
     For i = 0 To 3
         For j = 0 To 5
             Print mock[0, 6 * i + j];

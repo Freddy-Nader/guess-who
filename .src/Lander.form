@@ -1,6 +1,7 @@
 # Gambas Form File 3.0
 
 { Form Form
+  Text = ("Guess Who?")
   MoveScaled(0,0,177.7143,100)
   Background = &H8491FF
   { PictureBox1 PictureBox
@@ -8,14 +9,14 @@
     Picture = Picture.Load("img/logo.png")
     Stretch = True
   }
-  { Button1 Button
+  { btnPlay Button
     MoveScaled(102.5714,61.8571,18.2857,18.2857)
     Background = &HAA0000
     Foreground = &HFFFFFF
     Mouse = Cursor.Pointing
     Picture = Picture["img/play.png"]
   }
-  { Button2 Button
+  { btnInfo Button
     MoveScaled(56.8571,61.8571,18.2857,18.2857)
     Background = &H5555AA
     Foreground = &HFFFFFF

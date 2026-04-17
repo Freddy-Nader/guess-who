@@ -28,6 +28,6 @@
     Background = &H5555FF
     Foreground = &HFFFFFF
     Mouse = Cursor.Pointing
-    Text = ("Continuar")
+    Text = ("Continue")
   }
 }

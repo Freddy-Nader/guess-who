@@ -1,5 +1,5 @@
 # Gambas Project File 3.0
-Title=Adivina Quién?
+Title=Guess Who?
 Startup=Lander
 Version=0.0.2
 Component=gb.image

@@ -1,0 +1,137 @@
+' Gambas class file
+
+player[2] As Boolean
+
+Private Sub selectPlayer(id As Byte, btn As Object, color As Integer)
+    setupDisplay()
+    btn.Enabled = False
+    Next.Background = color
+    player[id] = True
+    loadImage(id)
+    Label1.Text = "Player " & (id + 1)
+    Label3.Text = Data.characters[Data.hidden[id], 10]
+End
+
+Public Sub Button1_Click()
+    selectPlayer(0, Button1, &H5555AA)
+End
+
+Public Sub Button2_Click()
+    selectPlayer(1, Button2, &HAA0000)
+End
+
+Public Sub Next_Click()
+    IIf(player[0], switchTurn(1), switchTurn(2))
+
+    toggleVisibility(False)
+    Next.Visible = False
+
+    Label1.Text = "Hidden Characters"
+    Label2.Text = "Press the other button to see your hidden character"
+    Label2.Visible = True
+    Label3.Visible = False
+End
+
+Public Sub switchTurn(i As Byte)
+    Label3.Visible = False
+    If player[0] And player[1] Then
+        Me.Hide()
+        Start.Show()
+    Else
+        If i = 1 Then Button2.Visible = True
+        If i = 2 Then Button1.Visible = True
+    Endif
+End
+
+Public Sub setupDisplay()
+    Button1.Visible = False
+    Button2.Visible = False
+    Next.Visible = True
+
+    Label2.Visible = False
+    Label3.Visible = True
+
+    toggleVisibility(True)
+End
+
+Public Sub toggleVisibility(value As Boolean)
+    skin.Visible = value
+    clothing.Visible = value
+    eyes.Visible = value
+    freckles.Visible = value
+    features.Visible = value
+    hair.Visible = value
+    acc.Visible = value
+End
+
+
+Public Sub loadImage(i As Byte)
+    Dim k As Byte
+    Dim m As Byte
+
+    i = Data.hidden[i]
+
+    ' skin
+    For k = 1 To 3
+        If Data.characters[i, 1] = Data.attr[1, k] Then
+            skin.Picture = Picture["img/pb1" & k & ".png"]
+            Break
+        Endif
+    Next
+
+    ' clothing
+    For k = 1 To 3
+        If Data.characters[i, 2] = Data.attr[2, k] Then
+            clothing.Picture = Picture["img/pb2" & k & ".png"]
+            Break
+        Endif
+    Next
+
+    ' eyes
+    For k = 1 To 3
+        For m = 1 To 3
+            If Data.characters[i, 3] = Data.attr[3, k] And Data.characters[i, 4] = Data.attr[4, m] Then
+                eyes.Picture = Picture["img/eyes" & k & m & ".png"]
+                Break 2
+            Endif
+        Next
+    Next
+
+    ' freckles
+    For k = 1 To 3
+        If Data.characters[i, 5] = Data.attr[5, k] Then
+            freckles.Picture = IIf(k = 3, Picture["img/empty.png"], Picture["img/pb5" & k & ".png"])
+            Break
+        Endif
+    Next
+
+    ' facial features
+    For k = 1 To 3
+        If Data.characters[i, 6] = Data.attr[6, k] Then
+            features.Picture = IIf(k = 3, Picture["img/empty.png"], Picture["img/pb6" & k & ".png"])
+            Break
+        Endif
+    Next
+
+    ' hair
+    If Data.characters[i, 7] = Data.attr[7, 3] Then
+        hair.Picture = Picture["img/empty.png"]
+    Else
+        For k = 1 To 2
+            For m = 1 To 3
+                If Data.characters[i, 7] = Data.attr[7, k] And Data.characters[i, 8] = Data.attr[8, m] Then
+                    hair.Picture = Picture["img/hair" & k & m & ".png"]
+                    Break 2
+                Endif
+            Next
+        Next
+    Endif
+
+    ' accessories
+    For k = 1 To 3
+        If Data.characters[i, 9] = Data.attr[9, k] Then
+            acc.Picture = IIf(k = 3, Picture["img/empty.png"], Picture["img/pb9" & k & ".png"])
+            Break
+        Endif
+    Next
+End

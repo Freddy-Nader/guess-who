@@ -1,42 +1,42 @@
 ' Gambas class file
 
-i As Byte
+pageIndex As Byte
 
 Public Sub Form_Open()
-    Label1.Text = "Objetivo"
-    Label2.Text = "Ser el primer jugador en adivinar correctamente el personaje oculto del oponente."
+    Label1.Text = "Objective"
+    Label2.Text = "Be the first player to correctly guess the opponent's hidden character."
 End
 
 Public Sub Next_Click()
-    Inc i
+    Inc pageIndex
     
-    If i = 7 Then
+    If pageIndex = 7 Then
         Me.Hide()
         Lander.Show()
     Else 
-        Select Case i
+        Select Case pageIndex
             Case 1
-                Label1.Text = "Componentes"
-                Label2.Text = "Dos tableros de 6x4, cada uno con 24 personajes. Cada personaje tiene 10 características distintas\n (como pelo, género, color de ojos, etc.)."
+                Label1.Text = "Components"
+                Label2.Text = "Two 6x4 boards, each with 24 characters. Each character has 10 distinct characteristics\n (such as hair, gender, eye color, etc.)."
             Case 2
-                Label1.Text = "Inicio del Juego"
-                Label2.Text = "Al comenzar, la computadora genera aleatoriamente dos tableros con personajes y asigna un\n personaje oculto para cada jugador."
+                Label1.Text = "Game Start"
+                Label2.Text = "At the beginning, the computer randomly generates two boards with characters and assigns a\n hidden character for each player."
             Case 3
-                Label1.Text = "Cómo jugar"
+                Label1.Text = "How to play"
                 Label2.Alignment = 1
-                Label2.Text = "- Turnos: Los jugadores toman turnos para hacer preguntas sobre las características de los personajes\n ocultos del oponente.\n- Preguntar: Utiliza casillas de verificación para seleccionar la característica que deseas preguntar.\n- Respuesta y Marcación: La computadora responde y marca los personajes que no coinciden con\n la característica preguntada.\n- Adivinanza Directa: En cualquier turno, puedes optar por adivinar directamente el personaje oculto\n del oponente. Si la adivinanza es incorrecta, el juego termina y pierdes.\n- Número de Jugadores: 2"
+                Label2.Text = "- Turns: Players take turns asking questions about the characteristics of the opponent's\n hidden characters.\n- Asking: Use checkboxes to select the characteristic you want to ask about.\n- Response and Marking: The computer responds and marks the characters that do not match\n the asked characteristic.\n- Direct Guess: On any turn, you can choose to directly guess the opponent's hidden\n character. If the guess is incorrect, the game ends and you lose.\n- Number of Players: 2"
             Case 4
                 Label2.Alignment = 3
-                Label1.Text = "Fin del Juego"
-                Label2.Text = "Gana el jugador que primero adivine correctamente el personaje oculto del oponente. El juego\n también puede terminar si un jugador realiza una adivinanza directa y falla."
+                Label1.Text = "Game End"
+                Label2.Text = "The player who first correctly guesses the opponent's hidden character wins. The game\n can also end if a player makes a direct guess and fails."
             Case 5
                 Label1.Visible = False
                 Label2.Y = 319
                 Label2.Height = 326
-                Label2.Text = "Nota que en cualquier punto del juego se puede finalizar la partida con el botón en pantalla."
+                Label2.Text = "Note that at any point in the game the match can be ended with the button on the screen."
             Case 6
-                Label2.Text = "¡Buena suerte!"
-                Next.Text = "Gracias"
+                Label2.Text = "Good luck!"
+                Next.Text = "Thanks"
         End Select
     Endif
 End

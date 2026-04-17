@@ -3,37 +3,37 @@
 { Form Form
   MoveScaled(0,0,177.7143,100)
   Background = &H8491FF
-  { piel PictureBox
+  { skin PictureBox
     MoveScaled(70.5714,55.5714,36.5714,36.5714)
     Visible = False
     Background = Color.DarkRoyal
     Stretch = True
   }
-  { ropa PictureBox
+  { clothing PictureBox
     MoveScaled(70.5714,55.5714,36.5714,36.5714)
     Visible = False
     Background = Color.Transparent
     Stretch = True
   }
-  { ojos PictureBox
+  { eyes PictureBox
     MoveScaled(70.5714,55.5714,36.5714,36.5714)
     Visible = False
     Background = Color.Transparent
     Stretch = True
   }
-  { pecas PictureBox
+  { freckles PictureBox
     MoveScaled(70.5714,55.5714,36.5714,36.5714)
     Visible = False
     Background = Color.Transparent
     Stretch = True
   }
-  { rasgos PictureBox
+  { features PictureBox
     MoveScaled(70.5714,55.5714,36.5714,36.5714)
     Visible = False
     Background = Color.Transparent
     Stretch = True
   }
-  { pelo PictureBox
+  { hair PictureBox
     MoveScaled(70.5714,55.5714,36.5714,36.5714)
     Visible = False
     Background = Color.Transparent
@@ -51,7 +51,7 @@
     Background = Color.Transparent
     Foreground = &HFFFFFF
     Mouse = Cursor.Pointing
-    Text = ("Continuar")
+    Text = ("Continue")
   }
   { Label1 Label
     MoveScaled(64,45.5714,49.7143,10)
@@ -59,14 +59,14 @@
     Background = &HAA0000
     Foreground = Color.TextBackground
     Alignment = Align.Center
-    Text = ("Personajes ocultos")
+    Text = ("Hidden Characters")
   }
   { Label2 Label
     MoveScaled(64,55.5714,49.7143,4.2857)
     Background = Color.LightForeground
     Foreground = Color.Black
     Alignment = Align.Center
-    Text = ("Presione un botón para ver su personaje oculto")
+    Text = ("Press a button to reveal your hidden character")
   }
   { Label3 Label
     MoveScaled(72.5714,55.5714,17.1429,5)
@@ -81,7 +81,7 @@
     Background = &H5555AA
     Foreground = &HFFFFFF
     Mouse = Cursor.Pointing
-    Text = ("Jugador 1")
+    Text = ("Player 1")
   }
   { Button2 Button
     MoveScaled(102.5714,61.8571,18.2857,18.2857)
@@ -90,7 +90,7 @@
     Foreground = &HFFFFFF
     Mouse = Cursor.Pointing
     Ignore = True
-    Text = ("Jugador 2")
+    Text = ("Player 2")
   }
   { PictureBox1 PictureBox
     MoveScaled(56.8571,6,64,42.2857)

@@ -1,15 +1,18 @@
 ' Gambas class file
 
+' Entry point for the landing page
 Public Sub Form_Open()
     Data.Form_Open()
 End
 
-Public Sub Button1_Click()
+' Start the game by hiding the landing page and showing the hidden character setup
+Public Sub btnPlay_Click()
     Me.Hide()
-    Ocultos.Show()
+    HiddenCharacters.Show()
 End
 
-Public Sub Button2_Click()
+' Show the info/how to play screen
+Public Sub btnInfo_Click()
     Info.Show()
     Me.Hide()
 End
