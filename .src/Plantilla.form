@@ -11,7 +11,7 @@
       Text = ("Género")
     }
     { car10 Menu
-      Text = ("Tes de la piel")
+      Text = ("Tez de la piel")
     }
     { car20 Menu
       Text = ("Color de la ropa")
@@ -49,7 +49,7 @@
     }
   }
   { op1 Menu
-    Text = ("Tes de la piel")
+    Text = ("Tez de la piel")
     Visible = False
     { car11 Menu
       Text = ("Blanca")
