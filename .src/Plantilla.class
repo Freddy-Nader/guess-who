@@ -75,35 +75,43 @@ End
 '---------------------------------------------------------
 Public Sub MenuClicks2(i As Byte, j As Byte, k As Byte)
     op = i
+
+    If chosen[Data.jugador(), j, k] Then
+        Message.Info("Esta característica ya fue seleccionada anteriormente. Vuelva a intentarlo.", "Ok")
+        reintentar()
+        Return
+    Endif
+
     adivinar()
-    
-    Inc puntacion[Data.jugador()]
-    Label3.Text = "Puntación: " & (puntacion[Data.jugador()] * 10)
-
     Data.restantes() ' consola
-    
-    If chosen[Data.jugador(), j, k] Or Data.vivos[Data.jugador()] = 0 Then
-        If chosen[Data.jugador(), j, k] Then
-            Message.Info("Esta característica ya fue seleccionada anteriormente. Vuelva a intentarlo.", "Ok")
-        Else
-            Message.Info("Todos los personajes comparten esta característica. Vuelva a intentarlo.", "Ok")
-            respaldar()
-        Endif
 
-        MenuButton1.Text = "Características"
-        MenuButton1.Menu = "Menu1"
-        MenuButton1.Visible = True
-        Button25.Enabled = True
-        Button27.Visible = False
+    If Data.vivos[Data.jugador()] = 0 Then
+        Message.Info("Todos los personajes comparten esta característica. Vuelva a intentarlo.", "Ok")
+        respaldar()
+        reintentar()
     Else
+        Inc puntacion[Data.jugador()]
+        Label3.Text = "Puntación: " & (puntacion[Data.jugador()] * 10)
+        chosen[Data.jugador(), j, k] = True
+
         MenuButton1.Visible = False
         MenuButton1.Text = "Características"
         Button25.Enabled = False
         Button27.Visible = True
     Endif
-    
+
     tachar()
-    chosen[Data.jugador(), j, k] = True
+End
+
+'----------------------------------------------
+' restaurar la interfaz para repetir la pregunta
+'----------------------------------------------
+Private Sub reintentar()
+    MenuButton1.Text = "Características"
+    MenuButton1.Menu = "Menu1"
+    MenuButton1.Visible = True
+    Button25.Enabled = True
+    Button27.Visible = False
 End
 
 ' genero
