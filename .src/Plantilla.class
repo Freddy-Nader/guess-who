@@ -268,7 +268,7 @@ Public Sub setup()
     Button25.Enabled = True
     
     Label4.Text = "Jugador " & (Data.jugador() + 1)
-    Label3.Text = "Puntación: " & (puntacion[Data.jugador()] * 10)
+    Label3.Text = "Puntuación: " & (puntacion[Data.jugador()] * 10)
     
     For i = 0 To 23
         botones[i].Text = Data.personajes[i, 10]

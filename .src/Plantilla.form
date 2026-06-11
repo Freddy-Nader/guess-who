@@ -13,7 +13,7 @@
       Tag = 0
     }
     { car10 Menu
-      Text = ("Tes de la piel")
+      Text = ("Tez de la piel")
       Group = "CarGrupo"
       Tag = 1
     }
@@ -73,7 +73,7 @@
     }
   }
   { op1 Menu
-    Text = ("Tes de la piel")
+    Text = ("Tez de la piel")
     Visible = False
     { car11 Menu
       Text = ("Blanca")

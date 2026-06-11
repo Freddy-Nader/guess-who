@@ -45,7 +45,7 @@ Public Sub caracteristicas()
     car[0, 2] = "Mujer"
     
     ' piel
-    car[1, 0] = "Tes de la piel"
+    car[1, 0] = "Tez de la piel"
     car[1, 1] = "Blanca"
     car[1, 2] = "Negra"
     car[1, 3] = "Amarilla"

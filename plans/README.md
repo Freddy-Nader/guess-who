@@ -16,13 +16,13 @@ maintainer's macOS machine — compiles happen in CI or on Linux.
 
 | Plan | Title | Priority | Effort | Depends on | Status |
 |------|-------|----------|--------|------------|--------|
-| 001 | CI compile gate (+ fix `Sub` keyword in `Data.class:39`) | P1 | S/M | — | TODO |
-| 002 | Fix elimination engine (option mapping, `vivos` count, phantom scoring, duplicate "Cuadrados") | P1 | M | 001 | TODO |
-| 003 | Demote console spoilers (hidden-character dumps) to `Debug` | P2 | S | 002 | TODO |
-| 004 | Fix README run instructions + UI typos (Puntuación, Tez) | P2 | S | — | TODO |
-| 007 | Spike: fixed character set vs random generation | P2 | M | — | TODO |
-| 005 | Unique names + distinguishable characters in generation | P3 | M | 002, gated by 007's verdict | TODO |
-| 006 | Group/Tag refactor of `Plantilla` (~500 lines of boilerplate) | P3 | L | 001, 002; needs Linux GUI for manual retest | TODO |
+| 001 | CI compile gate (+ fix `Sub` keyword in `Data.class:39`) | P1 | S/M | — | DONE — PR #1 |
+| 002 | Fix elimination engine (option mapping, `vivos` count, phantom scoring, duplicate "Cuadrados") | P1 | M | 001 | DONE — PR #4 |
+| 003 | Demote console spoilers (hidden-character dumps) to `Debug` | P2 | S | 002 | DONE — PR #5 |
+| 004 | Fix README run instructions + UI typos (Puntuación, Tez) | P2 | S | — | DONE — PR #2 |
+| 007 | Spike: fixed character set vs random generation | P2 | M | — | DONE — PR #3; VERDICT: adopt |
+| 005 | Unique names + distinguishable characters in generation | P3 | M | 002, gated by 007's verdict | REJECTED — spike 007 verdict is adopt; plan 005 is obsolete |
+| 006 | Group/Tag refactor of `Plantilla` (~500 lines of boilerplate) | P3 | L | 001, 002; needs Linux GUI for manual retest | IN PROGRESS — PR #6; Step 6 (GUI regression) pending |
 
 Status values: TODO | IN PROGRESS | DONE | BLOCKED (with one-line reason) | REJECTED (with one-line rationale)
 
@@ -30,7 +30,7 @@ Status values: TODO | IN PROGRESS | DONE | BLOCKED (with one-line reason) | REJE
 
 - **001 first, always**: it is the only verification gate; every other plan's done-criteria reference it.
 - **002 before 003**: plan 002's manual play-through uses the console `Print` output as its test oracle; 003 demotes those prints to debug-only.
-- **007 before 005**: the spike's verdict decides whether 005 (patch random generation) is worth doing at all. If 007 concludes "adopt fixed character set", mark 005 REJECTED. Record the verdict here: _(pending)_.
+- **007 before 005**: the spike's verdict decides whether 005 (patch random generation) is worth doing at all. If 007 concludes "adopt fixed character set", mark 005 REJECTED. Record the verdict here: **VERDICT: adopt** — plan 005 is REJECTED.
 - **002 before 005 and 006**: both rewrite code that 002 restructures (`asignacion()` inner loop; `MenuClicks2`).
 - **006 last**: largest blast radius, MED risk, requires a full manual GUI regression; everything correctness-critical should land before it.
 - 004 is independent and can run at any point; it touches strings also present in code 002 rewrites — both plans carry instructions for either ordering.
