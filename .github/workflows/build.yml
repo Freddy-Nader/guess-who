@@ -1,0 +1,19 @@
+name: build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Gambas 3
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gambas3
+
+      - name: Compile project
+        run: gbc3 -ag "$GITHUB_WORKSPACE"
