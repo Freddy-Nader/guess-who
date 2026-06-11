@@ -214,8 +214,7 @@ End
 Public Sub adivinar()
     Dim i As Byte
     Dim j As Byte
-    Dim op1 As Byte
-    Dim op2 As Byte
+    Dim k As Byte
     
     ' respaldo
     For i = 0 To 23
@@ -226,27 +225,14 @@ Public Sub adivinar()
     Next
     
     If Data.personajes[Data.oculto[Data.oponenteN()], caracteristica] = Data.car[caracteristica, op] Then
-        Inc Data.vivos[Data.jugador()]
-        
-        Select Case op
-            Case 1
-                op1 = 2
-                op2 = 3
-            Case 2
-                op1 = 1
-                op2 = 3
-            Case 3
-                op1 = 2
-                op2 = 3
-        End
-        
-        opciones(op1)
-        opciones(op2)
+        For k = 1 To 3
+            If k <> op And Data.car[caracteristica, k] <> "" Then opciones(k)
+        Next
     Else 
         opciones(op)
     Endif
     
-    If Data.vivos[Data.jugador()] = 1 Or Data.vivos[Data.jugador()] = 1 Then ' ganar por eliminación
+    If Data.vivos[Data.jugador()] = 1 Then ' ganar por eliminación
         Message.Info("El jugador " & (Data.jugador() + 1) & " ha ganado.", "Ok")
         Data.Close()
         Inicio.Close()
