@@ -179,6 +179,8 @@
     Background = &H5555AA
     Foreground = Color.TextBackground
     Border = False
+    Group = "Botones"
+    Tag = 1
   }
   { Button3 Button
     MoveScaled(72.2857,5,17.1429,5.1429)
@@ -187,6 +189,8 @@
     Background = &H5555AA
     Foreground = Color.TextBackground
     Border = False
+    Group = "Botones"
+    Tag = 2
   }
   { Button4 Button
     MoveScaled(89.4286,5,17.1429,5.1429)
@@ -195,6 +199,8 @@
     Background = &H5555AA
     Foreground = Color.TextBackground
     Border = False
+    Group = "Botones"
+    Tag = 3
   }
   { Button5 Button
     MoveScaled(106.5714,5,17.1429,5.1429)
@@ -203,6 +209,8 @@
     Background = &H5555AA
     Foreground = Color.TextBackground
     Border = False
+    Group = "Botones"
+    Tag = 4
   }
   { Button6 Button
     MoveScaled(123.7143,5,17.1429,5.1429)
@@ -211,6 +219,8 @@
     Background = &H5555AA
     Foreground = Color.TextBackground
     Border = False
+    Group = "Botones"
+    Tag = 5
   }
   { Button7 Button
     MoveScaled(38,27.2857,17.1429,5.1429)
@@ -219,6 +229,8 @@
     Background = &H5555AA
     Foreground = Color.TextBackground
     Border = False
+    Group = "Botones"
+    Tag = 6
   }
   { Button8 Button
     MoveScaled(55.1429,27.2857,17.1429,5.1429)
@@ -227,6 +239,8 @@
     Background = &H5555AA
     Foreground = Color.TextBackground
     Border = False
+    Group = "Botones"
+    Tag = 7
   }
   { Button9 Button
     MoveScaled(72.2857,27.2857,17.1429,5.1429)
@@ -235,6 +249,8 @@
     Background = &H5555AA
     Foreground = Color.TextBackground
     Border = False
+    Group = "Botones"
+    Tag = 8
   }
   { Button10 Button
     MoveScaled(89.4286,27.2857,17.1429,5.1429)
@@ -243,6 +259,8 @@
     Background = &H5555AA
     Foreground = Color.TextBackground
     Border = False
+    Group = "Botones"
+    Tag = 9
   }
   { Button11 Button
     MoveScaled(106.5714,27.2857,17.1429,5.1429)
@@ -251,6 +269,8 @@
     Background = &H5555AA
     Foreground = Color.TextBackground
     Border = False
+    Group = "Botones"
+    Tag = 10
   }
   { Button12 Button
     MoveScaled(123.7143,27.2857,17.1429,5.1429)
@@ -259,6 +279,8 @@
     Background = &H5555AA
     Foreground = Color.TextBackground
     Border = False
+    Group = "Botones"
+    Tag = 11
   }
   { Button13 Button
     MoveScaled(38,49.5714,17.1429,5.1429)
@@ -267,6 +289,8 @@
     Background = &H5555AA
     Foreground = Color.TextBackground
     Border = False
+    Group = "Botones"
+    Tag = 12
   }
   { Button14 Button
     MoveScaled(55.1429,49.5714,17.1429,5.1429)
@@ -275,6 +299,8 @@
     Background = &H5555AA
     Foreground = Color.TextBackground
     Border = False
+    Group = "Botones"
+    Tag = 13
   }
   { Button15 Button
     MoveScaled(72.2857,49.5714,17.1429,5.1429)
@@ -283,6 +309,8 @@
     Background = &H5555AA
     Foreground = Color.TextBackground
     Border = False
+    Group = "Botones"
+    Tag = 14
   }
   { Button16 Button
     MoveScaled(89.4286,49.5714,17.1429,5.1429)
@@ -291,6 +319,8 @@
     Background = &H5555AA
     Foreground = Color.TextBackground
     Border = False
+    Group = "Botones"
+    Tag = 15
   }
   { Button17 Button
     MoveScaled(106.5714,49.5714,17.1429,5.1429)
@@ -299,6 +329,8 @@
     Background = &H5555AA
     Foreground = Color.TextBackground
     Border = False
+    Group = "Botones"
+    Tag = 16
   }
   { Button18 Button
     MoveScaled(123.7143,49.5714,17.1429,5.1429)
@@ -307,6 +339,8 @@
     Background = &H5555AA
     Foreground = Color.TextBackground
     Border = False
+    Group = "Botones"
+    Tag = 17
   }
   { Button19 Button
     MoveScaled(38,71.8571,17.1429,5.1429)
@@ -315,6 +349,8 @@
     Background = &H5555AA
     Foreground = Color.TextBackground
     Border = False
+    Group = "Botones"
+    Tag = 18
   }
   { Button20 Button
     MoveScaled(55.1429,71.8571,17.1429,5.1429)
@@ -323,6 +359,8 @@
     Background = &H5555AA
     Foreground = Color.TextBackground
     Border = False
+    Group = "Botones"
+    Tag = 19
   }
   { Button21 Button
     MoveScaled(72.2857,71.8571,17.1429,5.1429)
@@ -331,6 +369,8 @@
     Background = &H5555AA
     Foreground = Color.TextBackground
     Border = False
+    Group = "Botones"
+    Tag = 20
   }
   { Button22 Button
     MoveScaled(89.4286,71.8571,17.1429,5.1429)
@@ -339,6 +379,8 @@
     Background = &H5555AA
     Foreground = Color.TextBackground
     Border = False
+    Group = "Botones"
+    Tag = 21
   }
   { Button23 Button
     MoveScaled(106.5714,71.8571,17.1429,5.1429)
@@ -347,6 +389,8 @@
     Background = &H5555AA
     Foreground = Color.TextBackground
     Border = False
+    Group = "Botones"
+    Tag = 22
   }
   { Button24 Button
     MoveScaled(123.7143,71.8571,17.1429,5.1429)
@@ -355,6 +399,8 @@
     Background = &H5555AA
     Foreground = Color.TextBackground
     Border = False
+    Group = "Botones"
+    Tag = 23
   }
   { PictureBox26 PictureBox
     MoveScaled(145,54,20.5714,20.5714)
