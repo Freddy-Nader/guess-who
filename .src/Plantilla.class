@@ -164,9 +164,7 @@ Public Sub tachar()
             Next
         Endif 
         
-        Data.oponenteL()
-        inferior[i].Picture = Picture[IIf(Data.mock[Data.jugador(), i] = "*", "img/no.png", "img/guess.png")]
-        Data.oponenteL()
+        inferior[i].Picture = Picture[IIf(Data.mock[Data.oponenteN(), i] = "*", "img/no.png", "img/guess.png")]
     Next
 End
 
