@@ -60,7 +60,6 @@ Public Sub caracteristicas()
     car[3, 0] = "Forma de los ojos"
     car[3, 1] = "Redondos"
     car[3, 2] = "Cuadrados"
-    car[3, 3] = "Cuadrados"
     
     ' color de los ojos
     car[4, 0] = "Color de los ojos"
@@ -249,14 +248,13 @@ Public Sub asignacion()
         
         ' resto de caracteristicas
         For j = 1 To 9
-            Repeat
+            If j = 6 Then Continue ' rasgos faciales ya asignados arriba
+            If car[j, 3] = "" Then
+                r1 = Int(Rnd(1, 3)) ' característica de 2 opciones
+            Else
                 r1 = Int(Rnd(1, 4))
-            Until r1 <> 4
-            personajes[i, j] = car[j, r1]
-            
-            If j = 5 Then
-                Inc j
             Endif
+            personajes[i, j] = car[j, r1]
         Next
     Next
     

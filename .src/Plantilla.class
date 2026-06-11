@@ -5,7 +5,7 @@ puntacion[2] As Byte
 ' lógica de adivinanza
 caracteristica As Byte
 op As Byte
-backup[24, 12] As String
+backup[24] As String
 
 ' eliminación de personajes
 chosen[2, 10, 3] As Boolean
@@ -75,35 +75,43 @@ End
 '---------------------------------------------------------
 Public Sub MenuClicks2(i As Byte, j As Byte, k As Byte)
     op = i
+
+    If chosen[Data.jugador(), j, k] Then
+        Message.Info("Esta característica ya fue seleccionada anteriormente. Vuelva a intentarlo.", "Ok")
+        reintentar()
+        Return
+    Endif
+
     adivinar()
-    
-    Inc puntacion[Data.jugador()]
-    Label3.Text = "Puntuación: " & (puntacion[Data.jugador()] * 10)
-
     Data.restantes() ' consola
-    
-    If chosen[Data.jugador(), j, k] Or Data.vivos[Data.jugador()] = 0 Then
-        If chosen[Data.jugador(), j, k] Then
-            Message.Info("Esta característica ya fue seleccionada anteriormente. Vuelva a intentarlo.", "Ok")
-        Else
-            Message.Info("Todos los personajes comparten esta característica. Vuelva a intentarlo.", "Ok")
-            respaldar()
-        Endif
 
-        MenuButton1.Text = "Características"
-        MenuButton1.Menu = "Menu1"
-        MenuButton1.Visible = True
-        Button25.Enabled = True
-        Button27.Visible = False
+    If Data.vivos[Data.jugador()] = 0 Then
+        Message.Info("Todos los personajes comparten esta característica. Vuelva a intentarlo.", "Ok")
+        respaldar()
+        reintentar()
     Else
+        Inc puntacion[Data.jugador()]
+        Label3.Text = "Puntación: " & (puntacion[Data.jugador()] * 10)
+        chosen[Data.jugador(), j, k] = True
+
         MenuButton1.Visible = False
         MenuButton1.Text = "Características"
         Button25.Enabled = False
         Button27.Visible = True
     Endif
-    
+
     tachar()
-    chosen[Data.jugador(), j, k] = True
+End
+
+'----------------------------------------------
+' restaurar la interfaz para repetir la pregunta
+'----------------------------------------------
+Private Sub reintentar()
+    MenuButton1.Text = "Características"
+    MenuButton1.Menu = "Menu1"
+    MenuButton1.Visible = True
+    Button25.Enabled = True
+    Button27.Visible = False
 End
 
 ' genero
@@ -213,40 +221,22 @@ End
 '----------------------
 Public Sub adivinar()
     Dim i As Byte
-    Dim j As Byte
-    Dim op1 As Byte
-    Dim op2 As Byte
+    Dim k As Byte
     
-    ' respaldo
+    ' respaldo del tablero del jugador
     For i = 0 To 23
-        For j = 0 To 10
-            backup[i, j] = Data.personajes[i, j]
-        Next
-        backup[i, j] = Data.mock[Data.jugador(), i]
+        backup[i] = Data.mock[Data.jugador(), i]
     Next
     
     If Data.personajes[Data.oculto[Data.oponenteN()], caracteristica] = Data.car[caracteristica, op] Then
-        Inc Data.vivos[Data.jugador()]
-        
-        Select Case op
-            Case 1
-                op1 = 2
-                op2 = 3
-            Case 2
-                op1 = 1
-                op2 = 3
-            Case 3
-                op1 = 2
-                op2 = 3
-        End
-        
-        opciones(op1)
-        opciones(op2)
+        For k = 1 To 3
+            If k <> op And Data.car[caracteristica, k] <> "" Then opciones(k)
+        Next
     Else 
         opciones(op)
     Endif
     
-    If Data.vivos[Data.jugador()] = 1 Or Data.vivos[Data.jugador()] = 1 Then ' ganar por eliminación
+    If Data.vivos[Data.jugador()] = 1 Then ' ganar por eliminación
         Message.Info("El jugador " & (Data.jugador() + 1) & " ha ganado.", "Ok")
         Data.Close()
         Inicio.Close()
@@ -273,16 +263,13 @@ End
 '---------------------------------
 Public Sub respaldar()
     Dim i As Byte
-    Dim j As Byte
-    
+
+    Data.vivos[Data.jugador()] = 0
     For i = 0 To 23
-        For j = 0 To 10
-            If Data.personajes[i, j] <> backup[i, j] Then
-                Inc Data.vivos[Data.jugador()]
-            Endif
-            Data.personajes[i, j] = backup[i, j]
-        Next
-        Data.mock[Data.jugador(), i] = backup[i, j]
+        Data.mock[Data.jugador(), i] = backup[i]
+        If backup[i] <> "*" Then
+            Inc Data.vivos[Data.jugador()]
+        Endif
     Next
 End
 
