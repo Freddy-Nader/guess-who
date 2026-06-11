@@ -13,9 +13,6 @@ chosen[2, 10, 3] As Boolean
 ' arreglos de objetos
 botones[24] As Object
 pb[7, 25] As Object             ' piel, ropa, ojos, pecas, rasgos, pelo, accesorios (acc)
-menus1[10, 4] As Object
-menus2[10] As Object
-menus3[10] As Object
 inferior[24] As Object
 
 Public Sub Form_Open()
@@ -239,302 +236,28 @@ End
 ' arreglos de objetos
 '---------------------
 Public Sub macro()
-    ' objetos de botones
-    botones[0] = Button1
-    botones[1] = Button2
-    botones[2] = Button3
-    botones[3] = Button4
-    botones[4] = Button5
-    botones[5] = Button6
-    botones[6] = Button7
-    botones[7] = Button8
-    botones[8] = Button9
-    botones[9] = Button10
-    botones[10] = Button11
-    botones[11] = Button12
-    botones[12] = Button13
-    botones[13] = Button14
-    botones[14] = Button15
-    botones[15] = Button16
-    botones[16] = Button17
-    botones[17] = Button18
-    botones[18] = Button19
-    botones[19] = Button20
-    botones[20] = Button21
-    botones[21] = Button22
-    botones[22] = Button23
-    botones[23] = Button24
-    
-    
-    ' objetos de menús
-    menus1[0, 0] = car00
-    menus1[0, 1] = car01
-    menus1[0, 2] = car02
-    menus1[1, 0] = car10
-    menus1[1, 1] = car11
-    menus1[1, 2] = car12
-    menus1[1, 3] = car13
-    menus1[2, 0] = car20
-    menus1[2, 1] = car21
-    menus1[2, 2] = car22
-    menus1[2, 3] = car23
-    menus1[3, 0] = car30
-    menus1[3, 1] = car31
-    menus1[3, 2] = car32
-    menus1[4, 0] = car40
-    menus1[4, 1] = car41
-    menus1[4, 2] = car42
-    menus1[4, 3] = car43
-    menus1[5, 0] = car50
-    menus1[5, 1] = car51
-    menus1[5, 2] = car52
-    menus1[5, 3] = car53
-    menus1[6, 0] = car60
-    menus1[6, 1] = car61
-    menus1[6, 2] = car62
-    menus1[6, 3] = car63
-    menus1[7, 0] = car70
-    menus1[7, 1] = car71
-    menus1[7, 2] = car72
-    menus1[7, 3] = car73
-    menus1[8, 0] = car80
-    menus1[8, 1] = car81
-    menus1[8, 2] = car82
-    menus1[8, 3] = car83
-    menus1[9, 0] = car90
-    menus1[9, 1] = car91
-    menus1[9, 2] = car92
-    menus1[9, 3] = car93
-    
-    menus2[0] = op0
-    menus2[1] = op1
-    menus2[2] = op2
-    menus2[3] = op3
-    menus2[4] = op4
-    menus2[5] = op5
-    menus2[6] = op6
-    menus2[7] = op7
-    menus2[8] = op8
-    menus2[9] = op9
-    
-    
-    ' objetos de pictureboxes
-    
-    ' piel
-    pb[0, 0] = piel1
-    pb[0, 1] = piel2
-    pb[0, 2] = piel3
-    pb[0, 3] = piel4
-    pb[0, 4] = piel5
-    pb[0, 5] = piel6
-    pb[0, 6] = piel7
-    pb[0, 7] = piel8
-    pb[0, 8] = piel9
-    pb[0, 9] = piel10
-    pb[0, 10] = piel11
-    pb[0, 11] = piel12
-    pb[0, 12] = piel13
-    pb[0, 13] = piel14
-    pb[0, 14] = piel15
-    pb[0, 15] = piel16
-    pb[0, 16] = piel17
-    pb[0, 17] = piel18
-    pb[0, 18] = piel19
-    pb[0, 19] = piel20
-    pb[0, 20] = piel21
-    pb[0, 21] = piel22
-    pb[0, 22] = piel23
-    pb[0, 23] = piel24
-    pb[0, 24] = piel25
+    Dim c As Control
+    Dim prefijos As String[] = ["piel", "ropa", "ojos", "pecas", "rasgos", "pelo", "acc"]
+    Dim j As Integer
+    Dim n As Integer
 
-    ' ropa
-    pb[1, 0] = ropa1
-    pb[1, 1] = ropa2
-    pb[1, 2] = ropa3
-    pb[1, 3] = ropa4
-    pb[1, 4] = ropa5
-    pb[1, 5] = ropa6
-    pb[1, 6] = ropa7
-    pb[1, 7] = ropa8
-    pb[1, 8] = ropa9
-    pb[1, 9] = ropa10
-    pb[1, 10] = ropa11
-    pb[1, 11] = ropa12
-    pb[1, 12] = ropa13
-    pb[1, 13] = ropa14
-    pb[1, 14] = ropa15
-    pb[1, 15] = ropa16
-    pb[1, 16] = ropa17
-    pb[1, 17] = ropa18
-    pb[1, 18] = ropa19
-    pb[1, 19] = ropa20
-    pb[1, 20] = ropa21
-    pb[1, 21] = ropa22
-    pb[1, 22] = ropa23
-    pb[1, 23] = ropa24
-    pb[1, 24] = ropa25
-
-    ' ojos
-    pb[2, 0] = ojos1
-    pb[2, 1] = ojos2
-    pb[2, 2] = ojos3
-    pb[2, 3] = ojos4
-    pb[2, 4] = ojos5
-    pb[2, 5] = ojos6
-    pb[2, 6] = ojos7
-    pb[2, 7] = ojos8
-    pb[2, 8] = ojos9
-    pb[2, 9] = ojos10
-    pb[2, 10] = ojos11
-    pb[2, 11] = ojos12
-    pb[2, 12] = ojos13
-    pb[2, 13] = ojos14
-    pb[2, 14] = ojos15
-    pb[2, 15] = ojos16
-    pb[2, 16] = ojos17
-    pb[2, 17] = ojos18
-    pb[2, 18] = ojos19
-    pb[2, 19] = ojos20
-    pb[2, 20] = ojos21
-    pb[2, 21] = ojos22
-    pb[2, 22] = ojos23
-    pb[2, 23] = ojos24
-    pb[2, 24] = ojos25
-
-    ' pecas
-    pb[3, 0] = pecas1
-    pb[3, 1] = pecas2
-    pb[3, 2] = pecas3
-    pb[3, 3] = pecas4
-    pb[3, 4] = pecas5
-    pb[3, 5] = pecas6
-    pb[3, 6] = pecas7
-    pb[3, 7] = pecas8
-    pb[3, 8] = pecas9
-    pb[3, 9] = pecas10
-    pb[3, 10] = pecas11
-    pb[3, 11] = pecas12
-    pb[3, 12] = pecas13
-    pb[3, 13] = pecas14
-    pb[3, 14] = pecas15
-    pb[3, 15] = pecas16
-    pb[3, 16] = pecas17
-    pb[3, 17] = pecas18
-    pb[3, 18] = pecas19
-    pb[3, 19] = pecas20
-    pb[3, 20] = pecas21
-    pb[3, 21] = pecas22
-    pb[3, 22] = pecas23
-    pb[3, 23] = pecas24
-    pb[3, 24] = pecas25
-
-    ' rasgos
-    pb[4, 0] = rasgos1
-    pb[4, 1] = rasgos2
-    pb[4, 2] = rasgos3
-    pb[4, 3] = rasgos4
-    pb[4, 4] = rasgos5
-    pb[4, 5] = rasgos6
-    pb[4, 6] = rasgos7
-    pb[4, 7] = rasgos8
-    pb[4, 8] = rasgos9
-    pb[4, 9] = rasgos10
-    pb[4, 10] = rasgos11
-    pb[4, 11] = rasgos12
-    pb[4, 12] = rasgos13
-    pb[4, 13] = rasgos14
-    pb[4, 14] = rasgos15
-    pb[4, 15] = rasgos16
-    pb[4, 16] = rasgos17
-    pb[4, 17] = rasgos18
-    pb[4, 18] = rasgos19
-    pb[4, 19] = rasgos20
-    pb[4, 20] = rasgos21
-    pb[4, 21] = rasgos22
-    pb[4, 22] = rasgos23
-    pb[4, 23] = rasgos24
-    pb[4, 24] = rasgos25
-
-    ' pelo
-    pb[5, 0] = pelo1
-    pb[5, 1] = pelo2
-    pb[5, 2] = pelo3
-    pb[5, 3] = pelo4
-    pb[5, 4] = pelo5
-    pb[5, 5] = pelo6
-    pb[5, 6] = pelo7
-    pb[5, 7] = pelo8
-    pb[5, 8] = pelo9
-    pb[5, 9] = pelo10
-    pb[5, 10] = pelo11
-    pb[5, 11] = pelo12
-    pb[5, 12] = pelo13
-    pb[5, 13] = pelo14
-    pb[5, 14] = pelo15
-    pb[5, 15] = pelo16
-    pb[5, 16] = pelo17
-    pb[5, 17] = pelo18
-    pb[5, 18] = pelo19
-    pb[5, 19] = pelo20
-    pb[5, 20] = pelo21
-    pb[5, 21] = pelo22
-    pb[5, 22] = pelo23
-    pb[5, 23] = pelo24
-    pb[5, 24] = pelo25
-
-    ' accesorios
-    pb[6, 0] = acc1
-    pb[6, 1] = acc2
-    pb[6, 2] = acc3
-    pb[6, 3] = acc4
-    pb[6, 4] = acc5
-    pb[6, 5] = acc6
-    pb[6, 6] = acc7
-    pb[6, 7] = acc8
-    pb[6, 8] = acc9
-    pb[6, 9] = acc10
-    pb[6, 10] = acc11
-    pb[6, 11] = acc12
-    pb[6, 12] = acc13
-    pb[6, 13] = acc14
-    pb[6, 14] = acc15
-    pb[6, 15] = acc16
-    pb[6, 16] = acc17
-    pb[6, 17] = acc18
-    pb[6, 18] = acc19
-    pb[6, 19] = acc20
-    pb[6, 20] = acc21
-    pb[6, 21] = acc22
-    pb[6, 22] = acc23
-    pb[6, 23] = acc24
-    pb[6, 24] = acc25
-    
-    
-    ' matriz inferior
-    inferior[0] = inf1
-    inferior[1] = inf2
-    inferior[2] = inf3
-    inferior[3] = inf4
-    inferior[4] = inf5
-    inferior[5] = inf6
-    inferior[6] = inf7
-    inferior[7] = inf8
-    inferior[8] = inf9
-    inferior[9] = inf10
-    inferior[10] = inf11
-    inferior[11] = inf12
-    inferior[12] = inf13
-    inferior[13] = inf14
-    inferior[14] = inf15
-    inferior[15] = inf16
-    inferior[16] = inf17
-    inferior[17] = inf18
-    inferior[18] = inf19
-    inferior[19] = inf20
-    inferior[20] = inf21
-    inferior[21] = inf22
-    inferior[22] = inf23
-    inferior[23] = inf24
+    For Each c In Me.Children
+        If c.Name Like "Button[0-9]*" Then
+            n = CInt(Mid$(c.Name, 7))
+            If n <= 24 Then botones[n - 1] = c
+            Continue
+        Endif
+        If c.Name Like "inf[0-9]*" Then
+            inferior[CInt(Mid$(c.Name, 4)) - 1] = c
+            Continue
+        Endif
+        For j = 0 To 6
+            If c.Name Like prefijos[j] & "[0-9]*" Then
+                pb[j, CInt(Mid$(c.Name, Len(prefijos[j]) + 1)) - 1] = c
+                Break
+            Endif
+        Next
+    Next
 End
 
 '----------------------
