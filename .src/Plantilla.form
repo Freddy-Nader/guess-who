@@ -169,6 +169,8 @@
     Background = &H5555AA
     Foreground = Color.TextBackground
     Border = False
+    Group = "Botones"
+    Tag = 0
   }
   { Button2 Button
     MoveScaled(55.1429,5,17.1429,5.1429)
