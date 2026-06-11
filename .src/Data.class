@@ -266,13 +266,12 @@ Public Sub asignacion()
         oculto[i] = r1
     Next
 
-    ' info. de personajes ocultos
+    ' info. de personajes ocultos (solo en modo depuración)
     For i = 0 To 1
-        Print "El personaje oculto del jugador " & (i + 1) & " es " & (personajes[oculto[i], 10]) & " y tiene las siguientes características:"
+        Debug "El personaje oculto del jugador " & (i + 1) & " es " & (personajes[oculto[i], 10]) & " y tiene las siguientes características:"
         For j = 0 To 9
-            Print (car[j, 0]) & ": " & (personajes[oculto[i], j])
+            Debug (car[j, 0]) & ": " & (personajes[oculto[i], j])
         Next
-        Print Null
     Next
 
     ' llenado de la matriz mock
@@ -290,22 +289,24 @@ End
 Public Sub restantes()
     Dim i As Byte                       ' primera dimension
     Dim j As Byte                       ' segunda dimension
+    Dim linea As String
 
-    ' numero
+    ' numero (solo en modo depuración)
     For i = 0 To 1
-        Print "El jugador " & (i + 1) & " tiene " & (vivos[i]) & " jugadores restantes."
+        Debug "El jugador " & (i + 1) & " tiene " & (vivos[i]) & " jugadores restantes."
     Next
 
     ' matriz
-    Print "\nJugador 1\t\tJugador 2"
+    Debug "Jugador 1\t\tJugador 2"
     For i = 0 To 3
+        linea = ""
         For j = 0 To 5
-            Print mock[0, 6 * i + j];
+            linea &= mock[0, 6 * i + j]
         Next
-        Print "\t\t",
+        linea &= "\t\t"
         For j = 0 To 5
-            Print mock[1, 6 * i + j];
+            linea &= mock[1, 6 * i + j]
         Next
-        Print Null
+        Debug linea
     Next
 End
