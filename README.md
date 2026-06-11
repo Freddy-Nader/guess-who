@@ -39,9 +39,11 @@ You must have **Gambas 3** installed to execute this project. Visit the [Gambas 
 git clone https://github.com/Freddy-Nader/guess-who.git
 cd guess-who
 
-# Run the compiled Gambas application:
-gb3 guess-who.gambas
+# Run the project from source with the Gambas interpreter:
+gbx3 .
 ```
+
+Alternatively, open the project folder in the Gambas 3 IDE (`gambas3`) and press <kbd>F5</kbd>.
 
 ## License
 
