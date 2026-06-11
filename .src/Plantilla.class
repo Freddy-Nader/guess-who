@@ -5,7 +5,7 @@ puntacion[2] As Byte
 ' lógica de adivinanza
 caracteristica As Byte
 op As Byte
-backup[24, 12] As String
+backup[24] As String
 
 ' eliminación de personajes
 chosen[2, 10, 3] As Boolean
@@ -213,15 +213,11 @@ End
 '----------------------
 Public Sub adivinar()
     Dim i As Byte
-    Dim j As Byte
     Dim k As Byte
     
-    ' respaldo
+    ' respaldo del tablero del jugador
     For i = 0 To 23
-        For j = 0 To 10
-            backup[i, j] = Data.personajes[i, j]
-        Next
-        backup[i, j] = Data.mock[Data.jugador(), i]
+        backup[i] = Data.mock[Data.jugador(), i]
     Next
     
     If Data.personajes[Data.oculto[Data.oponenteN()], caracteristica] = Data.car[caracteristica, op] Then
@@ -259,16 +255,13 @@ End
 '---------------------------------
 Public Sub respaldar()
     Dim i As Byte
-    Dim j As Byte
-    
+
+    Data.vivos[Data.jugador()] = 0
     For i = 0 To 23
-        For j = 0 To 10
-            If Data.personajes[i, j] <> backup[i, j] Then
-                Inc Data.vivos[Data.jugador()]
-            Endif
-            Data.personajes[i, j] = backup[i, j]
-        Next
-        Data.mock[Data.jugador(), i] = backup[i, j]
+        Data.mock[Data.jugador(), i] = backup[i]
+        If backup[i] <> "*" Then
+            Inc Data.vivos[Data.jugador()]
+        Endif
     Next
 End
 
