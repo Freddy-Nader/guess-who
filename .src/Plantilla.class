@@ -38,35 +38,8 @@ Public Sub MenuClicks1(i As Byte)
     Button25.Enabled = False
 End
 
-Public Sub car00_Click()
-    MenuClicks1(0)
-End
-Public Sub car10_Click()
-    MenuClicks1(1)
-End
-Public Sub car20_Click()
-    MenuClicks1(2)
-End
-Public Sub car30_Click()
-    MenuClicks1(3)
-End
-Public Sub car40_Click()
-    MenuClicks1(4)
-End
-Public Sub car50_Click()
-    MenuClicks1(5)
-End
-Public Sub car60_Click()
-    MenuClicks1(6)
-End
-Public Sub car70_Click()
-    MenuClicks1(7)
-End
-Public Sub car80_Click()
-    MenuClicks1(8)
-End
-Public Sub car90_Click()
-    MenuClicks1(9)
+Public Sub CarGrupo_Click()
+    MenuClicks1(Last.Tag)
 End
 
 
@@ -114,105 +87,10 @@ Private Sub reintentar()
     Button27.Visible = False
 End
 
-' genero
-Public Sub car01_Click()
-    MenuClicks2(1, 0, 0)
-End
-Public Sub car02_Click()
-    MenuClicks2(2, 0, 1)
-End
-Public Sub car03_Click()
-    MenuClicks2(3, 0, 2)
-End
-' color de cabello
-Public Sub car11_Click()
-    MenuClicks2(1, 1, 0)
-End
-Public Sub car12_Click()
-    MenuClicks2(2, 1, 1)
-End
-Public Sub car13_Click()
-    MenuClicks2(3, 1, 2)
-End
-' tipo de cabello
-Public Sub car21_Click()
-    MenuClicks2(1, 2, 0)
-End
-Public Sub car22_Click()
-    MenuClicks2(2, 2, 1)
-End
-Public Sub car23_Click()
-    MenuClicks2(3, 2, 2)
-End
-' color de ojos
-Public Sub car31_Click()
-    MenuClicks2(1, 3, 0)
-End
-Public Sub car32_Click()
-    MenuClicks2(2, 3, 1)
-End
-Public Sub car33_Click()
-    MenuClicks2(3, 3, 2)
-End
-' accesorios
-Public Sub car41_Click()
-    MenuClicks2(1, 4, 0)
-End
-Public Sub car42_Click()
-    MenuClicks2(2, 4, 1)
-End
-Public Sub car43_Click()
-    MenuClicks2(3, 4, 2)
-End
-' rasgos faciales
-Public Sub car51_Click()
-    MenuClicks2(1, 5, 0)
-End
-Public Sub car52_Click()
-    MenuClicks2(2, 5, 1)
-End
-Public Sub car53_Click()
-    MenuClicks2(3, 5, 2)
-End
-' edad
-Public Sub car61_Click()
-    MenuClicks2(1, 6, 0)
-End
-Public Sub car62_Click()
-    MenuClicks2(2, 6, 1)
-End
-Public Sub car63_Click()
-    MenuClicks2(3, 6, 2)
-End
-' expresion facial
-Public Sub car71_Click()
-    MenuClicks2(1, 7, 0)
-End
-Public Sub car72_Click()
-    MenuClicks2(2, 7, 1)
-End
-Public Sub car73_Click()
-    MenuClicks2(3, 7, 2)
-End
-' color de la ropa
-Public Sub car81_Click()
-    MenuClicks2(1, 8, 0)
-End
-Public Sub car82_Click()
-    MenuClicks2(2, 8, 1)
-End
-Public Sub car83_Click()
-    MenuClicks2(3, 8, 2)
-End
-' raza
-Public Sub car91_Click()
-    MenuClicks2(1, 9, 0)
-End
-Public Sub car92_Click()
-    MenuClicks2(2, 9, 1)
-End
-Public Sub car93_Click()
-    MenuClicks2(3, 9, 2)
+Public Sub CarOpcion_Click()
+    Dim t As Integer = Last.Tag
+
+    MenuClicks2(t Mod 10, t \ 10, (t Mod 10) - 1)
 End
 
 

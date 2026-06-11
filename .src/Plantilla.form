@@ -9,33 +9,53 @@
     Visible = False
     { car00 Menu
       Text = ("Género")
+      Group = "CarGrupo"
+      Tag = 0
     }
     { car10 Menu
       Text = ("Tes de la piel")
+      Group = "CarGrupo"
+      Tag = 1
     }
     { car20 Menu
       Text = ("Color de la ropa")
+      Group = "CarGrupo"
+      Tag = 2
     }
     { car30 Menu
       Text = ("Forma de los ojos")
+      Group = "CarGrupo"
+      Tag = 3
     }
     { car40 Menu
       Text = ("Color de los ojos")
+      Group = "CarGrupo"
+      Tag = 4
     }
     { car50 Menu
       Text = ("Pecas")
+      Group = "CarGrupo"
+      Tag = 5
     }
     { car60 Menu
       Text = ("Rasgos faciales")
+      Group = "CarGrupo"
+      Tag = 6
     }
     { car70 Menu
       Text = ("Tipo de cabello")
+      Group = "CarGrupo"
+      Tag = 7
     }
     { car80 Menu
       Text = ("Color de cabello")
+      Group = "CarGrupo"
+      Tag = 8
     }
     { car90 Menu
       Text = ("Accesorios")
+      Group = "CarGrupo"
+      Tag = 9
     }
   }
   { op0 Menu
@@ -43,9 +63,13 @@
     Visible = False
     { car01 Menu
       Text = ("Hombre")
+      Group = "CarOpcion"
+      Tag = 1
     }
     { car02 Menu
       Text = ("Mujer")
+      Group = "CarOpcion"
+      Tag = 2
     }
   }
   { op1 Menu
@@ -53,12 +77,18 @@
     Visible = False
     { car11 Menu
       Text = ("Blanca")
+      Group = "CarOpcion"
+      Tag = 11
     }
     { car12 Menu
       Text = ("Negra")
+      Group = "CarOpcion"
+      Tag = 12
     }
     { car13 Menu
       Text = ("Amarilla")
+      Group = "CarOpcion"
+      Tag = 13
     }
   }
   { op2 Menu
@@ -66,12 +96,18 @@
     Visible = False
     { car21 Menu
       Text = ("Rojo")
+      Group = "CarOpcion"
+      Tag = 21
     }
     { car22 Menu
       Text = ("Azul")
+      Group = "CarOpcion"
+      Tag = 22
     }
     { car23 Menu
       Text = ("Negro")
+      Group = "CarOpcion"
+      Tag = 23
     }
   }
   { op3 Menu
@@ -79,9 +115,13 @@
     Visible = False
     { car31 Menu
       Text = ("Redondos")
+      Group = "CarOpcion"
+      Tag = 31
     }
     { car32 Menu
       Text = ("Cuadrados")
+      Group = "CarOpcion"
+      Tag = 32
     }
   }
   { op4 Menu
@@ -89,12 +129,18 @@
     Visible = False
     { car41 Menu
       Text = ("Azul")
+      Group = "CarOpcion"
+      Tag = 41
     }
     { car42 Menu
       Text = ("Verde")
+      Group = "CarOpcion"
+      Tag = 42
     }
     { car43 Menu
       Text = ("Cafe")
+      Group = "CarOpcion"
+      Tag = 43
     }
   }
   { op5 Menu
@@ -102,12 +148,18 @@
     Visible = False
     { car51 Menu
       Text = ("Pocas")
+      Group = "CarOpcion"
+      Tag = 51
     }
     { car52 Menu
       Text = ("Muchas")
+      Group = "CarOpcion"
+      Tag = 52
     }
     { car53 Menu
       Text = ("Ninguna")
+      Group = "CarOpcion"
+      Tag = 53
     }
   }
   { op6 Menu
@@ -115,12 +167,18 @@
     Visible = False
     { car61 Menu
       Text = ("Barba")
+      Group = "CarOpcion"
+      Tag = 61
     }
     { car62 Menu
       Text = ("Bigote")
+      Group = "CarOpcion"
+      Tag = 62
     }
     { car63 Menu
       Text = ("Ninguno")
+      Group = "CarOpcion"
+      Tag = 63
     }
   }
   { op7 Menu
@@ -128,12 +186,18 @@
     Visible = False
     { car71 Menu
       Text = ("Largo")
+      Group = "CarOpcion"
+      Tag = 71
     }
     { car72 Menu
       Text = ("Corto")
+      Group = "CarOpcion"
+      Tag = 72
     }
     { car73 Menu
       Text = ("Rapado")
+      Group = "CarOpcion"
+      Tag = 73
     }
   }
   { op8 Menu
@@ -141,12 +205,18 @@
     Visible = False
     { car81 Menu
       Text = ("Rubio")
+      Group = "CarOpcion"
+      Tag = 81
     }
     { car82 Menu
       Text = ("Castaño")
+      Group = "CarOpcion"
+      Tag = 82
     }
     { car83 Menu
       Text = ("Pelirrojo")
+      Group = "CarOpcion"
+      Tag = 83
     }
   }
   { op9 Menu
@@ -154,12 +224,18 @@
     Visible = False
     { car91 Menu
       Text = ("Gafas")
+      Group = "CarOpcion"
+      Tag = 91
     }
     { car92 Menu
       Text = ("Sombrero")
+      Group = "CarOpcion"
+      Tag = 92
     }
     { car93 Menu
       Text = ("Ninguno")
+      Group = "CarOpcion"
+      Tag = 93
     }
   }
   { Button1 Button
