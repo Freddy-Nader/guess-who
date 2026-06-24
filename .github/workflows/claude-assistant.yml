@@ -29,7 +29,7 @@ jobs:
             const commentBody = context.payload.comment.body;
 
             const requestBody = JSON.stringify({
-              model: 'claude-3-5-sonnet',
+              model: 'gpt-4o',
               max_tokens: 2048,
               messages: [
                 {
@@ -80,5 +80,5 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
-              body: `> 🤖 **Claude** (via GitHub Models)\n\n${reply}`,
+              body: `> 🤖 **GPT-4o** (via GitHub Models)\n\n${reply}`,
             });
