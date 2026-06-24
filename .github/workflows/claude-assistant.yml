@@ -15,10 +15,10 @@ jobs:
       pull-requests: write
 
     steps:
-      - name: Call Claude and post reply
+      - name: Call Claude via GitHub Models and post reply
         uses: actions/github-script@v7
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GH_TOKEN: ${{ github.token }}
         with:
           script: |
             const https = require('https');
@@ -28,34 +28,39 @@ jobs:
             const issueBody   = context.payload.issue.body || '';
             const commentBody = context.payload.comment.body;
 
-            const userMessage = [
-              `GitHub ${isPR ? 'Pull Request' : 'Issue'}: ${issueTitle}`,
-              ``,
-              `Body:`,
-              issueBody,
-              ``,
-              `User comment (they mentioned @claude):`,
-              commentBody,
-            ].join('\n');
-
             const requestBody = JSON.stringify({
-              model: 'claude-sonnet-4-6',
+              model: 'claude-3-5-sonnet',
               max_tokens: 2048,
-              system: 'You are a helpful assistant embedded in a GitHub issue/PR tracker. The user mentioned @claude in a comment. Be concise and actionable. Use GitHub-flavored markdown.',
-              messages: [{ role: 'user', content: userMessage }]
+              messages: [
+                {
+                  role: 'system',
+                  content: 'You are a helpful assistant in a GitHub issue/PR tracker. The user mentioned @claude in a comment. Be concise and actionable. Use GitHub-flavored markdown.',
+                },
+                {
+                  role: 'user',
+                  content: [
+                    `GitHub ${isPR ? 'Pull Request' : 'Issue'}: ${issueTitle}`,
+                    '',
+                    'Body:',
+                    issueBody,
+                    '',
+                    'User comment (they mentioned @claude):',
+                    commentBody,
+                  ].join('\n'),
+                },
+              ],
             });
 
             const responseText = await new Promise((resolve, reject) => {
               const req = https.request({
-                hostname: 'api.anthropic.com',
-                path: '/v1/messages',
+                hostname: 'models.inference.ai.azure.com',
+                path: '/chat/completions',
                 method: 'POST',
                 headers: {
-                  'x-api-key': process.env.ANTHROPIC_API_KEY,
-                  'anthropic-version': '2023-06-01',
+                  'Authorization': `Bearer ${process.env.GH_TOKEN}`,
                   'content-type': 'application/json',
                   'content-length': Buffer.byteLength(requestBody),
-                }
+                },
               }, (res) => {
                 let data = '';
                 res.on('data', chunk => data += chunk);
@@ -67,13 +72,13 @@ jobs:
             });
 
             const parsed = JSON.parse(responseText);
-            if (parsed.error) throw new Error(parsed.error.message);
+            if (parsed.error) throw new Error(JSON.stringify(parsed.error));
 
-            const reply = parsed.content[0].text;
+            const reply = parsed.choices[0].message.content;
 
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
-              body: `> 🤖 **Claude** (claude-sonnet-4-6)\n\n${reply}`,
+              body: `> 🤖 **Claude** (via GitHub Models)\n\n${reply}`,
             });
