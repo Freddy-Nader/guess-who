@@ -1,0 +1,79 @@
+name: Claude Assistant
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  respond:
+    if: |
+      contains(github.event.comment.body, '@claude') &&
+      github.event.comment.user.type != 'Bot'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+
+    steps:
+      - name: Call Claude and post reply
+        uses: actions/github-script@v7
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        with:
+          script: |
+            const https = require('https');
+
+            const isPR        = !!context.payload.issue.pull_request;
+            const issueTitle  = context.payload.issue.title;
+            const issueBody   = context.payload.issue.body || '';
+            const commentBody = context.payload.comment.body;
+
+            const userMessage = [
+              `GitHub ${isPR ? 'Pull Request' : 'Issue'}: ${issueTitle}`,
+              ``,
+              `Body:`,
+              issueBody,
+              ``,
+              `User comment (they mentioned @claude):`,
+              commentBody,
+            ].join('\n');
+
+            const requestBody = JSON.stringify({
+              model: 'claude-sonnet-4-6',
+              max_tokens: 2048,
+              system: 'You are a helpful assistant embedded in a GitHub issue/PR tracker. The user mentioned @claude in a comment. Be concise and actionable. Use GitHub-flavored markdown.',
+              messages: [{ role: 'user', content: userMessage }]
+            });
+
+            const responseText = await new Promise((resolve, reject) => {
+              const req = https.request({
+                hostname: 'api.anthropic.com',
+                path: '/v1/messages',
+                method: 'POST',
+                headers: {
+                  'x-api-key': process.env.ANTHROPIC_API_KEY,
+                  'anthropic-version': '2023-06-01',
+                  'content-type': 'application/json',
+                  'content-length': Buffer.byteLength(requestBody),
+                }
+              }, (res) => {
+                let data = '';
+                res.on('data', chunk => data += chunk);
+                res.on('end', () => resolve(data));
+              });
+              req.on('error', reject);
+              req.write(requestBody);
+              req.end();
+            });
+
+            const parsed = JSON.parse(responseText);
+            if (parsed.error) throw new Error(parsed.error.message);
+
+            const reply = parsed.content[0].text;
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `> 🤖 **Claude** (claude-sonnet-4-6)\n\n${reply}`,
+            });
